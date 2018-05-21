@@ -14,7 +14,7 @@ class Footer extends Component {
 
                     <div className='col-9 footer-options'>
                         <ul>
-                            COMPANY
+                            <strong>COMPANY</strong>
                             <li>About</li>
                             <li>Careers</li>
                             <li>Legal</li>
@@ -22,20 +22,20 @@ class Footer extends Component {
                             <li>Cookies</li>
                         </ul>
                         <ul>
-                            COMMUNITY
+                            <strong>COMMUNITY</strong>
                             <li>Artists</li>
                             <li>Producers</li>
                             <li>Developers</li>
                             <li>Investors</li>
                         </ul>
                         <ul>
-                            SUPPORT
+                            <strong>SUPPORT</strong>
                             <li>Documentation</li>
                             <li>FAQ's</li>
                             <li>Help</li>
                         </ul>
                         <ul>
-                            FOLLOW US
+                            <strong>FOLLOW US</strong>
                             <li>Facebook</li>
                             <li>Instagram</li>
                             <li>Twitter</li>

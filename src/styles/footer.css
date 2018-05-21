@@ -1,5 +1,6 @@
 .footer-background {
-    background: linear-gradient(to top right, #531f61, #762989) 
+    background: linear-gradient(to top right, #531f61, #762989);
+    padding-top: 2em;
 }
 
 .footer-background * {
@@ -7,10 +8,16 @@
 }
 
 .company-brand{
-    margin: 3em 0em 1em 3em;
+    margin: 1em 0em 1em 3em;
 }
 
 .footer-options ul{
     display: inline-block;
-    margin-right: 10%;
+    margin-right: 8%;
+    list-style-type: none;
+    vertical-align: top;;
+}
+
+.footer-options ul li{
+    margin-bottom: 3px;
 }
