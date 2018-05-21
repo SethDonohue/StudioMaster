@@ -8,7 +8,7 @@ import '../../styles/bottom_desc.css'
 class BottomDescription extends Component{
     render(){
         return(
-            <div className='container'>
+            <div className='container-fluid'>
                 <div className='row'>
                     <div className='col-5 midpage_desc'>
                         <h3>
@@ -32,7 +32,7 @@ class BottomDescription extends Component{
                         </h3>
 
                         <p>
-                            Text that Blake neglected to put in! Let's all blame Blake together!
+                            Where's this text, Blake?
                         </p>
 
                         <button><Link to='/'>FEATURED ARTISTS</Link></button>

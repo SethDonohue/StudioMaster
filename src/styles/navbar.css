@@ -1,9 +1,9 @@
-ul li {
+.home-nav ul li {
     display: inline-block;
     margin-left: 12px;
 }
 
-ul {
+.home-nav ul {
     display: inline-block;
     margin-top: 10px;
 }

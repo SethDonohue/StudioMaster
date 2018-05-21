@@ -6,7 +6,7 @@ class NavBar extends Component {
 
     render(){
         return(
-            <div className='container'>
+            <div className='container-fluid home-nav'>
                 <div className='row'>
                     <div className='col-3'>
                         <h4><strong>Studio</strong>Master</h4>

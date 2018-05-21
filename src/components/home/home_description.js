@@ -6,7 +6,7 @@ import '../../styles/home_desc.css'
 class HomeDescription extends Component{
     render(){
         return(
-            <div className='container border-bottom'>
+            <div className='container-fluid border-bottom'>
                 <div className='row'>
                     <div className='col-12'>
 

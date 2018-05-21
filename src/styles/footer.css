@@ -1,0 +1,16 @@
+.footer-background {
+    background: linear-gradient(to top right, #531f61, #762989) 
+}
+
+.footer-background * {
+    color: white;
+}
+
+.company-brand{
+    margin: 3em 0em 1em 3em;
+}
+
+.footer-options ul{
+    display: inline-block;
+    margin-right: 10%;
+}
