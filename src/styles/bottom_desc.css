@@ -1,0 +1,10 @@
+.midpage_desc, .card_row {
+    margin-top: 50px;
+}
+
+
+.purple_spacer{
+    margin-top: 20px;
+    background-color: indigo;
+    height: 1px;
+}
