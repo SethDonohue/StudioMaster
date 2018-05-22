@@ -9,6 +9,7 @@ import rootReducer from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
 
 import App from './components/App';
+import SignUp from './containers/sign_up';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -18,7 +19,8 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
-                   <Route path='/' component={App} />
+                    <Route path='/registration' component={SignUp} />
+                    <Route path='/' component={App} />
                 </Switch>    
             </div>
         </BrowserRouter>

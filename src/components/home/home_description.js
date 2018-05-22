@@ -21,7 +21,7 @@ class HomeDescription extends Component{
                     </div>
 
                     <div className='col-6 mx-auto'>
-                        <button className='get_started top_buttons'><Link to='/'>GET STARTED</Link></button>
+                        <button className='get_started top_buttons'><Link to='/registration'>GET STARTED</Link></button>
                         <button className='top_buttons'><Link to='/'>LEARN MORE</Link></button>
                     </div>
 
