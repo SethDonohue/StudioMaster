@@ -28,7 +28,7 @@ class SignUp extends Component {
 
                     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                         <div className='col-10 mx-auto'>
-                            
+
                         </div>
                     </form>
                 </div>

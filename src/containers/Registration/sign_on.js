@@ -27,6 +27,7 @@ class SignOn extends Component {
                 <div className='row'>
                     <div className='col-10 mx-auto'>
                         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                            <h2>Welcome Back</h2>
                             <Field name='email' placeholder='Email' component={TextInput} />
                             <Field name='password' placeholder='Password' component={TextInput} />
                             <button type='submit'>Sign In</button>
