@@ -6,10 +6,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import rootReducer from './reducers/index';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
-import App from './components/App';
-import SignUp from './containers/sign_up';
+import Home from './components/Home';
+import Registration from './components/Registration';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -19,11 +19,11 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path='/registration' component={SignUp} />
-                    <Route path='/' component={App} />
+                    <Route path='/registration' component={Registration} />
+                    <Route path='/' component={Home} />
                 </Switch>    
             </div>
         </BrowserRouter>
     </Provider>,
     document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();

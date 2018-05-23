@@ -2,27 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 
-import '../styles/sign_up.css';
+import '../../styles/sign_up.css';
+import TextInput from '../Forms/text_input';
 
-class SignUp extends Component {
+class SignOn extends Component {
 
-    input(field){
-        const className = `form-control my-3 ${field.meta.touched && field.meta.error ? 'border-danger':''}`;
-            return(
-                
-                <div className='form-group'>
-                    <input 
-                    type="text"
-                    name={field.name}
-                    placeholder={field.placeholder} 
-                    className={className}
-                    {...field.input}
-                    />
-                    <p className='validations'>{field.meta.touched ?  field.meta.error : ''}</p>
-                </div>
-                
-            )
-    }
 
     onSubmit(values){
         console.log(values);
@@ -41,10 +25,10 @@ class SignUp extends Component {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-6 mx-auto'>
+                    <div className='col-10 mx-auto'>
                         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                            <Field name='email' placeholder='Email' component={this.input} />
-                            <Field name='password' placeholder='Password' component={this.input} />
+                            <Field name='email' placeholder='Email' component={TextInput} />
+                            <Field name='password' placeholder='Password' component={TextInput} />
                             <button type='submit'>Sign In</button>
                         </form>
                     </div>
@@ -70,5 +54,5 @@ function validate(values){
 
 export default reduxForm({
     validate,
-    form: 'signup'
-})(connect(null)(SignUp));
+    form: 'SignOn'
+})(connect(null)(SignOn));
