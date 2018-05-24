@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import NavBar from './home/nav_bar';
-import HomeDescription from './home/home_description';
-import BottomDescription from './home/bottom_description';
-import Footer from './footer/footer_main';
+import NavBar from './home/nav_bar.jsx';
+import HomeDescription from './home/home_description.jsx';
+import BottomDescription from './home/bottom_description.jsx';
+import Footer from './footer/footer_main.jsx';
 
 
 class App extends Component { // Home Page Component! Edit Me!

@@ -133,7 +133,7 @@ class SignUp extends Component {
                         <div className='col-2'></div>
                         <div className='col-6'>
                             <button
-                            onClick={}
+                            // onClick={}
                             className='btn btn-sm btn-secondary'> Legal Agreement </button>
                         </div>
                     </div>
