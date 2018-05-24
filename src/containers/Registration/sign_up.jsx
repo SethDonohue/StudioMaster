@@ -143,7 +143,7 @@ class SignUp extends Component {
                         </div>
                         <div className="col-2">
                             <button
-                            className='btn btn-sm btn-success'
+                            className='btn btn-success'
                             type='submit'
                             > Submit </button>
                         </div>
