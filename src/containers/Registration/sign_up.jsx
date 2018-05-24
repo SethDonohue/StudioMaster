@@ -5,14 +5,17 @@ import '../../styles/sign_up.css';
 import TextInput from '../Forms/text_input';
 import RadioInput from '../Forms/radio_input';
 import SelectInput from '../Forms/select_input';
+import PopUp from '../../components/boxes/pop_up.jsx';
 
-const securityQuestions = ['Please choose a security question', 'Example', 'Example', 'Example']
+const securityQuestions = ['Please choose a security question', 'Example1', 'Example2', 'Example3']
 
 
 
 class SignUp extends Component {
 
-    
+    legalAgreement(){
+        console.log("hello")
+    }
 
     onSubmit(values){
         console.log(values)
@@ -132,9 +135,17 @@ class SignUp extends Component {
                     <div className='row'>
                         <div className='col-2'></div>
                         <div className='col-6'>
+                            {/* <button
+                            type='button'
+                            onClick={this.legalAgreement}
+                            className='btn btn-sm btn-secondary'> Legal Agreement </button> */}
+                        <PopUp label='Legal Agreement' />
+                        </div>
+                        <div className="col-2">
                             <button
-                            // onClick={}
-                            className='btn btn-sm btn-secondary'> Legal Agreement </button>
+                            className='btn btn-sm btn-success'
+                            type='submit'
+                            > Submit </button>
                         </div>
                     </div>
 

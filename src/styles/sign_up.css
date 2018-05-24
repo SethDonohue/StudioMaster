@@ -8,3 +8,9 @@
     color: red;
     
 }
+
+.legalModal {
+    overflow: auto;
+    height: 500px;
+    
+}
