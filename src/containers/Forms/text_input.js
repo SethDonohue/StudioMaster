@@ -1,7 +1,7 @@
 import React from 'react';
 
 function TextInput(field){
-    const className = `form-control my-3 ${field.meta.touched && field.meta.error ? 'border-danger':''}`;
+    const className = `form-control bg-light ${field.meta.touched && field.meta.error ? 'border-danger':''}`;
     return(
         
         <div className='form-group'>

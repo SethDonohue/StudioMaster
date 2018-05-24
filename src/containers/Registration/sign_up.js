@@ -4,9 +4,15 @@ import { reduxForm, Field } from 'redux-form';
 import '../../styles/sign_up.css';
 import TextInput from '../Forms/text_input';
 import RadioInput from '../Forms/radio_input';
+import SelectInput from '../Forms/select_input';
+
+const securityQuestions = ['Please choose a security question', 'Example', 'Example', 'Example']
+
+
 
 class SignUp extends Component {
 
+    
 
     onSubmit(values){
         console.log(values)
@@ -22,7 +28,7 @@ class SignUp extends Component {
 
                     <div className='col-5'>
 
-                        <h3 className='ml-4 mt-5'>
+                        <h3 className=' mt-5'>
                             New User?
                         </h3>
 
@@ -66,7 +72,7 @@ class SignUp extends Component {
                         </div>
 
                         <div className='col-2'></div>
-                        
+
                     </div>
 
                     <div className='row'>
@@ -84,6 +90,54 @@ class SignUp extends Component {
 
                         <div className='col-2'></div>
                     </div>
+
+                    <div className='row'>
+                        <div className='col-8 mx-auto'>
+                            <Field name='securityOne' options={securityQuestions} component={SelectInput} />
+                            <Field name='securityOneAnswer' placeholder='Answer' component={TextInput} />
+                        </div>
+                        <div className='col-8 mx-auto'>
+                            <Field name='securityTwo' options={securityQuestions} component={SelectInput} />
+                            <Field name='securityTwoAnswer' placeholder='Answer' component={TextInput} />
+                        </div>
+                        <div className='col-8 mx-auto'>
+                            <Field name='securityThree' options={securityQuestions} component={SelectInput} />
+                            <Field name='securityThreeAnswer' placeholder='Answer' component={TextInput} />
+                        </div>
+                    </div>
+
+                    <div className='row'>
+                        <div className='col-2'></div>
+                        <div className='col-4'>
+                            <Field name='address' placeholder='Address' component={TextInput} />
+                        </div>
+                        <div className='col-2'>
+                            <Field name='city' placeholder='City' component={TextInput} />
+                        </div>
+                        <div className='col-2'>
+                            <Field name='state' placeholder='State' component={TextInput} />
+                        </div>
+                    </div>
+
+                    <div className='row'>
+                        <div className='col-2'></div>
+                        <div className='col-4'>
+                            <Field name='addressTwo' placeholder='Address continued' component={TextInput} />
+                        </div>
+                        <div className='col-2'>
+                            <Field name='zipCode' placeholder='Zip code' component={TextInput} />
+                        </div>
+                    </div>
+
+                    <div className='row'>
+                        <div className='col-2'></div>
+                        <div className='col-6'>
+                            <button
+                            onClick={}
+                            className='btn btn-sm btn-secondary'> Legal Agreement </button>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         )
