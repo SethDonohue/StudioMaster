@@ -145,7 +145,7 @@ class SignUp extends Component {
                             <button
                             className='btn btn-success'
                             type='submit'
-                            > Submit </button>
+                            > Submit Form </button>
                         </div>
                     </div>
 
