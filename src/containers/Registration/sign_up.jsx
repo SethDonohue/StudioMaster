@@ -34,6 +34,7 @@ class SignUp extends Component {
                         <h3 className=' mt-5'>
                             New User?
                         </h3>
+                        <hr/>
 
                     </div>
 
@@ -42,6 +43,13 @@ class SignUp extends Component {
                 </div>
 
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                    <div className='row'>
+                        <div className='col-2'></div>
+                        <div className="col-4">
+                            <h2>About You.</h2>
+                            <hr/>
+                        </div>
+                    </div>
                     <div className='row'>
                         <div className='col-2'></div>
 
@@ -77,6 +85,13 @@ class SignUp extends Component {
                         <div className='col-2'></div>
 
                     </div>
+                    <div className='row'>
+                        <div className='col-2'></div>
+                        <div className="col-4">
+                            <h2>Account and Security</h2>
+                            <hr/>
+                        </div>
+                    </div>
 
                     <div className='row'>
                         <div className='col-2'></div>
@@ -106,6 +121,13 @@ class SignUp extends Component {
                         <div className='col-8 mx-auto'>
                             <Field name='securityThree' options={securityQuestions} component={SelectInput} />
                             <Field name='securityThreeAnswer' placeholder='Answer' component={TextInput} />
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-2'></div>
+                        <div className="col-4">
+                            <h2>Address</h2>
+                            <hr/>
                         </div>
                     </div>
 

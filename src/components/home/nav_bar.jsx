@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/navbar.css'
 
 class NavBar extends Component {
@@ -27,8 +28,8 @@ class NavBar extends Component {
                                     <div className='nav_border'></div>
                                 </div>
                                 <ul className='col-4'>
-                                    <li className=''>Create Account</li>
-                                    <li className=''>Log in</li>
+                                    <li className=''><Link to='/profile'>Profile page</Link></li>
+                                    <li className=''><Link to='/registration'>Log in</Link></li>
                                 </ul>
                             </div>
                         </div>
