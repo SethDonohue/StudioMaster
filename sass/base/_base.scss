@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; //Sets 1rem == 10 px before responsive modifiers
+}
+
+
+/* DARK PURPLE --  #320d59 */
+/* LIGHT PURPLE -- #754996 */
+
+/* LIGHT GRAY -- #fafafa */
+/* MEDIUM GRAY -- #ccc */
+/* DARK GRAY -- #333 */
+
+/* BODY & PARAGRAPH TEXT */
+
+
+body {
+    box-sizing: border-box; //Padding will not add or subtract from overall dimensions of an element.
+	p {
+		font-family: 'Opan Sans';
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		color: #333;
+	}
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat';
+	font-weight: 700;
+	color: #333;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 3.5rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+	line-height: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+
+h4 {
+	font-size: 1.75rem;
+	line-height: 2.25rem;
+}
+
+h5 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+h6 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+
+/* LINKS */
+a {
+	color: #320d59;
+	text-decoration: none;
+
+	&:hover {
+		color: #754996;
+		text-decoration: none;
+	}
+}
+
+/* BUTTONS */
+button,
+button.btn,
+button[type="button"] {
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+}
+
+
+/* INPUTS */
+input[type="text"],
+input[type="text"].form-control {
+	padding: 1rem 1.5rem;
+	font-weight: 400;
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+
+	&.bg-light {
+		border: 2px solid #fff;
+		background-color: #fff;
+		color: #333;
+	}
+
+	&:hover,
+	&:focus {
+		border: 2px solid #754996;
+	}
+}

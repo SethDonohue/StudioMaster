@@ -1,6 +1,6 @@
 import React from 'react';
 import PopUp from 'reactjs-popup';
-import '../../styles/sign_up.css';
+
 
 function Modal(props){
     return (

@@ -1,0 +1,74 @@
+.navigation {
+    color: $color-black;
+    padding: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    
+    &__logo-box {
+        display: inline-block;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 2rem;
+        left: 5rem;
+        height: 5rem;
+    }
+
+    &__brand {
+        font-size: 3rem;
+    }
+
+    &__nav {
+        float: right;
+        display: inline-block;
+    }
+
+    &__nav-container {
+        display: inline-block;
+
+    }
+
+    &__divider {
+        width: 1px;
+        height: 3rem;
+        display: inline-block;
+        background-color: $color-white;
+        margin: 0 2rem;
+        position: relative;
+        top: -1rem;
+    }
+
+    &__item {
+        list-style: none;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 3.5rem;
+        }
+    }
+
+    &__link {
+        transition: all .2s;
+
+        display: inline-block;
+
+        &:link,
+        &:visited {
+            color: $color-white;
+            font-size: 2rem;
+            text-decoration: none;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        &:hover{
+            color: $color-primary;
+            transform: scale(1.1);
+            box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        }
+    }
+}

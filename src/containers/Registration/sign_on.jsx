@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 
-import '../../styles/sign_up.css';
+
 import TextInput from '../Forms/text_input';
 
 class SignOn extends Component {

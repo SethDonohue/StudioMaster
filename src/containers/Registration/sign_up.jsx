@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
-import '../../styles/sign_up.css';
+
 import TextInput from '../Forms/text_input';
 import RadioInput from '../Forms/radio_input';
 import SelectInput from '../Forms/select_input';
