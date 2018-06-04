@@ -22,8 +22,8 @@
     }
 
     &__nav {
-        width: 66%;
-        padding: 3rem 2rem;
+        width: 67%;
+        padding: 5rem 1rem 1rem 1rem;
         display: inline-block;
         color: $color-white;
         vertical-align: top;
@@ -31,8 +31,11 @@
 
         &-list {
             display: inline-block;
-            margin-right: 10rem;
             vertical-align: top;
+            
+            &:not(:last-child) {
+                margin-right: 10rem;       
+            }
         }
 
         &-title {

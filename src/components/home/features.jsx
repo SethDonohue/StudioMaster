@@ -45,16 +45,16 @@ class Features extends Component{
                 </div>
 
                 <div className="bottom-features">
-                    <h1 className="heading-primary bottom-features__header u-center-text">
+                    <h1 className="heading-primary bottom-features__header u-center-text u-margin-bottom-medium">
                         Intuitive, powerful features
                     </h1>
-                    <span className="bottom-features__divider">
-                        &nbsp;
-                    </span>
+                    <div className="bottom-features__divider u-margin-bottom-medium">
+                        
+                    </div>
                     <div className="row">
                         <div className="col-1-3">
                             <div className="bottom-features__card">
-                                <div className="bottom-features__icon"></div>
+                                <i class="fas fa-play-circle bottom-features__icon"></i>
                                 <h3 className="heading-tertiary">
                                     Easily create music and tracks
                                 </h3>
@@ -66,7 +66,7 @@ class Features extends Component{
                         </div>
                         <div className="col-1-3">
                             <div className="bottom-features__card">
-                                <div className="bottom-features__icon"></div>
+                                <i class="fas fa-rocket bottom-features__icon"></i>
                                 <h3 className="heading-tertiary">
                                     Publish & share
                                 </h3>
@@ -78,7 +78,7 @@ class Features extends Component{
                         </div>
                         <div className="col-1-3">
                             <div className="bottom-features__card">
-                                <div className="bottom-features__icon"></div>
+                                <i class="fas fa-comments bottom-features__icon"></i>
                                 <h3 className="heading-tertiary">
                                     Collaborate in real-time online
                                 </h3>
