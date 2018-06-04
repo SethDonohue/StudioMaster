@@ -1,5 +1,4 @@
 .btn {
-    border: 1px solid $color-black;
     border-radius: .8rem;
     font-size: 1.6rem;
     display: inline-block;
@@ -19,6 +18,7 @@
 
         &:hover,
         &:active {
+
             transform: scale(1.1);
             box-shadow: 0 2rem 4rem rgba($color-black, .4);
         }
@@ -39,4 +39,43 @@
         }
         
     }
+
+    &--transparent-purple {
+        &:link,
+        &:visited {
+            background-color: transparent;
+            border: solid 1px $color-primary;
+            color: $color-primary;
+        }
+            
+        &:hover,
+        &:active {
+            transform: scale(1.1);
+            box-shadow: 0 2rem 4rem rgba($color-black, .4);
+        }
+    }
+}
+
+.link {
+
+    transition: all .2s;
+
+    &:link,
+    &:visited {
+        color: $color-primary;
+        font-size: $default-font;
+    }
+
+    &:hover,
+    &:active {
+        transform: scale(1.1) translateY(-3rem);
+        color: $color-white;
+        background-color: $color-primary;
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        border-radius: 3px;
+        padding: .5rem;
+
+
+    }
+
 }

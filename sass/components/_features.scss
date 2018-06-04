@@ -39,3 +39,45 @@
         }
     }
 }
+
+.bottom-features {
+    background-color: $color-grey-light;
+    position: relative;
+    
+
+    &__header {
+        color: $color-black;
+        
+
+    }
+
+    &__divider {
+        background-color: $color-primary;
+        height: 2px;
+        width: 20rem;
+
+    }
+
+    &__card {
+        width: 90%;
+        height: 40rem;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        background-color: $color-white;
+        box-shadow: 0 2rem 3rem rgba($color-black, .15);
+        border-radius: 1rem;
+        color: $color-black; //for text color inheritance
+
+    }
+
+    &__icon {
+        background-color: $color-black;
+        height: 10rem;
+        width: 10rem;
+        margin-left: 9rem;
+
+    }
+
+
+}

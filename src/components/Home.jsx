@@ -17,10 +17,9 @@ class App extends Component { // Home Page Component! Edit Me!
             <Hero />
             <Features />
           </main>
-          <footer>
-            {/* <Footer /> */}
-            FOOTER
-          </footer>
+          
+          <Footer />
+          
       </div>
     );
   }

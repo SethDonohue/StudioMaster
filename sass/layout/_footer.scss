@@ -1,0 +1,72 @@
+.footer {
+    background: linear-gradient(to top right, $color-primary-dark, $color-primary-light);
+    width: 100%;
+    height: 30rem;
+    color: $color-white;
+
+    &__logo-box {
+        display: inline-block;;
+        padding: 6rem;
+        width: 33%;
+    }
+
+    &__logo {
+        height: 7.5rem;
+    }
+
+    &__brand {
+        font-size: $default-font;
+        font-weight: 300;
+        color: inherit;
+        margin-left: 1rem;
+    }
+
+    &__nav {
+        width: 66%;
+        padding: 3rem 2rem;
+        display: inline-block;
+        color: $color-white;
+        vertical-align: top;
+
+
+        &-list {
+            display: inline-block;
+            margin-right: 10rem;
+            vertical-align: top;
+        }
+
+        &-title {
+            color: inherit;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        &-item {
+            list-style: none;
+
+            
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &-link {
+            display: block;
+
+            transition: transform .2s;
+
+            &:link,
+            &:visited {
+                color: $color-white;
+                font-size: $default-font;
+            }
+
+            &:hover,
+            &:active {
+                transform: scale(1.2) rotate(3deg);
+                color: $color-grey-dark;
+            }
+        }
+    }
+}

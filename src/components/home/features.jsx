@@ -39,23 +39,65 @@ class Features extends Component{
                         </p>
 
                         <Link to="#" className="btn btn--purple u-margin-right-big">Featured artists</Link>
-                        <Link to="#" className="btn btn--purple">learn more</Link>
+                        <Link to="#" className="btn btn--transparent-purple">learn more</Link>
                     </div>
 
                 </div>
 
                 <div className="bottom-features">
-                    <h1 className="heading-primary">
+                    <h1 className="heading-primary bottom-features__header u-center-text">
                         Intuitive, powerful features
                     </h1>
+                    <span className="bottom-features__divider">
+                        &nbsp;
+                    </span>
+                    <div className="row">
+                        <div className="col-1-3">
+                            <div className="bottom-features__card">
+                                <div className="bottom-features__icon"></div>
+                                <h3 className="heading-tertiary">
+                                    Easily create music and tracks
+                                </h3>
+                                <p className="u-margin-bottom-medium">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
+                                </p>
+                                <Link to="#" className="link">Learn More &rarr;</Link>
+                            </div>
+                        </div>
+                        <div className="col-1-3">
+                            <div className="bottom-features__card">
+                                <div className="bottom-features__icon"></div>
+                                <h3 className="heading-tertiary">
+                                    Publish & share
+                                </h3>
+                                <p className="u-margin-bottom-medium">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
+                                </p>
+                                <Link to="#" className="link">Learn More &rarr;</Link>
+                            </div>
+                        </div>
+                        <div className="col-1-3">
+                            <div className="bottom-features__card">
+                                <div className="bottom-features__icon"></div>
+                                <h3 className="heading-tertiary">
+                                    Collaborate in real-time online
+                                </h3>
+                                <p className="u-margin-bottom-medium">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
+                                </p>
+                                <Link to="#" className="link">Learn More &rarr;</Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span className="bottom-features__divider">
-                    &nbsp;
-                </span>
-                <div className="row">
-                    <div className="col-1-3"></div>
-                    <div className="col-1-3"></div>
-                    <div className="col-1-3"></div>
+
+                <div className="billboard">
+                    <div className="billboard__info">
+                        <h1 className="heading-primary">
+                            Get noticed and rise to the top.
+                        </h1>
+                        <Link to="#" className="billboard__link">View Billboards &rarr;</Link>
+                    </div>
                 </div>
             </section>
         );
