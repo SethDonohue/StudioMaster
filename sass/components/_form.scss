@@ -34,7 +34,8 @@
         
 
         &:focus,
-        &:active {
+        &:active,
+        &:hover {
             outline: none;
             border: 3px solid $color-primary;
             box-shadow: 0 1rem 3rem rgba($color-black, .15);

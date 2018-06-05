@@ -13,7 +13,7 @@ class Registration extends Component {
                 <BrandPurple />
                 <NavBar />
                 <SignOn />
-                {/* <SignUp /> */}
+                <SignUp />
                 {/* <Footer /> */}
             </main>
         )

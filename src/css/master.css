@@ -294,7 +294,7 @@ a {
     border-radius: .5rem;
     padding-left: 2rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
-    .form__control:focus, .form__control:active {
+    .form__control:focus, .form__control:active, .form__control:hover {
       outline: none;
       border: 3px solid #79288d;
       box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
