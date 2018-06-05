@@ -1,0 +1,27 @@
+.brand {
+    text-align: center;
+    padding: 5rem 0;
+
+    &__link {
+        display: block;
+    }
+
+    &__logo {
+        height: 18rem;
+        width: 18rem;
+    }
+
+    &__header {
+        font-weight: 500;
+        font-size: 5.5rem;
+        color: $color-primary-light;
+
+        &--strong {
+            font-weight: 700;
+            color: $color-primary-dark;
+        }
+
+    }
+
+
+}

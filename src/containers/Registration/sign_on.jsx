@@ -14,28 +14,22 @@ class SignOn extends Component {
     
     render(){
         const { handleSubmit } = this.props;
-        return (
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-12'>
-                        <div className='placeholder mx-auto' />
-                        <h2 className='text-center'>
-                            StudioMaster
-                        </h2>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col-10 mx-auto'>
-                        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                            <h2>Welcome Back</h2>
-                            <Field name='email' placeholder='Email' component={TextInput} />
-                            <Field name='password' placeholder='Password' component={TextInput} />
-                            <button type='submit'>Sign In</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        )
+        
+            return (
+                <section className="section-login">
+                    <h2 className="login-header">
+                        Welcome back
+                    </h2>
+
+                    <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form">
+    
+                        <Field name="email" placeholder="Email" style="form__login" component={TextInput} />
+
+                        <Field name="password" placeholder="Password" style="form__login" component={TextInput} />
+                    </form>
+                </section>
+            );
+
     }
 }
 

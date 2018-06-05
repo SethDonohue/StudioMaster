@@ -68,25 +68,6 @@ button[type="button"] {
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem; }
 
-/* INPUTS */
-input[type="text"],
-input[type="text"].form-control {
-  padding: 1rem 1.5rem;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); }
-  input[type="text"].bg-light,
-  input[type="text"].form-control.bg-light {
-    border: 2px solid #fff;
-    background-color: #fff;
-    color: #333; }
-  input[type="text"]:hover, input[type="text"]:focus,
-  input[type="text"].form-control:hover,
-  input[type="text"].form-control:focus {
-    border: 2px solid #754996; }
-
 .heading-primary {
   font-size: 5rem;
   color: inherit;
@@ -164,6 +145,22 @@ input[type="text"].form-control {
       transform: scale(1.1);
       box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
       border-radius: 4px; }
+
+.brand {
+  text-align: center;
+  padding: 5rem 0; }
+  .brand__link {
+    display: block; }
+  .brand__logo {
+    height: 18rem;
+    width: 18rem; }
+  .brand__header {
+    font-weight: 500;
+    font-size: 5.5rem;
+    color: #754996; }
+    .brand__header--strong {
+      font-weight: 700;
+      color: #320d59; }
 
 .btn {
   border-radius: .8rem;
@@ -270,6 +267,47 @@ input[type="text"].form-control {
     font-size: 8rem;
     color: #777;
     transition: all .3s; }
+
+.form__login {
+  width: 50%; }
+
+.form__container {
+  position: relative;
+  background-color: #fff;
+  display: block;
+  height: 4rem;
+  padding: 0 2rem;
+  margin: 1rem 3rem;
+  border-radius: .6rem; }
+
+.form__control {
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  vertical-align: middle;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: .5rem; }
+  .form__control:focus, .form__control:active {
+    outline: none;
+    border: 3px solid #79288d;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
+
+.form__validate {
+  display: inline-block;
+  background-color: #fff; }
+
+.form__icon {
+  font-size: 1.8rem;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%); }
+  .form__icon--success {
+    color: green; }
+  .form__icon--warning {
+    color: red; }
 
 .hero {
   position: absolute;
@@ -414,3 +452,10 @@ input[type="text"].form-control {
 .section-features {
   background-color: #eee;
   color: #fff; }
+
+.section-brand {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent); }
+
+.section-login {
+  padding: 5rem;
+  text-align: center; }

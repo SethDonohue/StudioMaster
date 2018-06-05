@@ -1,0 +1,64 @@
+.form {
+
+    &__login {
+        width: 50%;
+    }
+
+    &__container {
+        position: relative;
+        background-color: $color-white;
+        display: block;
+        height: 4rem;
+        padding: 0 2rem;
+        margin:  1rem 3rem;
+        border-radius: .6rem;
+
+    }
+
+    
+    
+    &__control {
+        display: inline-block;
+        width: 100%;
+        background-color: $color-white;
+        border: none;
+        vertical-align: middle;
+        height: 100%;
+        border: 1px solid $color-black;
+        border-radius: .5rem;
+
+        &:focus,
+        &:active {
+            outline: none;
+            border: 3px solid $color-primary;
+            box-shadow: 0 1rem 3rem rgba($color-black, .15);
+
+        }
+
+        
+
+    }
+
+
+    &__validate {
+        display: inline-block;
+        background-color: $color-white;
+
+    }
+
+    &__icon {
+        font-size: 1.8rem;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+
+        &--success {
+            color: green;
+        }
+
+        &--warning {
+            color: red;
+        }
+    }
+}

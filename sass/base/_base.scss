@@ -89,24 +89,22 @@ button[type="button"] {
 }
 
 
-/* INPUTS */
-input[type="text"],
-input[type="text"].form-control {
-	padding: 1rem 1.5rem;
-	font-weight: 400;
-	font-size: 1.125rem;
-	line-height: 1.75rem;
-	border-radius: 0.5rem;
-	box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+// /* INPUTS */
+// input[type="text"],
+// input[type="text"].form__control {
+// 	padding: 1rem 1.5rem;
+// 	font-weight: 400;
+// 	font-size: 1.125rem;
+// 	line-height: 1.75rem;
 
-	&.bg-light {
-		border: 2px solid #fff;
-		background-color: #fff;
-		color: #333;
-	}
+// 	&.bg-light {
+// 		border: 2px solid #fff;
+// 		background-color: #fff;
+// 		color: #333;
+// 	}
 
-	&:hover,
-	&:focus {
-		border: 2px solid #754996;
-	}
-}
+// 	&:hover,
+// 	&:focus {
+// 		border: 2px solid #754996;
+// 	}
+// }
