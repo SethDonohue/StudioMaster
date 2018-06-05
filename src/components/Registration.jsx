@@ -9,7 +9,7 @@ import Footer from './footer/footer_main.jsx';
 class Registration extends Component {
     render(){
         return(
-            <main>
+            <main className="page-registration">
                 <BrandPurple />
                 <NavBar />
                 <SignOn />

@@ -9,7 +9,7 @@ class BrandPurple extends Component {
         <section className="section-brand">
             <div className="brand">
                 <Link to="/" className="brand__link">
-                    <img src={Logo} alt="Studio Master Logo Purple" className="brand__logo u-margin-bottom-small"/>
+                    <img src={Logo} alt="Studio Master Logo Purple" className="brand__logo u-margin-bottom-medium"/>
                     <h1 className="brand__header">
                         <span className="brand__header--strong">Studio</span>Master
                     </h1>

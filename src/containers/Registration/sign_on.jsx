@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
+import { Link } from "react-router-dom";
 
 
 import TextInput from '../Forms/text_input';
@@ -22,10 +23,18 @@ class SignOn extends Component {
                     </h2>
 
                     <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form">
-    
-                        <Field name="email" placeholder="Email" style="form__login" component={TextInput} />
 
-                        <Field name="password" placeholder="Password" style="form__login" component={TextInput} />
+                        <div className="form__login">
+
+                            <Field name="email" placeholder="Email" component={TextInput} />
+
+                            <Field name="password" placeholder="Password" component={TextInput} />
+                            
+                            <button className="btn btn--purple form__login-submit" type="submit">Sign In</button>
+                            <Link to="/" className="link">Forgot your password?</Link>
+                        </div>
+    
+
                     </form>
                 </section>
             );
@@ -37,11 +46,11 @@ function validate(values){
     const errors = {};
     
     if(!values.email){
-        errors.email = 'Please enter an email.'
+        errors.email = 'Please enter an email'
     }
 
     if(!values.password){
-        errors.password = 'Please enter a password.'
+        errors.password = 'Please enter a password'
     }
 
     return errors;

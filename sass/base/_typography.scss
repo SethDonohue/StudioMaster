@@ -17,3 +17,28 @@
     font-size: 3rem;
     margin: 2rem;
 }
+
+.link {
+
+    transition: all .2s;
+
+    &:link,
+    &:visited {
+        color: $color-primary;
+        font-size: $default-font;
+    }
+
+    &:hover,
+    &:active {
+        transform: scale(1.1) translateY(-3rem);
+        color: $color-white;
+        background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        border-radius: 3px;
+        padding: .5rem;
+        font-weight: 500;
+
+
+    }
+
+}

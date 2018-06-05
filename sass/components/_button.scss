@@ -1,18 +1,27 @@
 .btn {
-    border-radius: .8rem;
-    font-size: 1.6rem;
-    display: inline-block;
-    padding: 1.5rem 3.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 2rem 4rem rgba($color-black, .2);
-    transition: all .2s;
+
+    &,
+    &:link,
+    &:visited {
+        border-radius: .8rem;
+        font-size: 1.6rem;
+        display: inline-block;
+        padding: 1.5rem 3.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        transition: all .2s;
+
+        border: none;
+        cursor: pointer;
+    }
 
     &--purple {
 
+        &,
         &:link,
         &:visited {
-            background-color: $color-primary;
+            background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
             color: $color-white;
         }
 
@@ -54,28 +63,4 @@
             box-shadow: 0 2rem 4rem rgba($color-black, .4);
         }
     }
-}
-
-.link {
-
-    transition: all .2s;
-
-    &:link,
-    &:visited {
-        color: $color-primary;
-        font-size: $default-font;
-    }
-
-    &:hover,
-    &:active {
-        transform: scale(1.1) translateY(-3rem);
-        color: $color-white;
-        background-color: $color-primary;
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
-        border-radius: 3px;
-        padding: .5rem;
-
-
-    }
-
 }

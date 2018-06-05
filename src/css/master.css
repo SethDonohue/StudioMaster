@@ -62,12 +62,6 @@ a {
     text-decoration: none; }
 
 /* BUTTONS */
-button,
-button.btn,
-button[type="button"] {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem; }
-
 .heading-primary {
   font-size: 5rem;
   color: inherit;
@@ -84,6 +78,20 @@ button[type="button"] {
   font-weight: 700;
   font-size: 3rem;
   margin: 2rem; }
+
+.link {
+  transition: all .2s; }
+  .link:link, .link:visited {
+    color: #79288d;
+    font-size: 1.8rem; }
+  .link:hover, .link:active {
+    transform: scale(1.1) translateY(-3rem);
+    color: #fff;
+    background: linear-gradient(to right, #754996, #320d59);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: .5rem;
+    font-weight: 500; }
 
 .u-center-text {
   text-align: center; }
@@ -156,13 +164,13 @@ button[type="button"] {
     width: 18rem; }
   .brand__header {
     font-weight: 500;
-    font-size: 5.5rem;
+    font-size: 7.4rem;
     color: #754996; }
     .brand__header--strong {
       font-weight: 700;
       color: #320d59; }
 
-.btn {
+.btn, .btn:link, .btn:visited {
   border-radius: .8rem;
   font-size: 1.6rem;
   display: inline-block;
@@ -170,39 +178,34 @@ button[type="button"] {
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-  transition: all .2s; }
-  .btn--purple:link, .btn--purple:visited {
-    background-color: #79288d;
-    color: #fff; }
-  .btn--purple:hover, .btn--purple:active {
-    transform: scale(1.1);
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
-  .btn--transparent:link, .btn--transparent:visited {
-    border: solid 1px #fff;
-    color: #fff; }
-  .btn--transparent:hover, .btn--transparent:active {
-    transform: scale(1.1);
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
-  .btn--transparent-purple:link, .btn--transparent-purple:visited {
-    background-color: transparent;
-    border: solid 1px #79288d;
-    color: #79288d; }
-  .btn--transparent-purple:hover, .btn--transparent-purple:active {
-    transform: scale(1.1);
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
+  transition: all .2s;
+  border: none;
+  cursor: pointer; }
 
-.link {
-  transition: all .2s; }
-  .link:link, .link:visited {
-    color: #79288d;
-    font-size: 1.8rem; }
-  .link:hover, .link:active {
-    transform: scale(1.1) translateY(-3rem);
-    color: #fff;
-    background-color: #79288d;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    padding: .5rem; }
+.btn--purple, .btn--purple:link, .btn--purple:visited {
+  background: linear-gradient(to right bottom, #754996, #320d59);
+  color: #fff; }
+
+.btn--purple:hover, .btn--purple:active {
+  transform: scale(1.1);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
+
+.btn--transparent:link, .btn--transparent:visited {
+  border: solid 1px #fff;
+  color: #fff; }
+
+.btn--transparent:hover, .btn--transparent:active {
+  transform: scale(1.1);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
+
+.btn--transparent-purple:link, .btn--transparent-purple:visited {
+  background-color: transparent;
+  border: solid 1px #79288d;
+  color: #79288d; }
+
+.btn--transparent-purple:hover, .btn--transparent-purple:active {
+  transform: scale(1.1);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4); }
 
 .top-features {
   background: linear-gradient(to top right, #320d59, #754996); }
@@ -268,46 +271,58 @@ button[type="button"] {
     color: #777;
     transition: all .3s; }
 
-.form__login {
-  width: 50%; }
-
-.form__container {
-  position: relative;
-  background-color: #fff;
-  display: block;
-  height: 4rem;
-  padding: 0 2rem;
-  margin: 1rem 3rem;
-  border-radius: .6rem; }
-
-.form__control {
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  border: none;
-  vertical-align: middle;
-  height: 100%;
-  border: 1px solid #000;
-  border-radius: .5rem; }
-  .form__control:focus, .form__control:active {
-    outline: none;
-    border: 3px solid #79288d;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
-
-.form__validate {
-  display: inline-block;
-  background-color: #fff; }
-
-.form__icon {
-  font-size: 1.8rem;
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  transform: translateY(-50%); }
-  .form__icon--success {
-    color: green; }
-  .form__icon--warning {
-    color: red; }
+.form {
+  text-align: center;
+  margin-top: 3rem; }
+  .form__login {
+    width: 40%;
+    display: inline-block; }
+  .form__group {
+    position: relative;
+    display: block;
+    height: 4rem;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+    border-radius: .6rem; }
+  .form__control {
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    vertical-align: middle;
+    height: 100%;
+    border-radius: .5rem;
+    padding-left: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+    .form__control:focus, .form__control:active {
+      outline: none;
+      border: 3px solid #79288d;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
+    .form__control--warning {
+      border: 3px solid red; }
+    .form__control--success {
+      border: 3px solid green; }
+  .form__error {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: red;
+    margin-top: 3px; }
+  .form__validate {
+    display: inline-block;
+    background-color: #fff; }
+  .form__icon {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%); }
+    .form__icon--success {
+      color: green; }
+    .form__icon--warning {
+      color: red; }
+  .form__login-submit {
+    display: inline-block;
+    margin-right: 30rem; }
 
 .hero {
   position: absolute;
@@ -437,8 +452,7 @@ button[type="button"] {
       text-decoration: none; }
     .navigation__link:hover {
       color: #79288d;
-      transform: scale(1.1);
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+      transform: scale(1.1); }
 
 .section-hero {
   height: 85vh;
@@ -452,6 +466,9 @@ button[type="button"] {
 .section-features {
   background-color: #eee;
   color: #fff; }
+
+.page-registration {
+  background-color: #eee; }
 
 .section-brand {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent); }

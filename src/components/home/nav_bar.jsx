@@ -11,9 +11,6 @@ class NavBar extends Component {
             <div className="navigation">
                 <div className="navigation__logo-box">
                     <img src={logo} alt="" className="navigation__logo"/>
-                    {/* <h3 className="navigation__brand">
-                        <strong>Studio</strong>Master
-                    </h3> */}
                 </div>
                 <div className="navigation__nav">
                     <ul className="navigation__nav-container">
@@ -33,10 +30,10 @@ class NavBar extends Component {
                     <span className="navigation__divider">&nbsp;</span>
                     <ul className="navigation__nav-container">
                         <li className="navigation__item">
-                            <a href="#" className="navigation__link">Create Account</a>
+                            <Link to="/registration" className="navigation__link">Create Account</Link>
                         </li>
                         <li className="navigation__item">
-                            <a href="#" className="navigation__link">Log In</a>
+                            <Link to="/registration" className="navigation__link">Log In</Link>
                         </li>
                     </ul>
                 </div>
