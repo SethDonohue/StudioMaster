@@ -2,10 +2,6 @@
     max-width: $grid-width;
     margin: 0 auto; // Defines characteristics for .row class
 
-    &:not(:last-child) {
-        margin-bottom: $gutter-vertical; // Applied to all .row EXCEPT the last one (:not(the :last-child))
-    }
-
     @include clearfix; // fix missing height property when using floats
 
     [class^="col-"] { // apply to all class that ^start with an attribute 

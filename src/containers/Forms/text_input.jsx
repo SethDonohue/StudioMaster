@@ -27,4 +27,4 @@ function TextInput(field){
 export default TextInput;
 
 // ${field.meta.touched && !field.meta.error ? "form__control--success" : ""}  for confirmation inputs
-// {field.meta.touched && !field.meta.error ? <i className="fas fa-check form__icon form__icon--success"></i> : null  } icon operator for inputs
+// {field.meta.touched && !field.meta.error ? <i className="fas fa-check form__icon form__icon--success"></i> : null  } icon operator for confirmation inputs

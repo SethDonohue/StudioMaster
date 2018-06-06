@@ -2,17 +2,17 @@ import React from 'react';
 
 function RadioInput(field){
     return(
-        <div className='border bg-light mb-3'>
-            <label>
-                <input
-                className='ml-3 mr-2 mt-2'
-                type='radio'
-                name={field.name}
-                value={field.value}
-                {...field.input}
-                />
+        <div className="form__radio-group">
+            <input type="radio"
+            className="form__radio-input"
+            value={field.value}
+            id={field.fieldId}
+            name={field.name}
+            {...field.input}
+            />
+            <label htmlFor={field.fieldId} className="form__label-radio">
+                <span className="form__radio-button"></span>
                 {field.label}
-                {field.meta.error ? field.meta.error : ''}
             </label>
         </div>
     )
