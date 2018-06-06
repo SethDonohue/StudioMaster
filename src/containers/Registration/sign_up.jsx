@@ -31,7 +31,7 @@ class SignUp extends Component {
 
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form">
             
-                    <div className="form__about">
+                    <div className="form__register">
                         <h3 className="heading-tertiary">
                             About you
                         </h3>
@@ -78,6 +78,66 @@ class SignUp extends Component {
                             <div className="col-1-4">
                                 <Field name="zip" placeholder="Zip Code" component={TextInput}  />                           
                             </div>
+                        </div>
+
+                        <h3 className="heading-tertiary">
+                            Account & Security
+                        </h3>
+
+                        <div className="row">
+                            <div className="col-1-2">
+                                <Field name="username" placeholder="Username" component={TextInput}  />
+                                <Field name="Password" placeholder="Password" component={TextInput}  />
+                            </div>
+                            <div className="col-1-2">
+                                <Field name="usernameMatch" placeholder="Confirm Username" component={TextInput}  />
+                                <Field name="passConfirm" placeholder="Confirm Password" component={TextInput}  />
+                            </div>
+                        </div>
+
+                        <h4 className="security-heading">
+                            Security Question #1
+                        </h4>
+
+                        <div className="row">
+                            <div className="col-1">
+                            <Field options={securityQuestions} name="securityQuestionOne" component={SelectInput} />
+                            <Field component={TextInput} name="securityAnswerOne" placeholder="Answer" />
+                            </div>
+                        </div>
+
+                        <h4 className="security-heading">
+                            Security Question #2
+                        </h4>
+
+                        <div className="row">
+                            <div className="col-1">
+                            <Field options={securityQuestions} name="securityQuestionTwo" component={SelectInput} />
+                            <Field component={TextInput} name="securityAnswerTwo" placeholder="Answer" />
+                            </div>
+                        </div>
+
+                        <h4 className="security-heading">
+                            Security Question #3
+                        </h4>
+
+                        <div className="row">
+                            <div className="col-1">
+                            <Field options={securityQuestions} name="securityQuestionThree" component={SelectInput} />
+                            <Field component={TextInput} name="securityAnswerThree" placeholder="Answer" />
+                            </div>
+                        </div>
+
+                        <div className="form__submit-group">
+                            <button type="button" onClick={this.legalAgreement} className="btn btn--grey">
+                                Legal Agreement
+                            </button>
+
+                            <br/>
+
+                            <button type="submit" className="form__submit btn btn--green">
+                                Complete
+                            </button>
                         </div>
                         
                     </div>

@@ -63,4 +63,36 @@
             box-shadow: 0 2rem 4rem rgba($color-black, .4);
         }
     }
+
+    &--green {
+        &,
+        &:link,
+        &:visited {
+            background-color: green;;
+            color: $color-white;
+        }
+
+        &:hover,
+        &:active {
+
+            transform: scale(1.01);
+            box-shadow: 0 2rem 4rem rgba($color-black, .4);
+        }
+    }
+
+    &--grey {
+        &,
+        &:link,
+        &:visited {
+            background-color: $color-grey-dark;
+            color: $color-white;
+        }
+
+        &:hover,
+        &:active {
+
+            transform: scale(1.01);
+            box-shadow: 0 2rem 4rem rgba($color-black, .4);
+        }
+    }
 }

@@ -7,15 +7,16 @@ function SelectInput(field){
         )
     })
     return(
-        <div className='form-group bg-light'>
+        <div className='form__select-group'>
             <select
-            className="form-control"
+            className="form__select"
             {...field.input} 
             name={field.name}>
 
                 {securityOptions}
 
             </select>
+            <div className="form__select-arrow"></div>
             
         </div>
     )
