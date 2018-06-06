@@ -265,7 +265,7 @@ a {
   padding: 10rem; }
   .features__image-box {
     height: 50rem;
-    width: 90rem;
+    width: 50%;
     background-color: #000;
     display: inline-block; }
   .features__info {
