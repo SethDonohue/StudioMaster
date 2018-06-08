@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from "react-router-dom";
+import { fetchLogin } from "../../actions/index";
+
+import { bindActionCreators } from "redux";
 
 
 import TextInput from '../Forms/text_input';
@@ -11,6 +14,7 @@ class SignOn extends Component {
 
     onSubmit(values){
         console.log(values);
+        this.props.fetchLogin(values)
     }
     
     render(){
@@ -42,6 +46,8 @@ class SignOn extends Component {
     }
 }
 
+// Validations for this form
+
 function validate(values){
     const errors = {};
     
@@ -56,7 +62,17 @@ function validate(values){
     return errors;
 }
 
+// Redux container and Form hookup
+
+function mapStateToProps ({login}) {
+    return {login};
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({fetchLogin}, dispatch);
+}
+
 export default reduxForm({
     validate,
     form: 'SignOn'
-})(connect(null)(SignOn));
+})(connect(mapStateToProps, mapDispatchToProps)(SignOn));
