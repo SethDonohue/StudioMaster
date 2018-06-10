@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { newUser } from '../../actions/index';
 import { connect } from 'react-redux';
+import validation from '../../validations/new_user';
 
 
 import TextInput from '../Forms/text_input';
@@ -150,13 +151,10 @@ class SignUp extends Component {
     }
 }
 
-function validate(values){
-    const errors = {}
-    return errors;
-}
+
 
 export default reduxForm({
-    validate,
+    validate: validation,
     form: 'SignUp'
 })
     (connect(null, { newUser })
