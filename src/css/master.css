@@ -45,7 +45,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat';
-  font-weight: 600;
+  font-weight: 700;
   color: #333; }
 
 h1 {
@@ -336,7 +336,8 @@ a {
 
 .form {
   text-align: center;
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  font-family: 'Open Sans', sans-serif; }
   .form__login {
     width: 35%;
     display: inline-block; }
@@ -353,6 +354,8 @@ a {
     height: 100%;
     width: 100%;
     padding-left: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
     background-color: #fff;
     border: 2px solid #fff;
     border-radius: 0.5rem;
@@ -392,6 +395,9 @@ a {
     text-align: left;
     width: 45%;
     display: inline-block; }
+    .form__register .heading-tertiary {
+      color: #333;
+      font-size: 2rem; }
   .form__radio-group {
     display: inline-block;
     padding: 0 2rem; }
@@ -440,32 +446,35 @@ a {
     width: 100%;
     padding: 0 2rem; }
   .form__select {
-    font-family: 'Arial';
     display: inline-block;
+    padding: 1rem 1.5rem;
     width: 100%;
-    cursor: pointer;
-    padding: 1.5rem 1.5rem;
-    outline: 0;
-    border: 3px solid transparent;
-    border-radius: 0.5rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
     background: #fff;
-    color: #cccccc;
+    color: #4d4d4d;
+    outline: 0;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none; }
     .form__select::-ms-expand {
       display: none; }
     .form__select:hover, .form__select:focus {
-      border: 3px solid #320d59;
-      color: #cccccc;
-      background: #ffffff; }
+      border: 2px solid #320d59;
+      color: #333;
+      background: #ffffff;
+      box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
     .form__select:disabled {
       opacity: 0.5;
       pointer-events: none; }
   .form__select-arrow {
     position: absolute;
-    top: 1.5rem;
+    top: 1.25rem;
     right: 5rem;
     width: 1rem;
     height: 1rem;
