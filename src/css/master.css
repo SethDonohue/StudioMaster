@@ -201,11 +201,11 @@ a {
   border-radius: .5rem;
   cursor: pointer;
   transition: ease-in-out all 0.15s;
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15); }
 
 .btn:hover, .btn:focus, .btn:active {
   transition: ease-in-out all 0.15s;
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.35); }
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
 
 .btn--purple, .btn--purple:link, .btn--purple:visited {
   color: #fff;
@@ -243,7 +243,7 @@ a {
   color: #fff;
   background-color: #2ecc40;
   border: 2px solid #2ecc40;
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.35); }
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
 
 .btn--grey, .btn--grey:link, .btn--grey:visited {
   background-color: #cccccc;
@@ -353,7 +353,7 @@ a {
     vertical-align: middle;
     height: 100%;
     width: 100%;
-    padding-left: 2rem;
+    padding-left: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.25rem;
     background-color: #fff;
@@ -447,7 +447,7 @@ a {
     padding: 0 2rem; }
   .form__select {
     display: inline-block;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.25rem;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.25rem;
@@ -459,7 +459,6 @@ a {
     border: 2px solid transparent;
     border-radius: 0.5rem;
     cursor: pointer;
-    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none; }
     .form__select::-ms-expand {
