@@ -1,73 +1,77 @@
 .navigation {
-    color: $color-black;
-    padding: 3rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 20;
-    
-    &__logo-box {
-        display: inline-block;
-    }
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-family: 'Monserrat', sans-serif;
+	font-size: 1rem;
+	line-height: 3rem;
+	color: $color-white;
+	z-index: 20;
+	
+	&__logo-box {
+		display: inline-block;
+	}
 
-    &__logo {
-        position: absolute;
-        top: 2rem;
-        left: 5rem;
-        height: 5rem;
-    }
+	&__logo {
+		position: absolute;
+		top: 20px;
+		left: 5rem;
+		height: 60px;
+	}
 
-    &__brand {
-        font-size: 3rem;
-    }
+	&__brand {
+		font-size: 3rem;
+	}
 
-    &__nav {
-        float: right;
-        display: inline-block;
-    }
+	&__nav {
+		float: right;
+		display: inline-block;
+		margin-right: 5rem;
+	}
 
-    &__nav-container {
-        display: inline-block;
+	&__nav-container {
+		display: inline-block;
+	}
 
-    }
+	&__divider {
+		display: inline-block;
+		position: relative;
+		top: 0;
+		margin: 2rem;
+		width: 1px;
+		height: 3rem;
+		background-color: $color-white;
+	}
 
-    &__divider {
-        width: 1px;
-        height: 3rem;
-        display: inline-block;
-        background-color: $color-white;
-        margin: 0 2rem;
-        position: relative;
-        top: -1rem;
-    }
+	&__item {
+		list-style: none;
+		display: inline-block;
 
-    &__item {
-        list-style: none;
-        display: inline-block;
+		&:not(:last-child) {
+			margin: 0;
+		}
+	}
 
-        &:not(:last-child) {
-            margin-right: 3.5rem;
-        }
-    }
+	&__link {
+		display: inline-block;
+		transition: $ease-in-out;
+		line-height: 10rem;
+		padding: 0 1rem;
 
-    &__link {
-        transition: all .2s;
+		&:link,
+		&:visited {
+			font-size: 1.5rem;
+			color: $color-white;
+			display: inline-block;
+			text-decoration: none;
+		}
 
-        display: inline-block;
-
-        &:link,
-        &:visited {
-            color: $color-white;
-            font-size: 2rem;
-            text-decoration: none;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        &:hover{
-            color: $color-primary;
-            transform: scale(1.1);
-        }
-    }
+		&:hover{
+			color: $color-white-dark;
+			transition: $ease-in-out;
+		}
+	}
 }

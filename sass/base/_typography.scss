@@ -1,26 +1,29 @@
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
 .heading-primary {
+    margin: 2rem;
     font-size: 5rem;
     color: inherit;
-    margin: 2rem;
-    font-weight: 900;
 }
 
 .heading-secondary {
     font-size: 3.5rem;
     color: inherit;
-    font-weight: 700;
 }
 
 .heading-tertiary {
-    color: inherit;
-    font-weight: 700;
-    font-size: 3rem;
     margin: 2rem;
+    font-size: 3rem;
+    color: inherit;
 }
 
 .link {
-
-    transition: all .2s;
+    transition: $ease-in-out;
 
     &:link,
     &:visited {
@@ -36,9 +39,6 @@
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
         border-radius: 3px;
         padding: .5rem;
-        font-weight: 500;
-
-
+        font-weight: 600;
     }
-
 }

@@ -10,7 +10,7 @@ class NavBar extends Component {
         return(
             <div className="navigation">
                 <div className="navigation__logo-box">
-                    <img src={logo} alt="" className="navigation__logo"/>
+                    <a href="/"><img src={logo} alt="" className="navigation__logo"/></a>
                 </div>
                 <div className="navigation__nav">
                     <ul className="navigation__nav-container">
