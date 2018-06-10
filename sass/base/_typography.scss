@@ -1,44 +1,44 @@
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
-    font-family: 'Montserrat';
-    font-weight: 700;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	color: $color-charcoal;
 }
 
 .heading-primary {
-    margin: 2rem;
-    font-size: 5rem;
-    color: inherit;
+	margin: 2rem;
+	font-size: 4rem;
+	line-height: 4.5rem;
+	color: inherit;
 }
 
 .heading-secondary {
-    font-size: 3.5rem;
-    color: inherit;
+	font-size: 3rem;
+	line-height: 3.5rem;
+	color: inherit;
 }
 
 .heading-tertiary {
-    margin: 2rem;
-    font-size: 3rem;
-    color: inherit;
+	margin: 2rem;
+	font-size: 2.5rem;
+	line-height: 3rem;
+	color: inherit;
 }
 
 .link {
-    transition: $ease-in-out;
+	font-family: 'Open Sans', sans-serif;
+	transition: $ease-in-out;
 
-    &:link,
-    &:visited {
-        color: $color-primary;
-        font-size: $default-font;
-    }
+	&:link,
+	&:visited {
+		color: $color-primary;
+		font-size: $default-font;
+	}
 
-    &:hover,
-    &:active {
-        transform: scale(1.1) translateY(-3rem);
-        color: $color-white;
-        background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
-        border-radius: 3px;
-        padding: .5rem;
-        font-weight: 600;
-    }
+	&:hover,
+	&:active {
+		color: $color-primary-light;
+		font-weight: 400;
+	}
 }
