@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { newUser } from '../../actions/index';
+import { connect } from 'react-redux';
 
 
 import TextInput from '../Forms/text_input';
@@ -18,7 +20,8 @@ class SignUp extends Component {
     }
 
     onSubmit(values){
-        console.log(values)
+        console.log(values.gender)
+        this.props.newUser(values);
     }
 
     render(){
@@ -38,21 +41,21 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="fName" placeholder="First Name" component={TextInput}  />
-                                <Field name="birthday" placeholder="Birthday (mm/dd/yyyy)" component={TextInput}  />
+                                <Field name="fName" placeholder="First Name" inputType='text' component={TextInput}  />
+                                <Field name="birthday" placeholder="Birthday (mm/dd/yyyy)" inputType='date' component={TextInput}  />
                             </div>
                             <div className="col-1-2">
-                                <Field name="lName" placeholder="Last Name" component={TextInput}  />
-                                <Field name="email" placeholder="Email" component={TextInput}  />
+                                <Field name="lName" placeholder="Last Name" inputType='text' component={TextInput}  />
+                                <Field name="email" placeholder="Email" inputType='email' component={TextInput}  />
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-1">
-                                <Field name="gender" value="male" fieldId="Man" label="Male" component={RadioInput} />
-                                <Field name="gender" value="female" fieldId="Woman" label="Female" component={RadioInput} />
-                                <Field name="gender" value="other" fieldId="Other" label="Other" component={RadioInput} />
-                                <Field name="gender" value="N/A" fieldId="Nope" label="Prefer not to answer" component={RadioInput} />
+                                <Field name="gender" value="male" type='radio' fieldId="Man" label="Male" component={RadioInput} />
+                                <Field name="gender" value="female" type='radio' fieldId="Woman" label="Female" component={RadioInput} />
+                                <Field name="gender" value="other" type='radio' fieldId="Other" label="Other" component={RadioInput} />
+                                <Field name="gender" value="N/A" type='radio' fieldId="Nope" label="Prefer not to answer" component={RadioInput} />
                                 <p className="form__disclaimer">
                                     Please note: This information will not be shared with anyone and is for internal use only.
                                 </p>
@@ -61,22 +64,22 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="address" placeholder="Address" component={TextInput}  />
+                                <Field name="address" placeholder="Address" inputType='text' component={TextInput}  />
                             </div>
                             <div className="col-1-2">
-                                <Field name="city" placeholder="City" component={TextInput}  />
+                                <Field name="city" placeholder="City" inputType='text' component={TextInput}  />
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-2-4">
-                                <Field name="addressTwo" placeholder="Address Continued" component={TextInput}  />
+                                <Field name="addressTwo" placeholder="Address Continued" inputType='text' component={TextInput}  />
                             </div>
                             <div className="col-1-4">
-                                <Field name="state" placeholder="State" component={TextInput}  />
+                                <Field name="state" placeholder="State" inputType='text' component={TextInput}  />
                             </div>
                             <div className="col-1-4">
-                                <Field name="zip" placeholder="Zip Code" component={TextInput}  />                           
+                                <Field name="zip" placeholder="Zip Code" inputType='text' component={TextInput}  />                           
                             </div>
                         </div>
 
@@ -86,12 +89,12 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="username" placeholder="Username" component={TextInput}  />
-                                <Field name="Password" placeholder="Password" component={TextInput}  />
+                                <Field name="username" placeholder="Username" component={TextInput} inputType='text'  />
+                                <Field name="password" placeholder="Password" inputType='password' component={TextInput}  />
                             </div>
                             <div className="col-1-2">
-                                <Field name="usernameMatch" placeholder="Confirm Username" component={TextInput}  />
-                                <Field name="passConfirm" placeholder="Confirm Password" component={TextInput}  />
+                                <Field name="usernameMatch" placeholder="Confirm Username" component={TextInput} inputType='text'  />
+                                <Field name="passConfirm" placeholder="Confirm Password" inputType='password' component={TextInput}  />
                             </div>
                         </div>
 
@@ -102,7 +105,7 @@ class SignUp extends Component {
                         <div className="row">
                             <div className="col-1">
                             <Field options={securityQuestions} name="securityQuestionOne" component={SelectInput} />
-                            <Field component={TextInput} name="securityAnswerOne" placeholder="Answer" />
+                            <Field component={TextInput} name="securityAnswerOne" inputType='text' placeholder="Answer" />
                             </div>
                         </div>
 
@@ -113,7 +116,7 @@ class SignUp extends Component {
                         <div className="row">
                             <div className="col-1">
                             <Field options={securityQuestions} name="securityQuestionTwo" component={SelectInput} />
-                            <Field component={TextInput} name="securityAnswerTwo" placeholder="Answer" />
+                            <Field component={TextInput} name="securityAnswerTwo" inputType='text' placeholder="Answer" />
                             </div>
                         </div>
 
@@ -124,7 +127,7 @@ class SignUp extends Component {
                         <div className="row">
                             <div className="col-1">
                             <Field options={securityQuestions} name="securityQuestionThree" component={SelectInput} />
-                            <Field component={TextInput} name="securityAnswerThree" placeholder="Answer" />
+                            <Field component={TextInput} name="securityAnswerThree" inputType='text' placeholder="Answer" />
                             </div>
                         </div>
 
@@ -155,4 +158,6 @@ function validate(values){
 export default reduxForm({
     validate,
     form: 'SignUp'
-})(SignUp);
+})
+    (connect(null, { newUser })
+        (SignUp) );

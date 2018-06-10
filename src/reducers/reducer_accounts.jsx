@@ -1,4 +1,4 @@
-import { FETCH_LOGIN, LOGIN_ERRORS } from "../actions/index";
+import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER  } from "../actions/index";
 
 function loginValidate(state = {}, action) {
 
@@ -7,7 +7,10 @@ function loginValidate(state = {}, action) {
             return action.payload;
         
         case LOGIN_ERRORS:
-            return action.payload
+            return action.payload;
+        
+        case NEW_USER:
+            return action.payload;
     }
     return state;
 

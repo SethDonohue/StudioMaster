@@ -30,9 +30,9 @@ class SignOn extends Component {
 
                         <div className="form__login">
 
-                            <Field name="email" placeholder="Email" component={TextInput} />
+                            <Field name="email" placeholder="Email" inputType='text' component={TextInput} />
 
-                            <Field name="password" placeholder="Password" component={TextInput} />
+                            <Field name="password" placeholder="Password" inputType='password' component={TextInput} />
                             
                             <button className="btn btn--purple form__login-submit" type="submit">Sign In</button>
                             <Link to="/" className="link">Forgot your password?</Link>

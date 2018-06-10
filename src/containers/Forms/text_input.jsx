@@ -6,7 +6,7 @@ function TextInput(field){
         
             <div className="form__group">
                 <input 
-                type="text"
+                type={field.inputType}
                 className={className}
                 name={field.name}
                 placeholder={field.placeholder}
