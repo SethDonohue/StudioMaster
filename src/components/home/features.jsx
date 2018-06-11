@@ -54,7 +54,7 @@ class Features extends Component{
                     <div className="row">
                         <div className="col-1-3">
                             <div className="bottom-features__card">
-                                <i class="fas fa-play-circle bottom-features__icon"></i>
+                                <i className="fas fa-play-circle bottom-features__icon"></i>
                                 <h3 className="heading-tertiary">
                                     Easily create music and tracks
                                 </h3>
