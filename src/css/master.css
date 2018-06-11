@@ -345,7 +345,6 @@ a {
     position: relative;
     display: block;
     height: 4rem;
-    padding: 0 2rem;
     margin-bottom: 3rem;
     border-radius: 0.5rem; }
   .form__control {
@@ -374,6 +373,11 @@ a {
     margin-top: 0.25rem;
     font-size: 1.5rem;
     color: #ff4136; }
+  .form__success {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: green;
+    margin-top: 3px; }
   .form__validate {
     display: inline-block;
     background-color: #fff; }
@@ -443,8 +447,7 @@ a {
     position: relative;
     display: inline-block;
     margin-bottom: 1.5rem;
-    width: 100%;
-    padding: 0 2rem; }
+    width: 100%; }
   .form__select {
     display: inline-block;
     padding: 1rem 1.25rem;
@@ -520,21 +523,21 @@ section.section-login .form__login-submit {
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 1rem; }
+      margin-right: 2rem; }
   .row .col-1 {
     width: 100%; }
   .row .col-1-2 {
-    width: calc((100% - 1rem) / 2); }
+    width: calc((100% - 2rem) / 2); }
   .row .col-1-3 {
-    width: calc((100% - 2 * 1rem) / 3); }
+    width: calc((100% - 2 * 2rem) / 3); }
   .row .col-2-3 {
-    width: calc(2 * ((100% - 2 * 1rem) / 3) + 1rem); }
+    width: calc(2 * ((100% - 2 * 2rem) / 3) + 2rem); }
   .row .col-1-4 {
-    width: calc((100% - 3 * 1rem) / 4); }
+    width: calc((100% - 3 * 2rem) / 4); }
   .row .col-2-4 {
-    width: calc((2 * (100% - 3 * 1rem) / 4) + 1rem); }
+    width: calc((2 * (100% - 3 * 2rem) / 4) + 2rem); }
   .row .col-3-4 {
-    width: calc((3 * (100% - 3 * 1rem) / 4) + (2 * 1rem)); }
+    width: calc((3 * (100% - 3 * 2rem) / 4) + (2 * 2rem)); }
 
 .footer {
   width: 100%;
