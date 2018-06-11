@@ -1,4 +1,4 @@
-import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER  } from "../actions/index";
+import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER } from "../actions/index";
 
 function loginValidate(state = {}, action) {
 

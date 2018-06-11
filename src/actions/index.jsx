@@ -3,6 +3,7 @@ import axios from "axios";
 export const FETCH_LOGIN = "FETCH_LOGIN";
 export const LOGIN_ERRORS = "LOGIN_ERRORS";
 export const NEW_USER = "NEW_USER";
+export const CHECK_EMAIL ="CHECK_EMAIL";
 
 const ROOT_URL = "http://localhost:2000"
 
@@ -28,6 +29,17 @@ export function newUser (values){
 
     return {
         type: NEW_USER,
+        payload: request
+    }
+}
+
+export function queryEmail(email) {
+    const url = `${ROOT_URL}/checkEmail`
+
+    const request = axios.post(url, email);
+
+    return {
+        type: CHECK_EMAIL,
         payload: request
     }
 }
