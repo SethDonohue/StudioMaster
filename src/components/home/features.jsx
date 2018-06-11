@@ -66,7 +66,7 @@ class Features extends Component{
                         </div>
                         <div className="col-1-3">
                             <div className="bottom-features__card">
-                                <i class="fas fa-rocket bottom-features__icon"></i>
+                                <i className="fas fa-rocket bottom-features__icon"></i>
                                 <h3 className="heading-tertiary">
                                     Publish & share
                                 </h3>
@@ -78,7 +78,7 @@ class Features extends Component{
                         </div>
                         <div className="col-1-3">
                             <div className="bottom-features__card">
-                                <i class="fas fa-comments bottom-features__icon"></i>
+                                <i className="fas fa-comments bottom-features__icon"></i>
                                 <h3 className="heading-tertiary">
                                     Collaborate in real-time online
                                 </h3>
