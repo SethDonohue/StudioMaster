@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { newUser, queryEmail } from '../../actions/index';
+import { newUser, queryEmail, queryUsername } from '../../actions/index';
 import { connect } from 'react-redux';
 import validation from '../../validations/new_user';
 import _ from "lodash";
@@ -25,12 +25,21 @@ class SignUp extends Component {
         this.props.newUser(values);
     }
 
-    // checkUsername(){
-
-    // }
+    checkUsername(evt){
+        this.props.queryUsername({username: evt.target.value});
+    }
 
     checkEmail(evt){
         this.props.queryEmail({email: evt.target.value});
+    }
+
+    handleEnterKey(evt) {
+        if(!this.props.checkUsername || !this.props.checkLogin) {
+            if(evt.key == 'Enter' || evt.key == 'enter'){
+                evt.preventDefault();
+                return;
+            }
+        }
     }
 
     render(){
@@ -41,7 +50,10 @@ class SignUp extends Component {
                     Create An Account
                 </h2>
 
-                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="form">
+                <form 
+                onSubmit={handleSubmit(this.onSubmit.bind(this))}
+                onKeyPress={this.handleEnterKey.bind(this)}
+                className="form">
             
                     <div className="form__register">
                         <h3 className="heading-tertiary">
@@ -50,13 +62,13 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="fName" placeholder="First Name" inputType='text' success={false} component={TextInput}  />
-                                <Field name="birthday" placeholder="Birthday (mm/dd/yyyy)" inputType='date' success={false} component={TextInput}  />
+                                <Field name="fName" placeholder="First Name" inputType='text' component={TextInput}  />
+                                <Field name="birthday" placeholder="Birthday (mm/dd/yyyy)" inputType='date' component={TextInput}  />
                             </div>
                             <div className="col-1-2">
-                                <Field name="lName" placeholder="Last Name" inputType='text' success={false} component={TextInput}  />
+                                <Field name="lName" placeholder="Last Name" inputType='text' component={TextInput}  />
                                 <Field name="email" placeholder="Email" inputType='email' success={this.props.checkLogin} component={TextInput}
-                                    onChange={_.debounce(this.checkEmail.bind(this), 2000)}  />
+                                    onChange={_.debounce(this.checkEmail.bind(this), 1600)}  />
                             </div>
                         </div>
 
@@ -74,22 +86,22 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="address" placeholder="Address" inputType='text' success={false} component={TextInput}  />
+                                <Field name="address" placeholder="Address" inputType='text' component={TextInput}  />
                             </div>
                             <div className="col-1-2">
-                                <Field name="city" placeholder="City" inputType='text' success={false} component={TextInput}  />
+                                <Field name="city" placeholder="City" inputType='text'  component={TextInput}  />
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-2-4">
-                                <Field name="addressTwo" placeholder="Address Continued" inputType='text' success={false} component={TextInput}  />
+                                <Field name="addressTwo" placeholder="Address Continued" inputType='text'  component={TextInput}  />
                             </div>
                             <div className="col-1-4">
-                                <Field name="state" placeholder="State" inputType='text' success={false} component={TextInput}  />
+                                <Field name="state" placeholder="State" inputType='text'  component={TextInput}  />
                             </div>
                             <div className="col-1-4">
-                                <Field name="zip" placeholder="Zip Code" inputType='text' success={false} component={TextInput}  />                           
+                                <Field name="zip" placeholder="Zip Code" inputType='text'  component={TextInput}  />                           
                             </div>
                         </div>
 
@@ -99,7 +111,9 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="username" placeholder="Username" component={TextInput} inputType='text'  />
+                                <Field name="username" placeholder="Username" component={TextInput} success={this.props.checkUsername} inputType='text'
+                                    onChange={_.debounce(this.checkUsername.bind(this), 1600)}
+                                />
                                 <Field name="password" placeholder="Password" inputType='password' component={TextInput}  />
                             </div>
                             <div className="col-1-2">
@@ -148,7 +162,7 @@ class SignUp extends Component {
 
                             <br/>
 
-                            <button type="submit" className="form__submit btn btn--green" disabled={!this.props.checkLogin}>
+                            <button type="submit" className="form__submit btn btn--green" disabled={!this.props.checkLogin && !this.props.checkUsername}>
                                 Complete
                             </button>
                         </div>
@@ -160,8 +174,8 @@ class SignUp extends Component {
     }
 }
 
-function mapStateToProps ({checkLogin}){
-    return {checkLogin}
+function mapStateToProps ({checkLogin, checkUsername}){
+    return {checkLogin, checkUsername}
 }
 
 
@@ -170,5 +184,5 @@ export default reduxForm({
     validate: validation,
     form: 'SignUp'
 })
-    (connect(mapStateToProps, { newUser, queryEmail })
+    (connect(mapStateToProps, { newUser, queryEmail, queryUsername })
         (SignUp) );
