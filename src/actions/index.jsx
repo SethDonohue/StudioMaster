@@ -6,7 +6,7 @@ export const NEW_USER = "NEW_USER";
 export const CHECK_EMAIL ="CHECK_EMAIL";
 export const CHECK_USERNAME ="CHECK_USERNAME";
 
-const ROOT_URL = "http://localhost:2000"
+const ROOT_URL = "http://54.245.1.152"
 
 export function fetchLogin (credentials){
 
