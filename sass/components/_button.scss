@@ -1,98 +1,112 @@
 .btn {
 
-    &,
-    &:link,
-    &:visited {
-        border-radius: .8rem;
-        font-size: 1.6rem;
-        display: inline-block;
-        padding: 1.5rem 3.5rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
-        transition: all .2s;
+	&,
+	&:link,
+	&:visited {
+		display: inline-block;
+		padding: 1rem 2rem;
+		font-size: 1.25rem;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		border-radius: .5rem;
+		cursor: pointer;
+		transition: $ease-in-out;
+		box-shadow: $shadow-center-light;
+	}
 
-        border: none;
-        cursor: pointer;
-    }
+	&:hover,
+	&:focus,
+	&:active {
+		transition: $ease-in-out;
+		box-shadow: $shadow-center-dark;
+	}
 
-    &--purple {
+	&--purple {
 
-        &,
-        &:link,
-        &:visited {
-            background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-            color: $color-white;
-        }
+		&,
+		&:link,
+		&:visited {
+			color: $color-white;
+			background-color: $color-primary-light;
+			border: 2px solid $color-primary-light;
+		}
 
-        &:hover,
-        &:active {
+		&:hover,
+		&:active {
+			border: 2px solid $color-primary;
+			background-color: $color-primary;
+		}
+	}
 
-            transform: scale(1.1);
-            box-shadow: 0 2rem 4rem rgba($color-black, .4);
-        }
-    }
+	&--transparent {
 
-    &--transparent {
+		&:link,
+		&:visited {
+			color: $color-white;
+			border: 2px solid $color-white;
+		}
+			
+		&:hover,
+		&:active {
+			color: $color-white-dark;
+			border: 2px solid $color-white;
+		}
+	}
+		
 
-        &:link,
-        &:visited {
-            border: solid 1px $color-white;
-            color: $color-white;
-        }
-            
-        &:hover,
-        &:active {
-            transform: scale(1.1);
-            box-shadow: 0 2rem 4rem rgba($color-black, .4);
-        }
-        
-    }
+	&--transparent-purple {
 
-    &--transparent-purple {
-        &:link,
-        &:visited {
-            background-color: transparent;
-            border: solid 1px $color-primary;
-            color: $color-primary;
-        }
-            
-        &:hover,
-        &:active {
-            transform: scale(1.1);
-            box-shadow: 0 2rem 4rem rgba($color-black, .4);
-        }
-    }
+		&:link,
+		&:visited {
+			background-color: transparent;
+			border: 2px solid $color-primary-light;
+			color: $color-primary-light;
+		}
+			
+		&:hover,
+		&:active {
+			background-color: transparent;
+			border: 2px solid $color-primary;
+			color: $color-primary;
+		}
+	}
 
-    &--green {
-        &,
-        &:link,
-        &:visited {
-            background-color: green;;
-            color: $color-white;
-        }
+	&--green {
 
-        &:hover,
-        &:active {
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-green-dark;
+			border: 2px solid $color-green-dark;
+			color: $color-white;
+		}
 
-            transform: scale(1.01);
-            box-shadow: 0 2rem 4rem rgba($color-black, .4);
-        }
-    }
+		&:hover,
+		&:active {
+			color: $color-white;
+			background-color: $color-green;
+			border: 2px solid $color-green;
+			box-shadow: $shadow-center-dark;
+		}
+	}
 
-    &--grey {
-        &,
-        &:link,
-        &:visited {
-            background-color: $color-grey-dark;
-            color: $color-white;
-        }
+	&--grey {
 
-        &:hover,
-        &:active {
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-grey-dark;
+			border: 2px solid $color-grey-dark;
+			color: $color-charcoal-light;
+		}
 
-            transform: scale(1.01);
-            box-shadow: 0 2rem 4rem rgba($color-black, .4);
-        }
-    }
+		&:hover,
+		&:active {
+			background-color: $color-grey;
+			border: 2px solid $color-grey;
+			color: $color-charcoal-light;
+		}
+	}
 }

@@ -1,23 +1,57 @@
-$color-primary: #79288d;
-$color-primary-light: #754996;
-$color-primary-dark: #320d59;
+// Dark Purple
+$color-primary: #320d59;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%);
 
-$color-grey-dark: #777;
-$color-grey-light: #eee;
+// Light Purple
+$color-secondary: #754996;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-light-alt: lighten($color-secondary, 25%);
+$color-secondary-dark: darken($color-secondary, 10%);
+
+// White
 $color-white: #fff;
+$color-white-dark: darken($color-white, 15%);
+
+// Grey
+$color-grey: #e5e5e5;
+$color-grey-light: lighten($color-grey, 10%);
+$color-grey-dark: darken($color-grey, 10%);
+
+// Charcoal
+$color-charcoal: #333;
+$color-charcoal-light: lighten($color-charcoal, 10%);
+$color-charcoal-dark: darken($color-charcoal, 10%);
+
+// Black
 $color-black: #000;
+$color-black-light: lighten($color-black, 10%);
+$color-black-dark: darken($color-black, 10%);
 
+// Green
+$color-green: #2ecc40;
+$color-green-light: lighten($color-green, 10%);
+$color-green-dark: darken($color-green, 10%);
 
-//********* Font sizes
+// Red
+$color-red: #ff4136;
+$color-red-light: lighten($color-red, 10%);
+$color-red-dark: darken($color-red, 10%);
 
-$default-font: 1.8rem;
+// Font Sizes
+$default-font: 1.5rem;
 
-//********* Input styles
+// Input Styles
+$input-bradius: 0.5rem;
 
-$input-bradius: .5rem;
-
-//********* Grid Variables
-
+//Grid Variables
 $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-horizontal: 2rem;
+
+
+// Box Shadows
+$shadow-light: 0 1rem 1.5rem rgba($color-black, 0.15);
+$shadow-dark: 0 1rem 1.5rem rgba($color-black, 0.35);
+$shadow-center-light: 0 0 1.5rem rgba($color-black, 0.15);
+$shadow-center-dark: 0 0 1.5rem rgba($color-black, 0.35);

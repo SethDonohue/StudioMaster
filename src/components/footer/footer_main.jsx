@@ -11,7 +11,7 @@ class Footer extends Component {
                     <img src={logo} alt="White StudioMaster Logo" className="footer__logo u-margin-bottom-big"/>
 
                     <p className="footer__brand">
-                        &copy; StudioMaster LLC 2018
+                        &copy; 2018 StudioMaster LLC
                     </p>
                 </div>
                 <div className="footer__nav">

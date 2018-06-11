@@ -1,8 +1,8 @@
 .footer {
-    background: linear-gradient(to top right, $color-primary-dark, $color-primary-light);
     width: 100%;
-    height: 30rem;
-    color: $color-white;
+    height: auto;
+    background: $color-primary-dark;
+    color: $color-secondary-light;
 
     &__logo-box {
         display: inline-block;;
@@ -11,11 +11,12 @@
     }
 
     &__logo {
-        height: 7.5rem;
+        margin-top: -2.5rem;
+        height: 4rem;
     }
 
     &__brand {
-        font-size: $default-font;
+        font-size: 1.5rem;
         font-weight: 300;
         color: inherit;
         margin-left: 1rem;
@@ -25,13 +26,14 @@
         width: 67%;
         padding: 5rem 1rem 1rem 1rem;
         display: inline-block;
-        color: $color-white;
+        color: $color-secondary;
         vertical-align: top;
 
 
         &-list {
             display: inline-block;
             vertical-align: top;
+            transition: $ease-in-out;
             
             &:not(:last-child) {
                 margin-right: 10rem;       
@@ -39,36 +41,37 @@
         }
 
         &-title {
-            color: inherit;
-            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 2rem;
+            text-transform: uppercase;
+            color: inherit;
         }
 
         &-item {
             list-style: none;
-
             
             &:not(:last-child) {
-                margin-bottom: 1rem;
+                margin: 0;
             }
         }
 
         &-link {
             display: block;
-
-            transition: transform .2s;
+            font-family: sans-serif;
 
             &:link,
             &:visited {
-                color: $color-white;
-                font-size: $default-font;
+                color: $color-secondary;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
             }
 
             &:hover,
             &:active {
-                transform: scale(1.2) rotate(3deg);
-                color: $color-grey-dark;
+                color: $color-secondary-light-alt;
+                transition: $ease-in-out;
             }
         }
     }
