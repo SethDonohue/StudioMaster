@@ -4,15 +4,27 @@
     background: $color-primary-dark;
     color: $color-secondary-light;
 
+
     &__logo-box {
-        display: inline-block;;
+        display: inline-block;
         padding: 6rem;
         width: 33%;
+        @include respond(tab-port) {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 4rem;
+        }
     }
 
     &__logo {
         margin-top: -2.5rem;
         height: 4rem;
+        margin-bottom: 8rem;
+
+        @include respond(tab-port) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__brand {
@@ -29,6 +41,21 @@
         color: $color-secondary;
         vertical-align: top;
 
+        @include respond(tab-port){
+            width: 90%;
+            padding: 1rem 1rem 2rem 6rem;
+            display: block;
+            vertical-align: center;
+            margin: 0 auto;
+        }
+
+        @include respond(phone){
+            width: 90%;
+            padding: 1rem 1rem 2rem 6rem;
+            display: inline-block;
+            vertical-align: center;
+        }
+
 
         &-list {
             display: inline-block;
@@ -36,7 +63,19 @@
             transition: $ease-in-out;
             
             &:not(:last-child) {
-                margin-right: 10rem;       
+                margin-right: 9rem;       
+            }
+
+            @include respond(tab-port) {
+                &:not(:last-child) {
+                    margin-right: 7rem;       
+                }
+            }
+
+            @include respond(phone) {
+                &:not(:last-child) {
+                    margin-right: 5rem;       
+                }
             }
         }
 

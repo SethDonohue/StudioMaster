@@ -8,7 +8,7 @@ class Footer extends Component {
         return(
             <footer className="footer">
                 <div className="footer__logo-box">
-                    <img src={logo} alt="White StudioMaster Logo" className="footer__logo u-margin-bottom-big"/>
+                    <img src={logo} alt="White StudioMaster Logo" className="footer__logo"/>
 
                     <p className="footer__brand">
                         &copy; 2018 StudioMaster LLC

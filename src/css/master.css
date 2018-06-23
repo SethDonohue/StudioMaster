@@ -625,9 +625,19 @@ section.section-login .form__login-submit {
     display: inline-block;
     padding: 6rem;
     width: 33%; }
+    @media (max-width: 56.25em) {
+      .footer__logo-box {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 4rem; } }
   .footer__logo {
     margin-top: -2.5rem;
-    height: 4rem; }
+    height: 4rem;
+    margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .footer__logo {
+        margin-bottom: 2rem; } }
   .footer__brand {
     font-size: 1.5rem;
     font-weight: 300;
@@ -639,12 +649,31 @@ section.section-login .form__login-submit {
     display: inline-block;
     color: #754996;
     vertical-align: top; }
+    @media (max-width: 56.25em) {
+      .footer__nav {
+        width: 90%;
+        padding: 1rem 1rem 2rem 6rem;
+        display: block;
+        vertical-align: center;
+        margin: 0 auto; } }
+    @media (max-width: 37.5em) {
+      .footer__nav {
+        width: 90%;
+        padding: 1rem 1rem 2rem 6rem;
+        display: inline-block;
+        vertical-align: center; } }
     .footer__nav-list {
       display: inline-block;
       vertical-align: top;
       transition: ease-in-out all 0.15s; }
       .footer__nav-list:not(:last-child) {
-        margin-right: 10rem; }
+        margin-right: 9rem; }
+      @media (max-width: 56.25em) {
+        .footer__nav-list:not(:last-child) {
+          margin-right: 7rem; } }
+      @media (max-width: 37.5em) {
+        .footer__nav-list:not(:last-child) {
+          margin-right: 5rem; } }
     .footer__nav-title {
       margin-bottom: 1rem;
       font-family: 'Montserrat', sans-serif;
