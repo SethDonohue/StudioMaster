@@ -3,7 +3,14 @@
 
 	&__info{
 		padding: 6rem;
-		width: 35%;
+		width: 45%;
+
+		@include respond(tab-port){
+			display: block;
+			margin: auto;
+			width: 80%;
+			text-align: center;
+		}
 
 		p {
 			color: $color-white;
@@ -21,10 +28,17 @@
 	background-color: $color-grey;
 
 	&__image-box {
-		height: 50rem;
-		width: 50%;
+		max-height: 40rem;
+		width: 40%;
 		background-color: $color-black;
+		margin-top: 6rem;
 		display: inline-block;
+		@include respond(tab-port){
+			display: block;
+			margin: auto;
+			width: 80%
+		}
+
 	}
 	
 	&__info {
@@ -32,7 +46,15 @@
 		display: inline-block;
 		padding: 6rem;
 		color: $color-black;
-		width: 45%;
+		width: 50%;
+		@include respond(tab-port){
+			display: block;
+			margin: auto;
+			width: 100%;
+			padding: 2rem;
+			margin-top: 3rem;
+			text-align: center;
+		}
 
 		p {
 			font-size: $default-font;
@@ -77,9 +99,15 @@
 		border-radius: 1rem;
 		transition: $ease-in-out;
 
+		
+
 		p {
 			font-size: 1.5rem;
 			line-height: 2rem;
+
+			@include respond(tab-port) {
+				display: none;
+			}
 		}
 
 		&:hover {

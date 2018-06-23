@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import SongBlade from "../boxes/song_blade";
 
+import Guitar from "../../samples/guitar.wav";
+import Bass from "../../samples/bass.wav";
 
 // This component will be broken up into smaller components later
 
@@ -26,7 +29,8 @@ class Features extends Component{
 
                 <div className="features">
                     <div className="features__image-box">
-                    
+                        <SongBlade title="Guitar Sample" track={Guitar} />
+                        <SongBlade title="Bass Sample" track={Bass} />
                     </div>
 
                     <div className="features__info">

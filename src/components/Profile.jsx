@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import NavBar from './home/nav_bar.jsx';
+import NavBar from './navs/nav_bar.jsx';
 
 
 class Profile extends Component {

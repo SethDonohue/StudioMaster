@@ -1,0 +1,126 @@
+.mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+    padding: 3rem 5rem;
+    display: none;
+    @include respond(tab-port){
+        display: block;
+    }
+
+    &__brand {
+        height: 6rem;
+        
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        background-color: rgba($color-grey, .2);
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    &__menu-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 45%;
+        height: .6rem;
+        border-radius: 1rem;
+        background-color: $color-white;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: .6rem;
+            border-radius: 1rem;
+            background-color: $color-white;
+            transition: all .2s;
+        }
+
+        &::before {
+            top: -1.1rem;
+
+            &:hover {
+                top: -1.2rem;
+            }
+        }
+
+        &::after {
+            top: 1.2rem;
+
+            &:hover {
+                top: 1.3rem;
+            }
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        height: 100%;
+        background-color: $color-charcoal;
+        padding: 3rem 6rem;
+        transition: all .4s;
+
+    }
+
+    &__title {
+        color: $color-white;
+        font-size: 5rem;
+        padding: 2rem 0 3rem 0;
+        border-bottom: 1px solid $color-black;
+        font-weight: 400;
+        
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &__list {
+        margin-top: 2rem;
+    }
+
+    &__item {
+        list-style: none;
+        font-size: 3rem;
+        margin: 2rem 0;
+        padding: 1rem 0;
+        
+        
+    }
+
+    &__link,
+    &__link:visited {
+        color: $color-white;
+        display: block;
+
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-black;
+        }
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+    &__toggle:checked ~ &__nav {
+        left: 0;
+    }
+
+  
+}

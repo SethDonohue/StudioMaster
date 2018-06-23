@@ -1,0 +1,26 @@
+.blade {
+    overflow: hidden;
+    background-color: $color-grey-dark;
+    padding: .5rem;
+    border-bottom: 1px solid black;
+
+    &__icon {
+        background-color: $color-grey;
+        color: $color-grey-dark;
+        font-size: 4rem;
+        display: inline-block;
+    }
+
+    &__title {
+        display: inline-block;
+        vertical-align: top;
+        padding: 1rem;
+
+    }
+
+    &:hover {
+        background-color: darken($color-grey-dark, 5%);
+        cursor: pointer;
+    }
+
+}
