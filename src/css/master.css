@@ -345,6 +345,14 @@ ul, li {
     left: 50%;
     transform: translateX(-50%);
     top: 0; }
+  @media (max-width: 37.5em) {
+    .bottom-features__three-cards {
+      display: none; } }
+  .bottom-features__one-card {
+    display: none; }
+    @media (max-width: 37.5em) {
+      .bottom-features__one-card {
+        display: block; } }
   .bottom-features__card {
     padding: 4rem 2rem;
     width: 90%;

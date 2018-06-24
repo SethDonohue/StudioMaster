@@ -55,42 +55,66 @@ class Features extends Component{
                     <div className="bottom-features__divider u-margin-bottom-medium">
                         
                     </div>
-                    <div className="row">
-                        <div className="col-1-3">
-                            <div className="bottom-features__card">
-                                <i className="fas fa-play-circle bottom-features__icon"></i>
-                                <h3 className="heading-tertiary">
-                                    Easily create music and tracks
-                                </h3>
-                                <p className="u-margin-bottom-medium">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
-                                </p>
-                                <Link to="#" className="link">Learn More &rarr;</Link>
+
+                    <div className="bottom-features__three-cards">
+                        <div className="row">
+                            <div className="col-1-3">
+                                <div className="bottom-features__card">
+                                    <i className="fas fa-play-circle bottom-features__icon"></i>
+                                    <h3 className="heading-tertiary">
+                                        Easily create music and tracks
+                                    </h3>
+                                    <p className="u-margin-bottom-medium">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
+                                    </p>
+                                    <Link to="/" className="link">Learn More &rarr;</Link>
+                                </div>
+                            </div>
+                            <div className="col-1-3">
+                                <div className="bottom-features__card">
+                                    <i className="fas fa-rocket bottom-features__icon"></i>
+                                    <h3 className="heading-tertiary">
+                                        Publish & share
+                                    </h3>
+                                    <p className="u-margin-bottom-medium">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
+                                    </p>
+                                    <Link to="/" className="link">Learn More &rarr;</Link>
+                                </div>
+                            </div>
+                            <div className="col-1-3">
+                                <div className="bottom-features__card">
+                                    <i className="fas fa-comments bottom-features__icon"></i>
+                                    <h3 className="heading-tertiary">
+                                        Collaborate in real-time online
+                                    </h3>
+                                    <p className="u-margin-bottom-medium">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
+                                    </p>
+                                    <Link to="/" className="link">Learn More &rarr;</Link>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-1-3">
-                            <div className="bottom-features__card">
-                                <i className="fas fa-rocket bottom-features__icon"></i>
-                                <h3 className="heading-tertiary">
-                                    Publish & share
-                                </h3>
-                                <p className="u-margin-bottom-medium">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
-                                </p>
-                                <Link to="#" className="link">Learn More &rarr;</Link>
-                            </div>
-                        </div>
-                        <div className="col-1-3">
-                            <div className="bottom-features__card">
-                                <i className="fas fa-comments bottom-features__icon"></i>
-                                <h3 className="heading-tertiary">
-                                    Collaborate in real-time online
-                                </h3>
-                                <p className="u-margin-bottom-medium">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis reprehenderit facilis ipsa atque ratione nulla sequi? Inventore reprehenderit, provident vitae, accusantium iste harum facilis, eligendi aspernatur corporis temporibus magnam!
-                                </p>
-                                <Link to="#" className="link">Learn More &rarr;</Link>
-                            </div>
+                    </div>
+
+                    <div className="bottom-features__one-card">
+                        <div className="bottom-features__card">
+                            <i className="fas fa-play-circle bottom-features__icon"></i>
+                            <h3 className="heading-tertiary u-margin-bottom-big">
+                                Easily create music and tracks
+                            </h3>
+
+                            <i className="fas fa-rocket bottom-features__icon"></i>
+                            <h3 className="heading-tertiary u-margin-bottom-big">
+                                Publish & share
+                            </h3>
+
+                             <i className="fas fa-comments bottom-features__icon"></i>
+                            <h3 className="heading-tertiary u-margin-bottom-big">
+                                Collaborate in real-time online
+                            </h3>
+
+                            <Link to="/" className="link">Learn More &rarr;</Link>
                         </div>
                     </div>
                 </div>

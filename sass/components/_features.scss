@@ -88,6 +88,20 @@
 		top: 0;
 	}
 
+	&__three-cards {
+		@include respond(phone) {
+			display: none;
+		}
+	}
+
+	&__one-card {
+		display: none;
+
+		@include respond(phone) {
+			display: block;
+		}
+	}
+
 	&__card {
 		padding: 4rem 2rem;
 		width: 90%;
