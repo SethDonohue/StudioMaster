@@ -79,6 +79,9 @@ a {
     color: #754996;
     text-decoration: none; }
 
+ul, li {
+  font-family: 'Montserrat'; }
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
@@ -590,6 +593,52 @@ section.section-login .form__login-submit {
     cursor: pointer;
     color: #e5e5e5; }
 
+.slide-list {
+  padding: 0 13rem;
+  color: #fff;
+  margin-bottom: 25rem; }
+  .slide-list__item {
+    list-style: none;
+    font-size: 3rem;
+    border: 1px solid black;
+    border-radius: .4rem;
+    background-color: #4d4d4d;
+    padding: 1rem;
+    transition: all .2s; }
+    .slide-list__item:not(:last-child) {
+      margin-bottom: 3rem; }
+  .slide-list__toggle {
+    display: none; }
+  .slide-list__toggle:checked ~ .slide-list__text {
+    display: block; }
+  .slide-list__toggle:checked + .slide-list__button {
+    background-color: #404040; }
+  .slide-list__toggle:checked + .slide-list__button .slide-list__icon--down {
+    display: none; }
+  .slide-list__toggle:checked + .slide-list__button .slide-list__icon--up {
+    display: block; }
+  .slide-list__button {
+    display: block;
+    position: relative;
+    padding: .5rem;
+    cursor: pointer;
+    transition: all .1s; }
+    .slide-list__button:hover {
+      background-color: #404040;
+      border-radius: .5rem; }
+  .slide-list__text {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 8rem 1rem 2rem;
+    display: none; }
+  .slide-list__icon {
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%); }
+    .slide-list__icon--up {
+      display: none; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -836,6 +885,17 @@ section.section-login .form__login-submit {
     .navigation__link:hover {
       color: #d9d9d9;
       transition: ease-in-out all 0.15s; }
+
+.information {
+  width: 100%;
+  background-color: #1a1a1a; }
+  .information__hero {
+    padding: 13rem 10rem 8rem 10rem; }
+  .information__header {
+    color: #fff;
+    display: inline-block;
+    padding: 2rem 0;
+    border-bottom: 1px solid white; }
 
 .section-hero {
   height: 85vh;

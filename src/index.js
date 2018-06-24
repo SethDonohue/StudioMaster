@@ -12,6 +12,9 @@ import rootReducer from './reducers/index.jsx';
 import Home from './components/Home.jsx';
 import Registration from './components/Registration.jsx';
 import Profile from './components/Profile.jsx';
+import Company from "./components/Company.jsx";
+import Community from "./components/Community";
+import Support from "./components/Support.jsx";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -21,6 +24,9 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
+                    <Route path='/support' component={Support} />
+                    <Route path='/community' component={Community} />
+                    <Route path='/company' component={Company} />
                     <Route path='/registration' component={Registration} />
                     <Route path='/profile' component={Profile} />
                     <Route path='/' component={Home} />
