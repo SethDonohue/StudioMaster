@@ -179,7 +179,7 @@ ul, li {
 
 .brand {
   text-align: center;
-  padding: 5rem 0; }
+  padding: 10rem 0 5rem 0; }
   .brand__link {
     display: block; }
   .brand__logo {
@@ -444,8 +444,11 @@ ul, li {
     margin-right: 5rem; }
   .form__register {
     text-align: left;
-    width: 45%;
+    width: 50%;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .form__register {
+        width: 80%; } }
     .form__register .heading-tertiary {
       color: #333;
       font-size: 2rem; }
@@ -929,5 +932,5 @@ section.section-login .form__login-submit {
   text-align: center; }
 
 .section-register {
-  margin-top: 10rem;
+  margin-top: 5rem;
   text-align: center; }

@@ -85,7 +85,12 @@
 
 	&__register {
 		text-align: left;
-		width: 45%;
+		width: 50%;
+
+		@include respond(tab-port){
+			width: 80%;
+		}
+
 		display: inline-block;
 
 		.heading-tertiary {

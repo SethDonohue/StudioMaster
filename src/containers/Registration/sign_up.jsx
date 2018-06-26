@@ -86,16 +86,7 @@ class SignUp extends Component {
 
                         <div className="row">
                             <div className="col-1-2">
-                                <Field name="address" placeholder="Address" inputType='text' component={TextInput}  />
-                            </div>
-                            <div className="col-1-2">
                                 <Field name="city" placeholder="City" inputType='text'  component={TextInput}  />
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col-2-4">
-                                <Field name="addressTwo" placeholder="Address Continued" inputType='text'  component={TextInput}  />
                             </div>
                             <div className="col-1-4">
                                 <Field name="state" placeholder="State" inputType='text'  component={TextInput}  />
@@ -104,6 +95,7 @@ class SignUp extends Component {
                                 <Field name="zip" placeholder="Zip Code" inputType='text'  component={TextInput}  />                           
                             </div>
                         </div>
+
 
                         <h3 className="heading-tertiary">
                             Account & Security

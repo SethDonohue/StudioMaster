@@ -14,7 +14,6 @@ class Registration extends Component {
                 <BrandPurple />
                 <NavBar />
                 <NavBtn />
-                <SignOn />
                 <SignUp />
                 <Footer />
             </main>
