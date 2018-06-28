@@ -1,9 +1,9 @@
-import moment from "moment";
+
 
 export default function signUpValidation (values) {
     const errors = {};
 
-    // Basic validations -- These make sure all values are present.
+    // Basic user validations -- These make sure all values are present.
 
     if(!values.fName) errors.fName = 'Please enter a first name';
 
@@ -13,13 +13,15 @@ export default function signUpValidation (values) {
 
     if(!values.gender) errors.gender = true;
 
-    if(!values.address) errors.address = 'Please enter a valid address';
+    //Address Validations
 
     if(!values.city) errors.city = 'Please enter a city';
 
     if(!values.state) errors.state = 'Required';
     
     if(!values.zip) errors.zip = 'Required';
+
+    // Username and password Validations
 
     if(values.username !== values.usernameMatch) errors.username = 'Usernames must match';
 
@@ -33,19 +35,21 @@ export default function signUpValidation (values) {
 
     if(!values.password) errors.password = 'Please enter a password';
 
-    if(values.securityQuestionOne == 'Please choose a security question') errors.securityQuestionOne = 'Please choose a question';
+    //Security Question Validations MUST NOT CHOOSE THE SAME OPTION
+
+    if(values.securityQuestionOne === 'Please choose a security question') errors.securityQuestionOne = 'Please choose a question';
 
     if(!values.securityAnswerOne) errors.securityAnswerOne = 'Please provide a security question answer';
     
-    if(values.securityQuestionTwo == 'Please choose a security question') errors.securityQuestionTwo = 'Please choose a question';
+    if(values.securityQuestionTwo === 'Please choose a security question') errors.securityQuestionTwo = 'Please choose a question';
 
     if(!values.securityAnswerTwo) errors.securityAnswerTwo = 'Please provide a security question answer';
    
-    if(values.securityQuestionThree == 'Please choose a security question') errors.securityQuestionThree = 'Please choose a question';
+    if(values.securityQuestionThree === 'Please choose a security question') errors.securityQuestionThree = 'Please choose a question';
 
     if(!values.securityAnswerThree) errors.securityAnswerThree = 'Please provide a security question answer';
 
-    //Birthdate validation -- This makes sure that the birth year is at least in the past
+    //Birthdate validation -- User must be at least 15. NEED TO ADD
 
     if(!values.birthday) errors.birthday = 'Please enter your birthdate';
 

@@ -1,6 +1,9 @@
 .brand {
     text-align: center;
     padding: 10rem 0 5rem 0;
+    @include respond(tab-port) {
+        padding-top: 12rem;
+    }
 
     &__link {
         display: block;

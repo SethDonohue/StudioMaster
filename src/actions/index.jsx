@@ -5,8 +5,7 @@ export const LOGIN_ERRORS = "LOGIN_ERRORS";
 export const NEW_USER = "NEW_USER";
 export const CHECK_EMAIL ="CHECK_EMAIL";
 export const CHECK_USERNAME ="CHECK_USERNAME";
-export const CHANGE_SONG = "CHANGE_SONG";
-export const CLEAR_SONG = "CLEAR_SONG";
+
 
 const ROOT_URL = "http://54.245.1.152"
 
@@ -55,18 +54,5 @@ export function queryUsername(username) {
     return {
         type: CHECK_USERNAME,
         payload: request
-    }
-}
-
-export function changeSong(track){
-    return {
-        type: CHANGE_SONG,
-        payload: track
-    }
-}
-
-export function clearSong(){
-    return {
-        type: CLEAR_SONG
     }
 }

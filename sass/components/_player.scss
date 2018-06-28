@@ -38,6 +38,36 @@
         display: inline-block;
     }
 
+    &__seek-bar {
+        display: inline-block;
+        width: 40%;
+        height: 1rem;
+        background-color: $color-charcoal-light;
+        margin-left: 4rem;
+        position: relative;
+
+        @include respond(phone){
+            width: 25%;
+        }
+    }
+
+    &__seek-button {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+        border: 1px solid $color-grey;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        transition: all .1s;
+
+        &:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+    }
+
     &__close {
         font-size: 2rem;
         position: absolute;

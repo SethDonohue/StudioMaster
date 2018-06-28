@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { changeSong } from "../../actions/index";
+import { changeSong } from "../../actions/audio_actions";
 
 class SongBlade extends Component {
 

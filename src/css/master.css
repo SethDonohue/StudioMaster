@@ -180,6 +180,9 @@ ul, li {
 .brand {
   text-align: center;
   padding: 10rem 0 5rem 0; }
+  @media (max-width: 56.25em) {
+    .brand {
+      padding-top: 12rem; } }
   .brand__link {
     display: block; }
   .brand__logo {
@@ -595,6 +598,29 @@ section.section-login .form__login-submit {
     font-size: 1.8rem;
     color: #e5e5e5;
     display: inline-block; }
+  .player__seek-bar {
+    display: inline-block;
+    width: 40%;
+    height: 1rem;
+    background-color: #4d4d4d;
+    margin-left: 4rem;
+    position: relative; }
+    @media (max-width: 37.5em) {
+      .player__seek-bar {
+        width: 25%; } }
+  .player__seek-button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: #320d59;
+    border: 1px solid #e5e5e5;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: all .1s; }
+    .player__seek-button:hover {
+      transform: translate(-50%, -50%) scale(1.08); }
   .player__close {
     font-size: 2rem;
     position: absolute;
