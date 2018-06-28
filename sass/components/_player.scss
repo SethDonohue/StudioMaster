@@ -40,11 +40,12 @@
 
     &__seek-bar {
         display: inline-block;
+        position: relative;
         width: 40%;
         height: 1rem;
         background-color: $color-charcoal-light;
         margin-left: 4rem;
-        position: relative;
+        cursor: pointer;
 
         @include respond(phone){
             width: 25%;
@@ -67,6 +68,14 @@
             transform: translate(-50%, -50%) scale(1.08);
         }
     }
+
+    &__duration-remaining {
+        display: inline-block;
+        color: $color-white;
+        font-size: $default-font;
+        margin-left: 2rem;
+    }
+
 
     &__close {
         font-size: 2rem;

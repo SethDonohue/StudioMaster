@@ -12,10 +12,18 @@ function NewSong (state = null, action) {
 
             //define a new sound to be played and pass it to reducer with track info
 
+            
             const sound = new Howl({
                 src: [action.payload.track],
                 autoplay: true
-            })
+            });
+            
+            
+            // function getDuration(){
+            //     return sound.duration();
+                
+            // }
+            
 
             const master = {
                 sound,

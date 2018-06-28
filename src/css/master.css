@@ -600,11 +600,12 @@ section.section-login .form__login-submit {
     display: inline-block; }
   .player__seek-bar {
     display: inline-block;
+    position: relative;
     width: 40%;
     height: 1rem;
     background-color: #4d4d4d;
     margin-left: 4rem;
-    position: relative; }
+    cursor: pointer; }
     @media (max-width: 37.5em) {
       .player__seek-bar {
         width: 25%; } }
@@ -621,6 +622,11 @@ section.section-login .form__login-submit {
     transition: all .1s; }
     .player__seek-button:hover {
       transform: translate(-50%, -50%) scale(1.08); }
+  .player__duration-remaining {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 2rem; }
   .player__close {
     font-size: 2rem;
     position: absolute;
