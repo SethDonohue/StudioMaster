@@ -12,7 +12,7 @@ class Player extends Component {
 
         this.seekButton = null
 
-        //Set ref to seek button
+        //Set ref to seek button. Grants access to seek button through this.seekButton
 
         this.setSeekButton = (element) => {
             this.seekButton = element;
@@ -60,9 +60,20 @@ class Player extends Component {
 
     //update seek button position
 
-    updateSeekButton(){
-        if( this.props.song !== null&& this.props.song.sound.playing()){
+    updateSeekButton(seekInterval = null){
+        if( this.props.song !== null && this.props.song.sound.playing()){
             this.seekButton.style.left = ((this.props.song.sound.seek() / this.state.duration) * 100) + '%';
+
+        }
+    }
+
+    //End of playback, makes sure the player knows we aren't playing a sound anymore
+
+    resetTrack(){
+        if(!this.props.song.sound.playing()){
+            this.setState({
+                isPlaying: false
+            })
         }
     }
 
@@ -73,7 +84,8 @@ class Player extends Component {
         if(this.props.song){
             this.props.song.sound.on('play', () => {
                 this.setState({
-                    duration: this.props.song.sound.duration()
+                    duration: this.props.song.sound.duration(),
+                    isPlaying: true
                 });
             })
 
@@ -102,10 +114,12 @@ class Player extends Component {
             const durInterval = setInterval(this.updateDuration.bind(this), 1000);
             const seekButtonInterval = setInterval(this.updateSeekButton.bind(this), 200);
 
-            //track has finished playing, stop the timer and change icons
+            //track has finished playing, stop the sound, timer, and change icons
             if(this.state.durationRemaining < 0){
+                this.props.song.sound.stop();
                 clearInterval(durInterval);
                 clearInterval(seekButtonInterval);
+                this.resetTrack.bind(this);
             }
             
             return (
@@ -113,17 +127,17 @@ class Player extends Component {
                     <i className="fas fa-music player__track-icon" ></i>
 
                     <div className="player__controls">
-                        {this.props.song.sound.playing() ? <i className="fas fa-pause player__play-icon" onClick={this.play.bind(this)}></i> : <i className="fas fa-play player__play-icon"
+                        {this.props.song.sound.playing() ? <i className="fas fa-pause player__play-icon" onClick={this.play.bind(this, durInterval, seekButtonInterval)}></i> : <i className="fas fa-play player__play-icon"
                         onClick={this.play.bind(this)}
                         ></i>}
 
                         <p className="player__track-name">{this.props.song ? this.props.song.track.title : ""}</p>
 
-                        <div className="player__seek-bar" onClick={this.updateSeekButton}>
+                        <div className="player__seek-bar" onClick={this.updateSeekButton.bind(this, seekButtonInterval)}>
                             <span className="player__seek-button" ref={this.setSeekButton}></span>
                         </div>
 
-                        <p className="player__duration-remaining">{this.state.duration ? `${Math.floor((this.state.durationRemaining) / 60)}:${(Math.floor(this.state.durationRemaining) % 60)}` : '0'}</p>
+                        <p className="player__duration-remaining">{this.state.duration ? `${Math.floor((this.state.durationRemaining) / 60)}:${(Math.floor(this.state.durationRemaining) % 60) < 10 ? "0" : ""}${(Math.floor(this.state.durationRemaining) % 60)}` : '0'}</p>
 
                         <i className="fas fa-times player__close"
                         onClick={this.clearSongState.bind(this)}

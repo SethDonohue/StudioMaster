@@ -15,6 +15,7 @@ import Profile from './components/Profile.jsx';
 import Company from "./components/Company.jsx";
 import Community from "./components/Community";
 import Support from "./components/Support.jsx";
+import Player from "./containers/player.jsx";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -30,7 +31,8 @@ ReactDOM.render(
                     <Route path='/registration' component={Registration} />
                     <Route path='/profile' component={Profile} />
                     <Route path='/' component={Home} />
-                </Switch>    
+                </Switch>
+                <Player />
             </div>
         </BrowserRouter>
     </Provider>,

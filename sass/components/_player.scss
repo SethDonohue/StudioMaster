@@ -6,6 +6,8 @@
     vertical-align: bottom;
     padding: 0 3rem;
     background-color: $color-charcoal-dark;
+    
+
 
     &__track-icon {
         font-size: 3rem;
@@ -15,12 +17,21 @@
         float: left;
 
         transform: scale(1.5) translateY(-1rem);
+
+        @include respond(phone){
+            font-size: 4rem;
+            padding: 1.2rem;
+        }
     }
 
     &__controls{
-        display: inline;
+        display: inline-block;
         padding: 0 3rem;
         vertical-align: center;
+        width: 85%;
+        @include respond(phone){
+            margin-top: 1rem;
+        }
     
     }
 

@@ -584,10 +584,18 @@ section.section-login .form__login-submit {
     padding: .8rem;
     float: left;
     transform: scale(1.5) translateY(-1rem); }
+    @media (max-width: 37.5em) {
+      .player__track-icon {
+        font-size: 4rem;
+        padding: 1.2rem; } }
   .player__controls {
-    display: inline;
+    display: inline-block;
     padding: 0 3rem;
-    vertical-align: center; }
+    vertical-align: center;
+    width: 85%; }
+    @media (max-width: 37.5em) {
+      .player__controls {
+        margin-top: 1rem; } }
   .player__play-icon {
     font-size: 2rem;
     color: #e5e5e5;

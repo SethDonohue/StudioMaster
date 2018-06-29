@@ -5,7 +5,6 @@ import NavBtn from './navs/nav_btn.jsx';
 import Hero from './home/hero.jsx';
 import Features from './home/features.jsx';
 import Footer from './footer/footer_main.jsx';
-import Player from '../containers/player';
 
 
 class App extends Component { // Home Page Component! Edit Me!
@@ -22,8 +21,6 @@ class App extends Component { // Home Page Component! Edit Me!
           </main>
           
           <Footer />
-          <Player />
-          
       </div>
     );
   }
