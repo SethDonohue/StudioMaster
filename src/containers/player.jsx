@@ -9,7 +9,14 @@ class Player extends Component {
     constructor(){
         super();
 
-        this.updateDuration.bind(this);
+
+        this.seekButton = null
+
+        //Set ref to seek button
+
+        this.setSeekButton = (element) => {
+            this.seekButton = element;
+        }
 
         this.state = {
             isPlaying: true,
@@ -20,10 +27,13 @@ class Player extends Component {
 
     //Pause/Play function
 
-    play(){
+    play(durInterval = null, seekInterval = null){
         if(this.state.isPlaying){
             this.props.song.sound.pause();
             this.setState({isPlaying: false});
+            if(durInterval) clearInterval(durInterval);
+            if(seekInterval) clearInterval(seekInterval);
+            
         }
         if(!this.state.isPlaying){
             this.props.song.sound.play();
@@ -41,25 +51,30 @@ class Player extends Component {
     //Update durationRemaining 
 
     updateDuration(){
-        console.log('updating duration!!!!');
-        if(this.state.isPlaying){
+        if( this.props.song !== null&& this.props.song.sound.playing()){
             this.setState({
                 durationRemaining: (this.props.song.sound.duration() - this.props.song.sound.seek()) 
             })
         }
     }
 
-    componentDidMount() {
+    //update seek button position
+
+    updateSeekButton(){
+        if( this.props.song !== null&& this.props.song.sound.playing()){
+            this.seekButton.style.left = ((this.props.song.sound.seek() / this.state.duration) * 100) + '%';
+        }
     }
 
+
     componentDidUpdate(){
+
+        //If there's a song after update, once it's playing, update the duration local state.
         if(this.props.song){
             this.props.song.sound.on('play', () => {
                 this.setState({
                     duration: this.props.song.sound.duration()
                 });
-                console.log(this.state.duration);
-                console.log(this.props.song.sound.seek());
             })
 
             if(this.props.song.sound.playing() === 'true') {
@@ -67,6 +82,8 @@ class Player extends Component {
                     isPlaying: true
                 })
             }
+
+            this.seekButton.style.left = ((this.props.song.sound.seek() / this.state.duration) * 100) + '%';
         }
     }
 
@@ -82,21 +99,28 @@ class Player extends Component {
         }
         else {
 
-            const interval = setInterval(this.updateDuration.bind(this), 1000);
+            const durInterval = setInterval(this.updateDuration.bind(this), 1000);
+            const seekButtonInterval = setInterval(this.updateSeekButton.bind(this), 200);
+
+            //track has finished playing, stop the timer and change icons
+            if(this.state.durationRemaining < 0){
+                clearInterval(durInterval);
+                clearInterval(seekButtonInterval);
+            }
             
             return (
                 <figure className="player">
                     <i className="fas fa-music player__track-icon" ></i>
 
                     <div className="player__controls">
-                        {this.state.isPlaying ? <i className="fas fa-pause player__play-icon" onClick={this.play.bind(this)}></i> : <i className="fas fa-play player__play-icon"
+                        {this.props.song.sound.playing() ? <i className="fas fa-pause player__play-icon" onClick={this.play.bind(this)}></i> : <i className="fas fa-play player__play-icon"
                         onClick={this.play.bind(this)}
                         ></i>}
 
                         <p className="player__track-name">{this.props.song ? this.props.song.track.title : ""}</p>
 
-                        <div className="player__seek-bar">
-                            <span className="player__seek-button"></span>
+                        <div className="player__seek-bar" onClick={this.updateSeekButton}>
+                            <span className="player__seek-button" ref={this.setSeekButton}></span>
                         </div>
 
                         <p className="player__duration-remaining">{this.state.duration ? `${Math.floor((this.state.durationRemaining) / 60)}:${(Math.floor(this.state.durationRemaining) % 60)}` : '0'}</p>
