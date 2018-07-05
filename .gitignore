@@ -9,6 +9,9 @@
 # production
 /build
 
+# env
+mysqlconnection.js
+
 # misc
 .DS_Store
 .env.local

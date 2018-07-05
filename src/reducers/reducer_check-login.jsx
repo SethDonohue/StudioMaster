@@ -5,7 +5,6 @@ function checkLogin (state = false, action) {
     switch(action.type){
 
         case CHECK_EMAIL:
-            console.log(action.payload);
             return action.payload.data;
     }
 

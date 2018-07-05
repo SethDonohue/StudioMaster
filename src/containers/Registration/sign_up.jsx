@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { newUser, queryEmail, queryUsername } from '../../actions/index';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import validation from '../../validations/new_user';
 import _ from "lodash";
 
@@ -23,6 +24,7 @@ class SignUp extends Component {
 
     onSubmit(values){
         this.props.newUser(values);
+        // console.log(values);
     }
 
     checkUsername(evt){
@@ -46,6 +48,7 @@ class SignUp extends Component {
         const { handleSubmit } = this.props;
         return(
             <section className="section-register">
+                {this.props.login && this.props.login.data ? <Redirect to='/' /> : ''}
                 <h2 className="register-header">
                     Create An Account
                 </h2>
@@ -68,7 +71,8 @@ class SignUp extends Component {
                             <div className="col-1-2">
                                 <Field name="lName" placeholder="Last Name" inputType='text' component={TextInput}  />
                                 <Field name="email" placeholder="Email" inputType='email' success={this.props.checkLogin} component={TextInput}
-                                    onChange={_.debounce(this.checkEmail.bind(this), 1600)}  />
+                                    onChange={_.debounce(this.checkEmail.bind(this), 1600)}
+                                      />
                             </div>
                         </div>
 
@@ -106,10 +110,10 @@ class SignUp extends Component {
                                 <Field name="username" placeholder="Username" component={TextInput} success={this.props.checkUsername} inputType='text'
                                     onChange={_.debounce(this.checkUsername.bind(this), 1600)}
                                 />
-                                <Field name="password" placeholder="Password" inputType='password' component={TextInput}  />
+                                <Field name="usernameMatch" placeholder="Confirm Username" component={TextInput} inputType='text'  />
                             </div>
                             <div className="col-1-2">
-                                <Field name="usernameMatch" placeholder="Confirm Username" component={TextInput} inputType='text'  />
+                                <Field name="password" placeholder="Password" inputType='password' component={TextInput}  />
                                 <Field name="passConfirm" placeholder="Confirm Password" inputType='password' component={TextInput}  />
                             </div>
                         </div>
@@ -154,7 +158,9 @@ class SignUp extends Component {
 
                             <br/>
 
-                            <button type="submit" className="form__submit btn btn--green" disabled={!this.props.checkLogin && !this.props.checkUsername}>
+                            <button type="submit" className="form__submit btn btn--green"
+                             disabled={!this.props.checkLogin && !this.props.checkUsername}
+                             >
                                 Complete
                             </button>
                         </div>
@@ -166,14 +172,14 @@ class SignUp extends Component {
     }
 }
 
-function mapStateToProps ({checkLogin, checkUsername}){
-    return {checkLogin, checkUsername}
+function mapStateToProps ({checkLogin, checkUsername, login}){
+    return {checkLogin, checkUsername, login}
 }
 
 
 
 export default reduxForm({
-    validate: validation,
+    // validate: validation,
     form: 'SignUp'
 })
     (connect(mapStateToProps, { newUser, queryEmail, queryUsername })

@@ -124,24 +124,35 @@ class Player extends Component {
             
             return (
                 <figure className="player">
-                    <i className="fas fa-music player__track-icon" ></i>
 
                     <div className="player__controls">
+                        
                         {this.props.song.sound.playing() ? <i className="fas fa-pause player__play-icon" onClick={this.play.bind(this, durInterval, seekButtonInterval)}></i> : <i className="fas fa-play player__play-icon"
                         onClick={this.play.bind(this)}
                         ></i>}
 
-                        <p className="player__track-name">{this.props.song ? this.props.song.track.title : ""}</p>
+                        <i className="fas fa-volume-up player__volume">
+                            <div className="player__volume-slider">
+                                
+                            </div>
+                        </i>
 
+                    </div>
+
+                    <div className="player__info">
+                        <p className="player__track-name">{this.props.song ? this.props.song.track.title : ""}</p>
                         <div className="player__seek-bar" onClick={this.updateSeekButton.bind(this, seekButtonInterval)}>
                             <span className="player__seek-button" ref={this.setSeekButton}></span>
                         </div>
-
                         <p className="player__duration-remaining">{this.state.duration ? `${Math.floor((this.state.durationRemaining) / 60)}:${(Math.floor(this.state.durationRemaining) % 60) < 10 ? "0" : ""}${(Math.floor(this.state.durationRemaining) % 60)}` : '0'}</p>
+                    </div>
 
+                    <div className="player__options">
+                        
                         <i className="fas fa-times player__close"
                         onClick={this.clearSongState.bind(this)}
                         ></i>
+
                     </div>
 
                 </figure>

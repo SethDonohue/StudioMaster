@@ -574,20 +574,8 @@ section.section-login .form__login-submit {
   position: fixed;
   bottom: 0;
   left: 0;
-  vertical-align: bottom;
   padding: 0 3rem;
   background-color: #1a1a1a; }
-  .player__track-icon {
-    font-size: 3rem;
-    background-color: #e5e5e5;
-    text-align: center;
-    padding: .8rem;
-    float: left;
-    transform: scale(1.5) translateY(-1rem); }
-    @media (max-width: 37.5em) {
-      .player__track-icon {
-        font-size: 4rem;
-        padding: 1.2rem; } }
   .player__controls {
     display: inline-block;
     padding: 0 3rem;
@@ -635,6 +623,14 @@ section.section-login .form__login-submit {
     color: #fff;
     font-size: 1.5rem;
     margin-left: 2rem; }
+  .player__volume {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.9rem; }
   .player__close {
     font-size: 2rem;
     position: absolute;
