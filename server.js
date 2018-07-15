@@ -125,10 +125,21 @@ app.post('/newUser', (req,res) => {
     })
 })
 
+app.get('/getAccountInfo/:id', (req, res) => {
+    con.query(`SELECT * FROM users WHERE(id = ${req.params.id})`, (err, user) => {
+        if(err) console.log(err);
+
+        if(user) {
+            console.log(user);
+            res.json(user);
+        };
+    })
+})
+
 app.get('*', (req,res)=>{
     res.sendFile(path.join(__dirname, '/build/index.html') );
 })
 
-app.listen(port, function(){
+app.listen(port ,function(){
     console.log("listening on ", port)
 })

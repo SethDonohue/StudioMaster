@@ -37,8 +37,11 @@ function NewSong (state = null, action) {
             if(state != null) state.sound.stop();
 
             return null;
+
+        default: 
+
+            return state;
     }
-    return state;
 };
 
 export default NewSong;

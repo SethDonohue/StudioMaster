@@ -10,7 +10,7 @@ import _ from "lodash";
 import TextInput from '../Forms/text_input';
 import RadioInput from '../Forms/radio_input';
 import SelectInput from '../Forms/select_input';
-import PopUp from '../../components/boxes/pop_up.jsx';
+// import PopUp from '../../components/boxes/pop_up.jsx';
 
 const securityQuestions = ['Please choose a security question', 'Example1', 'Example2', 'Example3']
 
@@ -37,18 +37,23 @@ class SignUp extends Component {
 
     handleEnterKey(evt) {
         if(!this.props.checkUsername || !this.props.checkLogin) {
-            if(evt.key == 'Enter' || evt.key == 'enter'){
+            if(evt.key === 'Enter' || evt.key === 'enter'){
                 evt.preventDefault();
                 return;
             }
         }
     }
 
+    RedirectToAccountPage() {
+        console.log(this.props.login.data);
+        <Redirect to='/' />;
+    }
+
     render(){
         const { handleSubmit } = this.props;
         return(
             <section className="section-register">
-                {this.props.login && this.props.login.data ? <Redirect to='/' /> : ''}
+                {this.props.login && this.props.login.data ? <Redirect to={`/profile/${this.props.login.data.id}`}   /> : ''}
                 <h2 className="register-header">
                     Create An Account
                 </h2>
@@ -181,6 +186,4 @@ function mapStateToProps ({checkLogin, checkUsername, login}){
 export default reduxForm({
     // validate: validation,
     form: 'SignUp'
-})
-    (connect(mapStateToProps, { newUser, queryEmail, queryUsername })
-        (SignUp) );
+}) (connect(mapStateToProps, { newUser, queryEmail, queryUsername }) (SignUp) );

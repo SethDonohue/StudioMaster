@@ -7,9 +7,10 @@ function checkUsername (state = false, action) {
         case CHECK_USERNAME:
             console.log(action.payload);
             return action.payload.data;
-    }
 
-    return state;
+        default:
+            return state;
+    }
 }
 
 export default checkUsername;

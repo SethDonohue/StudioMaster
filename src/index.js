@@ -29,7 +29,7 @@ ReactDOM.render(
                     <Route path='/community' component={Community} />
                     <Route path='/company' component={Company} />
                     <Route path='/registration' component={Registration} />
-                    <Route path='/profile' component={Profile} />
+                    <Route path='/profile/:id' component={Profile} />
                     <Route path='/' component={Home} />
                 </Switch>
                 <Player />

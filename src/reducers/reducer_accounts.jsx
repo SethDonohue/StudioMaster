@@ -11,8 +11,10 @@ function loginValidate(state = {}, action) {
         
         case NEW_USER:
             return action.payload;
+
+        default:
+            return state;
     }
-    return state;
 
 }
 

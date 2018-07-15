@@ -6,9 +6,10 @@ function checkLogin (state = false, action) {
 
         case CHECK_EMAIL:
             return action.payload.data;
-    }
 
-    return state;
+        default:
+            return state;
+    }
 }
 
 export default checkLogin;
