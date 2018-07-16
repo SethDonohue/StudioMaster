@@ -16,13 +16,13 @@
     }
 
     &__button {
-        position: absolute;
-        top: 50%;
+        position: fixed;
+        top: 5%;
         right: 5%;
         height: 7rem;
         width: 7rem;
         border-radius: 50%;
-        background-color: rgba($color-grey, .2);
+        background-color: rgba($color-charcoal, .8);
         transform: translateY(-50%);
         cursor: pointer;
     }

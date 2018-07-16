@@ -640,6 +640,60 @@ section.section-login .form__login-submit {
     cursor: pointer;
     color: #e5e5e5; }
 
+.no-user {
+  height: 80vh;
+  width: 100%;
+  position: relative;
+  background-color: #cccccc;
+  text-align: center; }
+  .no-user__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .no-user__link {
+    display: inline-block;
+    margin-top: 3rem; }
+
+.banner {
+  margin-top: 10rem;
+  width: 100%;
+  background: linear-gradient(to right, #4b1486, #19072d);
+  padding: 2rem 4rem;
+  position: relative; }
+  @media (max-width: 56.25em) {
+    .banner {
+      margin-top: 12rem; } }
+  .banner__img {
+    display: inline-block;
+    margin-right: 3rem;
+    height: 12rem;
+    color: #fff;
+    vertical-align: top; }
+  .banner__info {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2rem; }
+  .banner__text {
+    color: #e5e5e5;
+    margin: .6rem 0; }
+    .banner__text--header {
+      color: #fff; }
+  .banner__actions {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    vertical-align: center;
+    padding: 2rem 0; }
+  .banner__actions > * {
+    display: block;
+    width: 18rem;
+    text-align: center; }
+    .banner__actions > *:not(:last-child) {
+      margin-bottom: 3rem; }
+
 .slide-list {
   padding: 0 13rem;
   color: #fff;
@@ -806,13 +860,13 @@ section.section-login .form__login-submit {
   .mobile-nav__brand {
     height: 6rem; }
   .mobile-nav__button {
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 5%;
     right: 5%;
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
-    background-color: rgba(229, 229, 229, 0.2);
+    background-color: rgba(51, 51, 51, 0.8);
     transform: translateY(-50%);
     cursor: pointer; }
   .mobile-nav__menu-icon {
@@ -895,9 +949,9 @@ section.section-login .form__login-submit {
     display: inline-block; }
   .navigation__logo {
     position: absolute;
-    top: 20px;
+    top: 2rem;
     left: 5rem;
-    height: 60px; }
+    height: 6rem; }
   .navigation__brand {
     font-size: 3rem; }
   .navigation__nav {
@@ -913,7 +967,7 @@ section.section-login .form__login-submit {
     margin: 0.5rem;
     width: 1px;
     height: 3rem;
-    background-color: #fff; }
+    background-color: #19072d; }
   .navigation__item {
     list-style: none;
     display: inline-block; }
@@ -923,14 +977,15 @@ section.section-login .form__login-submit {
     display: inline-block;
     transition: ease-in-out all 0.15s;
     line-height: 10rem;
-    padding: 0 1rem; }
+    padding: 0 1rem;
+    font-weight: 700; }
     .navigation__link:link, .navigation__link:visited {
       font-size: 1.5rem;
-      color: #fff;
+      color: #4b1486;
       display: inline-block;
       text-decoration: none; }
     .navigation__link:hover {
-      color: #d9d9d9;
+      color: #19072d;
       transition: ease-in-out all 0.15s; }
 
 .information {

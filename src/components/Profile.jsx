@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { getAccountInfo } from "../actions/index";
 
-import NavBar from './navs/nav_bar.jsx';
+import NavBar from './navs/nav_bar';
+import NavBtn from './navs/nav_btn';
+import Footer from "./footer/footer_main";
+import Banner from "../components/boxes/profile_banner";
 
 
 class Profile extends Component {
@@ -16,12 +20,18 @@ class Profile extends Component {
         if(this.props.userProfile === null) {
             return(
                 
-                <main>
-                    <NavBar />
-                    <h2 className=''>
-                        Fetching account information...
-                    </h2>
-                </main>
+                    <div>
+                        <main className='no-user'>
+                            <NavBar />
+                            <NavBtn />
+                            <div className="no-user__container">
+                                <h1 className='no-user__text'>
+                                    Fetching User Information...
+                                </h1>
+                            </div>
+                        </main>
+                        <Footer />
+                    </div>
             )
         }
 
@@ -30,9 +40,19 @@ class Profile extends Component {
 
             if(!this.props.userProfile.length) {
                 return (
-                    <h1>
-                        User does not exist
-                    </h1>
+                    <div>
+                        <main className='no-user'>
+                            <NavBar />
+                            <NavBtn />
+                            <div className="no-user__container">
+                                <h1 className='no-user__text'>
+                                    Oops, looks like this user doesn't exist.
+                                </h1>
+                                <Link className='no-user__link btn btn--transparent-purple' to='/'> Home Page </Link>
+                            </div>
+                        </main>
+                        <Footer />
+                    </div>
                 )
             }
 
@@ -41,9 +61,12 @@ class Profile extends Component {
 
                 console.log(this.props.userProfile)
                 return (
-                    <h1>
-                        Got em!
-                    </h1>
+                    <main className="section-profile">
+                        <NavBar />
+                        <NavBtn />
+                        <Banner artist={this.props.userProfile[0]} />
+                        <Footer />
+                    </main>
                 )
             }
         }

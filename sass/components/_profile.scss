@@ -1,0 +1,80 @@
+// styling for invalid user page 
+
+.no-user {
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    background-color: $color-grey-dark;
+    text-align: center;
+
+    &__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: 3rem;
+        
+    }
+}
+
+// Profile Banner Styling
+
+.banner {
+    margin-top: 10rem;
+    width: 100%;
+    background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    padding: 2rem 4rem;
+    position: relative;
+
+    @include respond(tab-port) {
+        margin-top: 12rem;
+    }
+
+    &__img {
+        display: inline-block;
+        margin-right: 3rem;
+        height: 12rem;
+        color: $color-white;
+        vertical-align: top;
+    }
+    
+    &__info {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 2rem; 
+    }
+
+    &__text {
+        color: $color-grey;
+        margin: .6rem 0;
+
+        &--header {
+            color: $color-white;
+        }
+    }
+    
+    &__actions {
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        top: 2%;
+        right: 5%;
+        vertical-align: center;
+        padding: 2rem 0;
+    }
+
+    &__actions > * {
+        display: block;
+        width: 18rem;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "../../img/logos/StudioMaster-Logo_White.png";
+import Logo from "../../img/logos/StudioMaster-Logo_Purple-Light.png";
 
 class NavBtn extends Component {
 

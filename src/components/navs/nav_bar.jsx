@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../../img/logos/StudioMaster-Logo_White.png";
+import Logo from "../../img/logos/StudioMaster-Logo_Purple-Light.png";
 
 
 class NavBar extends Component {
@@ -10,7 +10,7 @@ class NavBar extends Component {
         return(
             <div className="navigation">
                 <div className="navigation__logo-box">
-                    <a href="/"><img src={logo} alt="" className="navigation__logo"/></a>
+                    <a href="/"><img src={Logo} alt="" className="navigation__logo"/></a>
                 </div>
                 <div className="navigation__nav">
                     <ul className="navigation__nav-container">
