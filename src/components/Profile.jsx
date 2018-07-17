@@ -7,7 +7,9 @@ import { getAccountInfo } from "../actions/index";
 import NavBar from './navs/nav_bar';
 import NavBtn from './navs/nav_btn';
 import Footer from "./footer/footer_main";
-import Banner from "../components/boxes/profile_banner";
+import Banner from "../components/profile/profile_banner";
+import Actions from "../components/profile/profile_actions";
+import Info from "../components/profile/profile_info";
 
 
 class Profile extends Component {
@@ -65,6 +67,8 @@ class Profile extends Component {
                         <NavBar />
                         <NavBtn />
                         <Banner artist={this.props.userProfile[0]} />
+                        <Actions />
+                        <Info artist={this.props.userProfile[0]} />
                         <Footer />
                     </main>
                 )

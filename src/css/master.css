@@ -694,6 +694,85 @@ section.section-login .form__login-submit {
     .banner__actions > *:not(:last-child) {
       margin-bottom: 3rem; }
 
+.profile-actions {
+  background-color: #fff;
+  padding: 2rem 5rem; }
+  .profile-actions__button {
+    padding: .2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer; }
+    .profile-actions__button:not(:last-child) {
+      margin-right: 2rem; }
+  .profile-actions__button:hover .profile-actions__icon-container {
+    background-color: #4b1486; }
+  .profile-actions__icon-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #320d59;
+    text-align: center;
+    height: 5rem;
+    width: 5rem;
+    transition: all .1s; }
+  .profile-actions__icon-container * {
+    position: absolute;
+    font-size: 2rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; }
+  .profile-actions__text {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1.4rem 1rem; }
+
+.profile-info {
+  background-color: #e5e5e5;
+  padding: 2rem; }
+  .profile-info__about {
+    display: inline-block;
+    width: 55%;
+    padding: 1rem;
+    background-color: #cccccc;
+    margin-right: 1rem; }
+  .profile-info__description-container {
+    height: 15rem;
+    padding: .5rem 1rem; }
+  .profile-info__snapshot {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top; }
+  .profile-info__stats-container {
+    background-color: #cccccc;
+    text-align: center;
+    padding: 1rem; }
+  .profile-info__list-container {
+    display: inline-block;
+    width: 45%;
+    margin-top: 1rem;
+    vertical-align: top;
+    padding-bottom: 2rem; }
+  .profile-info__list {
+    margin-left: 2.5rem; }
+  .profile-info__item {
+    font-size: 1.5rem; }
+  .profile-info__header {
+    font-size: 3rem;
+    margin-bottom: 1rem; }
+  .profile-info__text {
+    font-size: 1.5rem; }
+  .profile-info__stats {
+    font-size: 2rem;
+    margin-bottom: 1rem; }
+  .profile-info__ad-container {
+    background-color: #000;
+    text-align: center;
+    margin-top: 1rem;
+    height: 10rem; }
+
 .slide-list {
   padding: 0 13rem;
   color: #fff;
