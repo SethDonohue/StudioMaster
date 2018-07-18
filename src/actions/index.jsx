@@ -8,7 +8,10 @@ export const CHECK_USERNAME ="CHECK_USERNAME";
 export const GET_ACCOUNT_INFO = "GET_INFO";
 
 
+//8080 for DEVELOPMENT "" for PRODUCTION.  Need to come up with a better system.
+
 const ROOT_URL = "http://localhost:8080"
+// const ROOT_URL = ""
 
 export function fetchLogin (credentials){
 

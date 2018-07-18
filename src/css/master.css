@@ -74,7 +74,8 @@ h6 {
 
 a {
   color: #320d59;
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: 'Montserrat'; }
   a:hover {
     color: #754996;
     text-decoration: none; }
@@ -773,6 +774,17 @@ section.section-login .form__login-submit {
     margin-top: 1rem;
     height: 10rem; }
 
+.profile-tracks {
+  background-color: #cccccc;
+  padding: 2rem; }
+  .profile-tracks__link-container {
+    text-align: right;
+    padding: 0 2rem; }
+  .profile-tracks__link {
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase; }
+
 .slide-list {
   padding: 0 13rem;
   color: #fff;
@@ -818,6 +830,13 @@ section.section-login .form__login-submit {
     transform: translateY(-50%); }
     .slide-list__icon--up {
       display: none; }
+
+.track {
+  height: 18rem;
+  width: 12rem;
+  background-color: #333;
+  display: inline-block;
+  margin: 0 2rem 2rem 0; }
 
 .row {
   max-width: 114rem;

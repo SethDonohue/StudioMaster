@@ -199,3 +199,21 @@
         
     }
 }
+
+//Tracks on PROFILE PAGE ONLY
+
+.profile-tracks {
+    background-color: $color-grey-dark;
+    padding: 2rem;
+
+    &__link-container {
+        text-align: right;
+        padding: 0 2rem;
+    }
+
+    &__link {
+        font-weight: 800;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}
