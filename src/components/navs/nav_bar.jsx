@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Logo from "../../img/logos/StudioMaster-Logo_Purple-Light.png";
+import NoUser from './nav_bar-no-user';
+import LoggedInUser from './nav_bar-logged_in';
 
 
 class NavBar extends Component {
 
 
     render(){
+        console.log(this.props.login);
         return(
             <div className="navigation">
                 <div className="navigation__logo-box">
@@ -15,31 +20,25 @@ class NavBar extends Component {
                 <div className="navigation__nav">
                     <ul className="navigation__nav-container">
                         <li className="navigation__item">
-                            <Link to="/" className="navigation__link">Billboard</Link>
-                        </li>
-                        <li className="navigation__item">
-                            <Link to="/" className="navigation__link">Features</Link>
+                            <Link to="/" className="navigation__link">Explore</Link>
                         </li>
                         <li className="navigation__item">
                             <Link to="/" className="navigation__link">About</Link>
                         </li>
                         <li className="navigation__item">
-                            <Link to="/" className="navigation__link">Support</Link>
+                            <Link to="/" className="navigation__link">Billboards</Link>
                         </li>
                     </ul>
                     <span className="navigation__divider">&nbsp;</span>
-                    <ul className="navigation__nav-container">
-                        <li className="navigation__item">
-                            <Link to="/registration" className="navigation__link">Create Account</Link>
-                        </li>
-                        <li className="navigation__item">
-                            <Link to="/registration" className="navigation__link">Log In</Link>
-                        </li>
-                    </ul>
+                    {this.props.login && this.props.login.data.id ? <LoggedInUser user={this.props.login} /> : <NoUser />}
                 </div>
             </div>
         )
     }
 }
 
-export default NavBar;
+function mapStateToProps({ login }) {
+    return { login }
+}
+
+export default connect(mapStateToProps, null)(NavBar);

@@ -80,4 +80,21 @@
 			transition: $ease-in-out;
 		}
 	}
+
+	&__pop-up {
+		width: 100%;
+		background-color: $color-grey-dark;
+	}
+
+	&__log-in {
+		font-size: $default-font;
+		cursor: pointer;
+		color: $color-primary-light;
+		font-weight: 700;
+		transition: all .1s;
+
+		&:hover {
+			color: $color-primary-dark;
+		}
+	}
 }

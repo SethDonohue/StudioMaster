@@ -1,6 +1,6 @@
 import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER } from "../actions/index";
 
-function loginValidate(state = {}, action) {
+function loggedIn(state = null, action) {
 
     switch(action.type) {
         case FETCH_LOGIN:
@@ -18,4 +18,4 @@ function loginValidate(state = {}, action) {
 
 }
 
-export default loginValidate;
+export default loggedIn;

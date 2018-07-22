@@ -10,7 +10,7 @@ class ProfileTracks extends Component {
         super();
 
         this.state = {
-            songs: [Song, Song, Song, Song, Song, Song]
+            songs: [Song, Song, Song, Song, Song, Song, Song, Song, Song, Song, Song, Song]
         }
         this.createTracks.bind(this);
     }

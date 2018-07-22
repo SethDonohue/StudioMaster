@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Buffer from "./boxes/buffer";
+
 import NavBar from './navs/nav_bar.jsx';
 import NavBtn from './navs/nav_btn.jsx';
 import Hero from './home/hero.jsx';
@@ -16,6 +18,7 @@ class App extends Component { // Home Page Component! Edit Me!
             <NavBtn />
           </nav>
           <main>
+            <Buffer />
             <Hero />
             <Features />
           </main>

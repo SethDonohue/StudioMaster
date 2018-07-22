@@ -19,7 +19,7 @@ function SelectInput(field){
             <div className="form__select-arrow"></div>
 
             <p className='form__error'>
-                {field.meta.error ? field.meta.error : ''}
+                {field.meta.touched && field.meta.error ? field.meta.error : ""}
             </p>
             
         </div>

@@ -209,11 +209,16 @@
     &__link-container {
         text-align: right;
         padding: 0 2rem;
+        margin-bottom: 2rem;
     }
 
     &__link {
         font-weight: 800;
         font-size: 2rem;
         text-transform: uppercase;
+    }
+
+    &__track-container {
+        padding: 2rem 8rem;
     }
 }

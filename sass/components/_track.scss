@@ -1,7 +1,39 @@
 .track {
-    height: 18rem;
-    width: 12rem;
-    background-color: $color-charcoal;
+    height: 24rem;
+    width: 18rem;
     display: inline-block;
-    margin: 0 2rem 2rem 0;
+    margin: 0 6rem 2rem 0;
+    position: relative;
+    background-size: contain;
+    cursor: pointer;
+
+    &__play {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        opacity: .5;
+        color: $color-charcoal;
+    }
+
+
+    &__text-box {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $color-charcoal;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        cursor: initial;
+    }
+
+    &__title {
+        color: $color-white;
+    }
+
+    &__release {
+        color: $color-grey-dark;
+    }
 }

@@ -53,7 +53,7 @@ class SignUp extends Component {
         const { handleSubmit } = this.props;
         return(
             <section className="section-register">
-                {this.props.login && this.props.login.data ? <Redirect to={`/profile/${this.props.login.data.id}`}   /> : ''}
+                {this.props.login && this.props.login.data && this.props.login.data.id !== false ? <Redirect to={`/profile/${this.props.login.data.id}`}   /> : ''}
                 <h2 className="register-header">
                     Create An Account
                 </h2>
@@ -184,6 +184,6 @@ function mapStateToProps ({checkLogin, checkUsername, login}){
 
 
 export default reduxForm({
-    // validate: validation,
+    validate: validation,
     form: 'SignUp'
 }) (connect(mapStateToProps, { newUser, queryEmail, queryUsername }) (SignUp) );

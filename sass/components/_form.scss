@@ -77,8 +77,9 @@
 	}
 	
 	&__login-submit {
-		display: inline-block;
-		margin-right: 5rem;
+		display: block;
+		margin: auto;
+		margin-bottom: 1rem;
 	}
 
 	//Registration specific css
@@ -96,6 +97,14 @@
 		.heading-tertiary {
 			color: $color-charcoal;
 			font-size: 2rem;
+		}
+
+		input[type="date"]::-webkit-calendar-picker-indicator{
+			display: none;
+		}
+
+		input[type="date"]::-webkit-calendar-spin-button{
+			display: none;
 		}
 	}
 

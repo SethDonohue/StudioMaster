@@ -13,7 +13,6 @@ class SignOn extends Component {
 
 
     onSubmit(values){
-        console.log(values);
         this.props.fetchLogin(values)
     }
     
@@ -30,12 +29,16 @@ class SignOn extends Component {
 
                         <div className="form__login">
 
-                            <Field name="email" placeholder="Email" inputType='text' component={TextInput} />
+                            {this.props.login && this.props.login.data.noUser ? <p className='form__error'>That email is not registered</p> : ''}
+                            {this.props.login && this.props.login.data.id === false ? <p className='form__error'>Incorrect password</p> : ''}
+
+                            <Field name="email" placeholder="Email" inputType='email' component={TextInput} />
 
                             <Field name="password" placeholder="Password" inputType='password' component={TextInput} />
                             
                             <button className="btn btn--purple form__login-submit" type="submit">Sign In</button>
-                            <Link to="/" className="link">Forgot your password?</Link>
+                            <Link to='/registration' className='btn btn--purple form__login-submit'>Create an Account</Link>
+                            <Link to="/" className="link u-display-block">Forgot your password?</Link>
                         </div>
     
 

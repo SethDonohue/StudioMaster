@@ -153,6 +153,39 @@ ul, li {
 .u-margin-right-small {
   margin-right: 1.4rem; }
 
+.u-display-block {
+  display: block; }
+
+.track {
+  height: 24rem;
+  width: 18rem;
+  display: inline-block;
+  margin: 0 6rem 2rem 0;
+  position: relative;
+  background-size: contain;
+  cursor: pointer; }
+  .track__play {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    opacity: .5;
+    color: #333; }
+  .track__text-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    cursor: initial; }
+  .track__title {
+    color: #fff; }
+  .track__release {
+    color: #cccccc; }
+
 .billboard {
   width: 100%;
   height: 60vh;
@@ -444,8 +477,9 @@ ul, li {
     .form__icon--warning {
       color: #ff4136; }
   .form__login-submit {
-    display: inline-block;
-    margin-right: 5rem; }
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem; }
   .form__register {
     text-align: left;
     width: 50%;
@@ -456,6 +490,10 @@ ul, li {
     .form__register .heading-tertiary {
       color: #333;
       font-size: 2rem; }
+    .form__register input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none; }
+    .form__register input[type="date"]::-webkit-calendar-spin-button {
+      display: none; }
   .form__radio-group {
     display: inline-block;
     padding: 0 2rem; }
@@ -779,11 +817,14 @@ section.section-login .form__login-submit {
   padding: 2rem; }
   .profile-tracks__link-container {
     text-align: right;
-    padding: 0 2rem; }
+    padding: 0 2rem;
+    margin-bottom: 2rem; }
   .profile-tracks__link {
     font-weight: 800;
     font-size: 2rem;
     text-transform: uppercase; }
+  .profile-tracks__track-container {
+    padding: 2rem 8rem; }
 
 .slide-list {
   padding: 0 13rem;
@@ -831,12 +872,10 @@ section.section-login .form__login-submit {
     .slide-list__icon--up {
       display: none; }
 
-.track {
-  height: 18rem;
-  width: 12rem;
-  background-color: #333;
-  display: inline-block;
-  margin: 0 2rem 2rem 0; }
+.buffer {
+  width: 100%;
+  height: 10rem;
+  background: linear-gradient(to bottom, #cccccc, #a5a5a5); }
 
 .row {
   max-width: 114rem;
@@ -1085,6 +1124,17 @@ section.section-login .form__login-submit {
     .navigation__link:hover {
       color: #19072d;
       transition: ease-in-out all 0.15s; }
+  .navigation__pop-up {
+    width: 100%;
+    background-color: #cccccc; }
+  .navigation__log-in {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4b1486;
+    font-weight: 700;
+    transition: all .1s; }
+    .navigation__log-in:hover {
+      color: #19072d; }
 
 .information {
   width: 100%;
