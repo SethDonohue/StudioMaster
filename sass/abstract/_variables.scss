@@ -38,6 +38,14 @@ $color-red: #ff4136;
 $color-red-light: lighten($color-red, 10%);
 $color-red-dark: darken($color-red, 10%);
 
+//Orange
+$color-orange: rgb(235, 185, 22);
+$color-orange-dark: darken($color-orange, 5%);
+
+//Yellow
+$color-yellow: #eeff00;
+$color-yellow-light: lighten($color-yellow, 12%);
+
 // Font Sizes
 $default-font: 1.5rem;
 

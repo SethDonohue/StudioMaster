@@ -5,7 +5,6 @@ import profileStock from "../../img/dj-profile.png";
 
 class Banner extends Component {
     render(){
-        console.log(this.props.artist)
         return (
             <section className='banner'>
                 <img src={profileStock} alt="Profile Picture" className="banner__img"/>
@@ -20,7 +19,7 @@ class Banner extends Component {
 
                 </div>
                 <div className="banner__actions">
-                    <Link to='/' className='btn btn--green'>My Mix Board</Link>
+                    <Link to='/' className='btn btn--orange'>My Mix Board</Link>
                     <button className='btn btn--grey'>Edit Profile</button>
                 </div>
             </section>

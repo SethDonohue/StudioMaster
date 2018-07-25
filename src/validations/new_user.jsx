@@ -64,10 +64,7 @@ export default function signUpValidation (values) {
         const now = new Date();
         const birthday = new Date(values.birthday)
         if(Date.parse(values.birthday) - now > 0) errors.birthday = 'Your birthdate was in the past, surely';
-        console.log(birthday.getFullYear())
         if(now.getFullYear() - birthday.getFullYear() < 15) errors.birthday = 'You must be at least 15 years old';
-        console.log(now.getFullYear() - birthday.getFullYear())
-        
     }
 
     

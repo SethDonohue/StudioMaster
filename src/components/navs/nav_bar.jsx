@@ -11,7 +11,7 @@ class NavBar extends Component {
 
 
     render(){
-        console.log(this.props.login);
+        
         return(
             <div className="navigation">
                 <div className="navigation__logo-box">

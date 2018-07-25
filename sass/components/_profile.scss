@@ -94,30 +94,48 @@
         &:not(:last-child) {
             margin-right: 2rem;
         }
-    }
-
-    &__button:hover &__icon-container {
-        background-color: $color-primary-light;
-    }  
+    } 
 
     &__icon-container {
         position: relative;
         display: inline-block;
         border-radius: 50%;
-        background-color: $color-primary;
         text-align: center;
         height: 5rem;
         width: 5rem;
         transition: all .1s;
+
+        &--purple {
+            background-color: $color-primary;
+
+            &:hover {
+                background-color: $color-primary-light;
+            }
+        }
+
+        &--orange {
+            background-color: $color-orange;
+
+            &:hover {
+                background-color: $color-orange-dark;
+            }
+        }
     }
 
-    &__icon-container * {
+    &__icon{
         position: absolute;
         font-size: 2rem;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        color: $color-white;
+
+        &--purple {
+            color: $color-primary;
+        }
+
+        &--white {
+            color: $color-white;
+        }
     }
 
     &__text {

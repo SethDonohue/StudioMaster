@@ -88,7 +88,7 @@ app.post('/newUser', (req,res) => {
     const sub = req.body;
 
     const securityQuestions = [[sub.securityQuestionOne, sub.securityAnswerOne], [sub.securityQuestionTwo, sub.securityAnswerTwo], [sub.securityQuestionThree, sub.securityAnswerThree]]
-    console.log(sub);
+    
     const salt = bcrypt.genSaltSync(saltRounds);
 
     bcrypt.hash(sub.password, salt, null, (err, hash) => {
@@ -107,7 +107,7 @@ app.post('/newUser', (req,res) => {
                         if (err) console.log(err);
                         if(result) console.log(result);
                     });
-                    for(let idx = 0; idx < 3; idx++) {
+                    for(let idx = 0; idx < securityQuestions.length; idx++) {
                         con.query(`INSERT INTO securityQuestions (users_id, question, answer, created_at, updated_at) VALUES ('${response.insertId}', '${securityQuestions[idx][0]}', '${securityQuestions[idx][1]}', now(), now())`, (err, result) => {
                             if (err) console.log(err);
                             if(result) console.log(result);
@@ -162,7 +162,6 @@ app.get('/getAccountInfo/:id', (req, res) => {
         if(err) console.log(err);
 
         if(user) {
-            console.log(user);
             res.json(user);
         };
     })

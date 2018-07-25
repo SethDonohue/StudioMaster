@@ -303,6 +303,17 @@ ul, li {
   border: 2px solid #2ecc40;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
 
+.btn--orange, .btn--orange:link, .btn--orange:visited {
+  background-color: #ebb916;
+  border: 2px solid #000;
+  color: #320d59; }
+
+.btn--orange:hover, .btn--orange:active {
+  color: #320d59;
+  background-color: #d5a712;
+  border: 2px solid #000;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
+
 .btn--grey, .btn--grey:link, .btn--grey:visited {
   background-color: #cccccc;
   border: 2px solid #cccccc;
@@ -743,24 +754,32 @@ section.section-login .form__login-submit {
     cursor: pointer; }
     .profile-actions__button:not(:last-child) {
       margin-right: 2rem; }
-  .profile-actions__button:hover .profile-actions__icon-container {
-    background-color: #4b1486; }
   .profile-actions__icon-container {
     position: relative;
     display: inline-block;
     border-radius: 50%;
-    background-color: #320d59;
     text-align: center;
     height: 5rem;
     width: 5rem;
     transition: all .1s; }
-  .profile-actions__icon-container * {
+    .profile-actions__icon-container--purple {
+      background-color: #320d59; }
+      .profile-actions__icon-container--purple:hover {
+        background-color: #4b1486; }
+    .profile-actions__icon-container--orange {
+      background-color: #ebb916; }
+      .profile-actions__icon-container--orange:hover {
+        background-color: #d5a712; }
+  .profile-actions__icon {
     position: absolute;
     font-size: 2rem;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff; }
+    transform: translate(-50%, -50%); }
+    .profile-actions__icon--purple {
+      color: #320d59; }
+    .profile-actions__icon--white {
+      color: #fff; }
   .profile-actions__text {
     display: inline-block;
     vertical-align: top;

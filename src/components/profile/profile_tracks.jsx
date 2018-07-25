@@ -24,7 +24,6 @@ class ProfileTracks extends Component {
 
 
     render(){
-        console.log(this.createTracks() + '*****************')
         
         return(
             <section className="profile-tracks">

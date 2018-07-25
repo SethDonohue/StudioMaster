@@ -92,6 +92,25 @@
 		}
 	}
 
+	&--orange {
+		
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-orange;
+			border: 2px solid $color-black;
+			color: $color-primary;
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			background-color: $color-orange-dark;
+			border: 2px solid $color-black;
+			box-shadow: $shadow-center-dark;
+		}
+	}
+
 	&--grey {
 
 		&,

@@ -1,22 +1,35 @@
 import React, { Component } from 'react';
+import Popup from 'reactjs-popup';
+
+import AddTrack from '../../containers/add-track';
 
 class ProfileActions extends Component {
     render(){
         return(
+
+            //Button for add track and associating modal
             <section className='profile-actions'>
-                <button className="profile-actions__button">
-                    <div className="profile-actions__icon-container">
-                        <i className="fas fa-plus"></i>
-                    </div>
+                <Popup trigger={
+                        <button className="profile-actions__button">
+                            <div className="profile-actions__icon-container profile-actions__icon-container--orange">
+                                <i className="fas fa-plus profile-actions__icon profile-actions__icon--purple"></i>
+                            </div>
 
-                    <p className="profile-actions__text">
-                        Add Track
-                    </p>
-                </button>
+                            <p className="profile-actions__text">
+                                Add Track
+                            </p>
+                        </button>
+                    } className='profile-actions__add-track' modal>
+
+                    <AddTrack />
+
+
+                </Popup>
+                    
 
                 <button className="profile-actions__button">
-                    <div className="profile-actions__icon-container">
-                        <i className="fas fa-users"></i>
+                    <div className="profile-actions__icon-container profile-actions__icon-container--purple">
+                        <i className="fas fa-users profile-actions__icon profile-actions__icon--white"></i>
                     </div>
 
                     <p className="profile-actions__text">
@@ -25,8 +38,8 @@ class ProfileActions extends Component {
                 </button>
 
                 <button className="profile-actions__button">
-                    <div className="profile-actions__icon-container">
-                        <i className="fas fa-signal"></i>
+                    <div className="profile-actions__icon-container profile-actions__icon-container--purple">
+                        <i className="fas fa-signal profile-actions__icon profile-actions__icon--white"></i>
                     </div>
 
                     <p className="profile-actions__text">
@@ -35,8 +48,8 @@ class ProfileActions extends Component {
                 </button>
 
                 <button className="profile-actions__button">
-                    <div className="profile-actions__icon-container">
-                        <i className="far fa-envelope"></i>
+                    <div className="profile-actions__icon-container profile-actions__icon-container--purple">
+                        <i className="far fa-envelope profile-actions__icon profile-actions__icon--white"></i>
                     </div>
                     
                     <p className="profile-actions__text">
