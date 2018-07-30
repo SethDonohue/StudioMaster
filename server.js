@@ -25,16 +25,22 @@ app.use(session({
 
 app.use(bp.json());
 
-const whitelist = ['http://localhost:3000', 'http://www.studiomasterllc.com'];
+const whitelist = ['http://localhost:3000', 'localhost:8080', 'http://www.studiomasterllc.com'];
 
-app.use(cors({
-    credentials: true,
-    origin: (origin, callback) => {
-        if(whitelist.indexOf(origin) !== -1) {
-            callback(null, true);
-        }; 
+
+
+var corsOptionsDelegate = function (req, callback) {
+    var corsOptions = {credentials: true};
+    if (whitelist.indexOf(req.header('Origin')) !== -1) {
+      corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+    }else{
+      corsOptions = { origin: false } // disable CORS for this request
     }
-}));
+    callback(null, corsOptions) // callback expects two parameters: error and options
+  }
+
+
+
 
 const saltRounds = 10;
 
@@ -58,7 +64,7 @@ function validateEmail(email) {
 
 //While creating an account, this route queries for an email entry to see if available IF post passes email validation.
 
-app.post('/checkEmail', (req,res) => {
+app.post('/checkEmail', cors(corsOptionsDelegate), (req,res) => {
     if(req.body.email && req.body.email.length) {
        if(validateEmail(req.body.email)) {
            con.query(`SELECT * FROM users where(emailAddress = '${req.body.email}')`, (err, user) => {
@@ -80,7 +86,7 @@ app.post('/checkEmail', (req,res) => {
 
 // While creating an account, this route queries for a username to see if available
 
-app.post('/checkUsername', (req,res) => {
+app.post('/checkUsername', cors(corsOptionsDelegate), (req,res) => {
     if(req.body.username && req.body.username.length) {
            con.query(`SELECT * FROM users where(userName = '${req.body.username}')`, (err, user) => {
                
@@ -99,7 +105,7 @@ app.post('/checkUsername', (req,res) => {
 
 // Accepts new user packet and sends to database
 
-app.post('/newUser', (req,res) => {
+app.post('/newUser', cors(corsOptionsDelegate), (req,res) => {
 
     const sub = req.body;
 
@@ -142,7 +148,7 @@ app.post('/newUser', (req,res) => {
     })
 })
 
-app.post('/login', (req,res) => {
+app.post('/login', cors(corsOptionsDelegate), (req,res) => {
     con.query(`SELECT * FROM users WHERE(emailAddress = '${req.body.email}')`, (err, user) => {
         if(err) console.log(err);
 
@@ -177,7 +183,7 @@ app.post('/login', (req,res) => {
     });
 })
 
-app.get('/getAccountInfo/:id', (req, res) => {
+app.get('/getAccountInfo/:id', cors(corsOptionsDelegate), (req, res) => {
     con.query(`SELECT * FROM users WHERE(id = ${req.params.id})`, (err, user) => {
         if(err) console.log(err);
 
@@ -187,7 +193,7 @@ app.get('/getAccountInfo/:id', (req, res) => {
     })
 })
 
-app.get('/checkLoginSession', (req, res) => {
+app.get('/checkLoginSession', cors(corsOptionsDelegate), (req, res) => {
     console.log(req.session);
     
     if(req.session.loggedInUser) {
@@ -207,7 +213,7 @@ app.get('/checkLoginSession', (req, res) => {
 
 })
 
-app.get('/signoff', (req, res) => {
+app.get('/signoff', cors(corsOptionsDelegate), (req, res) => {
     req.session.destroy();
     res.json({id: null});
 })
