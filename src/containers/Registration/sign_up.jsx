@@ -19,12 +19,11 @@ const securityQuestions = ['Please choose a security question', 'Example1', 'Exa
 class SignUp extends Component {
 
     legalAgreement(){
-        console.log("hello")
+        // console.log("hello")
     }
 
     onSubmit(values){
         this.props.newUser(values);
-        // console.log(values);
     }
 
     checkUsername(evt){
@@ -44,16 +43,11 @@ class SignUp extends Component {
         }
     }
 
-    RedirectToAccountPage() {
-        console.log(this.props.login.data);
-        <Redirect to='/' />;
-    }
-
     render(){
         const { handleSubmit } = this.props;
         return(
             <section className="section-register">
-                {this.props.login && this.props.login.data && this.props.login.data.id !== false ? <Redirect to={`/profile/${this.props.login.data.id}`}   /> : ''}
+                {/* {this.props.login && (this.props.login.data && this.props.login.data.id !== null) ? <Redirect to={`/profile/${this.props.login.data.id}`} /> : ''} */}
                 <h2 className="register-header">
                     Create An Account
                 </h2>

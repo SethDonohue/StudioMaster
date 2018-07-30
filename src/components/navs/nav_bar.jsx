@@ -37,7 +37,7 @@ class NavBar extends Component {
                     </ul>
                     <span className="navigation__divider">&nbsp;</span>
                     
-                    {this.props.login && this.props.login.data.id !== null ? <LoggedInUser user={this.props.login} /> : <NoUser />}
+                    {this.props.login && this.props.login.data && this.props.login.data.id !== null ? <LoggedInUser user={this.props.login} /> : <NoUser />}
                 </div>
             </div>
         )

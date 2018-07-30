@@ -29,8 +29,8 @@ class SignOn extends Component {
 
                         <div className="form__login">
 
-                            {this.props.login && this.props.login.data.noUser ? <p className='form__error'>That email is not registered</p> : ''}
-                            {this.props.login && this.props.login.data.id === false ? <p className='form__error'>Incorrect password</p> : ''}
+                            {this.props.login && this.props.login.data && this.props.login.data.noUser ? <p className='form__error'>That email is not registered</p> : ''}
+                            {this.props.login && this.props.login.data && this.props.login.data.id === false ? <p className='form__error'>Incorrect password</p> : ''}
 
                             <Field name="email" placeholder="Email" inputType='email' component={TextInput} />
 
