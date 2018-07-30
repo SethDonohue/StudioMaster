@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOff } from '../../actions/index';
 
-const loggedInUser = (props) => { 
-    return(
-        <ul className="navigation__nav-container">
-            <li className="navigation__item">
-                <Link to={`/profile/${props.user.data.id}`} className="navigation__link">My Studio</Link>
-            </li>
-            <li className="navigation__item">
-                <Link to="/registration" className="navigation__link">{props.user.data.info.firstName}</Link>
-            </li>
-        </ul>
-    )
+class LoggedInUser extends Component {
+
+    signOffUser(){
+        this.props.signOff();
+    }
+
+    render(){
+        return(
+            <ul className="navigation__nav-container">
+                <li className="navigation__item">
+                    <Link to={`/profile/${this.props.user.data.id}`} className="navigation__link">My Studio</Link>
+                </li>
+                <li className="navigation__item">
+                    <Link to="/registration" className="navigation__link">{this.props.user.data.info.firstName}</Link>
+                </li>
+                <li className="navigation__item" onClick={this.signOffUser.bind(this)}>
+                    <a className="navigation__link">Log Off</a>
+                </li>
+            </ul>
+        )
+    }
 }
 
-export default loggedInUser;
+export default connect(null, { signOff })(LoggedInUser);

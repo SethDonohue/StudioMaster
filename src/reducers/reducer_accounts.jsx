@@ -1,4 +1,4 @@
-import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER } from "../actions/index";
+import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER, CHECK_LOGIN_SESSION, SIGN_OFF } from "../actions/index";
 
 function loggedIn(state = null, action) {
 
@@ -10,6 +10,12 @@ function loggedIn(state = null, action) {
             return action.payload;
         
         case NEW_USER:
+            return action.payload;
+
+        case CHECK_LOGIN_SESSION:
+            return action.payload;
+
+        case SIGN_OFF:
             return action.payload;
 
         default:

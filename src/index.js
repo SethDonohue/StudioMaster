@@ -9,6 +9,8 @@ import "./css/master.css";
 
 import rootReducer from './reducers/index.jsx';
 
+
+
 import Home from './components/Home.jsx';
 import Registration from './components/Registration.jsx';
 import Profile from './components/Profile.jsx';

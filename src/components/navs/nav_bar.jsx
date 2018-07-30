@@ -6,11 +6,17 @@ import Logo from "../../img/logos/StudioMaster-Logo_Purple-Light.png";
 import NoUser from './nav_bar-no-user';
 import LoggedInUser from './nav_bar-logged_in';
 
+import { checkForLoginSession } from '../../actions/index';
+
 
 class NavBar extends Component {
 
+    componentDidMount() {
+        this.props.checkForLoginSession();
+    }
 
     render(){
+        console.log(this.props.login)
         
         return(
             <div className="navigation">
@@ -30,7 +36,8 @@ class NavBar extends Component {
                         </li>
                     </ul>
                     <span className="navigation__divider">&nbsp;</span>
-                    {this.props.login && this.props.login.data.id ? <LoggedInUser user={this.props.login} /> : <NoUser />}
+                    
+                    {this.props.login && this.props.login.data.id !== null ? <LoggedInUser user={this.props.login} /> : <NoUser />}
                 </div>
             </div>
         )
@@ -41,4 +48,4 @@ function mapStateToProps({ login }) {
     return { login }
 }
 
-export default connect(mapStateToProps, null)(NavBar);
+export default connect(mapStateToProps, { checkForLoginSession })(NavBar);

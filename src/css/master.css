@@ -73,11 +73,13 @@ h6 {
   line-height: 1.75rem; }
 
 a {
-  color: #320d59;
+  color: #4b1486;
   text-decoration: none;
-  font-family: 'Montserrat'; }
+  font-family: 'Montserrat';
+  font-size: 1.5rem;
+  cursor: pointer; }
   a:hover {
-    color: #754996;
+    color: #19072d;
     text-decoration: none; }
 
 ul, li {
@@ -156,35 +158,17 @@ ul, li {
 .u-display-block {
   display: block; }
 
-.track {
-  height: 24rem;
-  width: 18rem;
-  display: inline-block;
-  margin: 0 6rem 2rem 0;
-  position: relative;
-  background-size: contain;
-  cursor: pointer; }
-  .track__play {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 5rem;
-    opacity: .5;
-    color: #333; }
-  .track__text-box {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: #333;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    cursor: initial; }
-  .track__title {
-    color: #fff; }
-  .track__release {
-    color: #cccccc; }
+.addTrack {
+  background-color: #cccccc;
+  padding: 2rem;
+  text-align: center; }
+  .addTrack__form {
+    width: 60%;
+    margin-top: 2rem;
+    display: block;
+    margin: auto; }
+  .addTrack__form > * {
+    margin-bottom: 2rem; }
 
 .billboard {
   width: 100%;
@@ -786,6 +770,8 @@ section.section-login .form__login-submit {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 1.4rem 1rem; }
+  .profile-actions__add-track {
+    background-color: #cccccc; }
 
 .profile-info {
   background-color: #e5e5e5;
@@ -890,6 +876,36 @@ section.section-login .form__login-submit {
     transform: translateY(-50%); }
     .slide-list__icon--up {
       display: none; }
+
+.track {
+  height: 24rem;
+  width: 18rem;
+  display: inline-block;
+  margin: 0 6rem 2rem 0;
+  position: relative;
+  background-size: contain;
+  cursor: pointer; }
+  .track__play {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    opacity: .5;
+    color: #333; }
+  .track__text-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    cursor: initial; }
+  .track__title {
+    color: #fff; }
+  .track__release {
+    color: #cccccc; }
 
 .buffer {
   width: 100%;

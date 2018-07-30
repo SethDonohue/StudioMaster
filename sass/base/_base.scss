@@ -76,12 +76,14 @@ h6 {
 
 // Links
 a {
-	color: #320d59;
+	color: $color-primary-light;
 	text-decoration: none;
 	font-family: 'Montserrat';
+	font-size: $default-font;
+	cursor: pointer;
 
 	&:hover {
-		color: #754996;
+		color: $color-primary-dark;
 		text-decoration: none;
 	}
 }

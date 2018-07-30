@@ -5,6 +5,8 @@ import { reduxForm, Field } from 'redux-form';
 import FileInput from './Forms/file_input';
 import TextInput from './Forms/text_input';
 
+import validations from '../validations/add_track';
+
 
 class AddTrack extends Component {
 
@@ -17,15 +19,15 @@ class AddTrack extends Component {
         const { handleSubmit } = this.props
         return(
             <section className="addTrack">
-                <h1 className='addTrack-header'>
-                    Add a track
-                </h1>
 
-                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className='addTrack__form'>
+                    <h1 className='addTrack-header'>
+                        Add a track
+                    </h1>
 
-                    <Field name='Track' component={FileInput} />
+                    <Field name='track' component={FileInput} />
 
-                    <Field name='Title' component={TextInput} placeholder='Name your track' />
+                    <Field name='title' component={TextInput} placeholder='Name your track' />
 
                     <button className='btn btn--green' type='submit'>
                         Upload your track
@@ -38,5 +40,6 @@ class AddTrack extends Component {
 }
 
 export default reduxForm({
+    validate: validations,
     form: 'addtrack'
 })(connect(null, null)(AddTrack))

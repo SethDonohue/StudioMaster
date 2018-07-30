@@ -15,10 +15,26 @@ const credentials = require('./mysqlconnection');
 const app = express();
 
 app.use(session({
-    secret: credentials.session
-}))
+
+    secret: credentials.session,
+    cookie: {secure: false},
+    saveUninitialized: true,
+    resave: false
+
+}));
+
 app.use(bp.json());
-app.use(cors());
+
+const whitelist = ['http://localhost:3000', 'http://www.studiomasterllc.com'];
+
+app.use(cors({
+    credentials: true,
+    origin: (origin, callback) => {
+        if(whitelist.indexOf(origin) !== -1) {
+            callback(null, true);
+        }; 
+    }
+}));
 
 const saltRounds = 10;
 
@@ -115,6 +131,7 @@ app.post('/newUser', (req,res) => {
                     };
                 };
                 req.session.loggedInUser = response.insertId;
+                req.session.save();
                 res.json({
                     success: "Account created",
                     id: req.session.loggedInUser
@@ -140,6 +157,9 @@ app.post('/login', (req,res) => {
             else {
                 if(bcrypt.compareSync(req.body.password , user[0].password)) { // if user is found and pw matches save session with userID
                     req.session.loggedInUser = user[0].id;
+                    req.session.save();
+                    
+                    
 
                     res.json({
                         id: req.session.loggedInUser,
@@ -165,6 +185,31 @@ app.get('/getAccountInfo/:id', (req, res) => {
             res.json(user);
         };
     })
+})
+
+app.get('/checkLoginSession', (req, res) => {
+    console.log(req.session);
+    
+    if(req.session.loggedInUser) {
+        con.query(`SELECT * FROM users WHERE (id = ${req.session.loggedInUser});`, (err, user) => {
+            if (err) console.log(err)
+            res.json({
+                id: req.session.loggedInUser,
+                info: user[0]
+            });
+
+        })
+    }
+
+    else{
+        res.json({id: null});
+    }
+
+})
+
+app.get('/signoff', (req, res) => {
+    req.session.destroy();
+    res.json({id: null});
 })
 
 app.get('*', (req,res)=>{

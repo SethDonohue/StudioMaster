@@ -1,0 +1,16 @@
+.addTrack {
+     background-color: $color-grey-dark;
+     padding: 2rem;
+     text-align: center;
+
+     &__form {
+         width: 60%;
+         margin-top: 2rem;
+         display: block;
+         margin: auto;
+     }
+
+     &__form > * {
+         margin-bottom: 2rem;
+     }
+}
