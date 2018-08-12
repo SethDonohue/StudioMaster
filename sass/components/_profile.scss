@@ -77,6 +77,20 @@
         }
     }
 
+    &__edit-icon {
+        color: $color-grey-dark;
+        cursor: pointer;
+        font-size: 2rem;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        transition: all .1s;
+
+        &:hover {
+            color: $color-charcoal-light;
+        }
+    }
+
 }
 
 // Personal Profile Action buttons
@@ -243,4 +257,10 @@
     &__track-container {
         padding: 2rem 8rem;
     }
+}
+
+// Form to change profile picture
+
+.photoForm {
+    
 }

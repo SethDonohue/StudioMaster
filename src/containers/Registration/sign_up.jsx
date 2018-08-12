@@ -24,6 +24,7 @@ class SignUp extends Component {
 
     onSubmit(values){
         this.props.newUser(values);
+        
     }
 
     checkUsername(evt){
@@ -47,7 +48,7 @@ class SignUp extends Component {
         const { handleSubmit } = this.props;
         return(
             <section className="section-register">
-                {/* {this.props.login && (this.props.login.data && this.props.login.data.id !== null) ? <Redirect to={`/profile/${this.props.login.data.id}`} /> : ''} */}
+                {this.props.login && (this.props.login.data && this.props.login.data.id !== null) ? <Redirect to={`/profile/${this.props.login.data.id}`} /> : ''}
                 <h2 className="register-header">
                     Create An Account
                 </h2>

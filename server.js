@@ -7,6 +7,18 @@ const cors = require("cors");
 const bcrypt = require('bcrypt-nodejs');
 const session = require('express-session');
 
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+
+const photoBucket = 'studiomaster.photo.bucket';
+const audioBucket = 'studiomaster.audio.bucket';
+
+
+// s3.upload({Bucket: photoBucket, Key: , Body: 'Hello'}, (err, data) => {
+//     if (err) console.log(err);
+//     if (data) console.log(data);
+// })
+
 const mysql = require('mysql');
 const credentials = require('./mysqlconnection');
 
@@ -14,7 +26,7 @@ const credentials = require('./mysqlconnection');
 
 const app = express();
 
-app.use(session({
+app.use(session({ 
 
     secret: credentials.session,
     cookie: {secure: false},
@@ -135,9 +147,17 @@ app.post('/newUser', (req,res) => {
                 };
                 req.session.loggedInUser = response.insertId;
                 req.session.save();
-                res.json({
-                    success: "Account created",
-                    id: req.session.loggedInUser
+                con.query(`SELECT * FROM users WHERE(id = ${req.session.loggedInUser})`, (err, user) => {
+                    if(err) console.log(err);
+                    else{
+                        res.json({
+                            success: "Account created",
+                            id: req.session.loggedInUser,
+                            info: user[0]
+                        })
+
+                    }
+
                 })
             });
         };
@@ -146,6 +166,7 @@ app.post('/newUser', (req,res) => {
 })
 
 app.post('/login', (req,res) => {
+
     con.query(`SELECT * FROM users WHERE(emailAddress = '${req.body.email}')`, (err, user) => {
         if(err) console.log(err);
 
@@ -191,7 +212,6 @@ app.get('/getAccountInfo/:id', (req, res) => {
 })
 
 app.get('/checkLoginSession', (req, res) => {
-    console.log(req.session);
     
     if(req.session.loggedInUser) {
         con.query(`SELECT * FROM users WHERE (id = ${req.session.loggedInUser});`, (err, user) => {

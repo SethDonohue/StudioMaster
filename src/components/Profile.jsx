@@ -19,9 +19,7 @@ class Profile extends Component {
         this.props.getAccountInfo(this.props.match.params.id);
     }
 
-    render(){
-        console.log(this.props.login);
-        console.log(this.props.userProfile);    
+    render(){  
         if(this.props.userProfile === null) {
             return(
                 
@@ -69,8 +67,8 @@ class Profile extends Component {
                         <NavBar />
                         <NavBtn />
                         <Banner artist={this.props.userProfile[0]} />
-                        {/* {this.props.login !== null && this.props.login.data.id === this.props.userProfile[0].id ? <Actions /> : ''} */}
-                        <Actions />
+                        {this.props.login !== null && this.props.login.data.id === this.props.userProfile[0].id ? <Actions /> : ''}
+                        {/* <Actions /> */}
                         <Info artist={this.props.userProfile[0]} />
                         <Tracks artist={this.props.userProfile[0]} />
                         <Footer />

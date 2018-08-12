@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
+import Popup from 'reactjs-popup';
 
 import profileStock from "../../img/dj-profile.png";
+import ChangePhoto from "../../containers/change-photo";
 
 class Banner extends Component {
+    
+
     render(){
+        console.log(this.props.login)
         return (
             <section className='banner'>
+                {this.props.login.data.id === this.props.artist.id ? <Popup trigger={<i className="fas fa-edit banner__edit-icon"></i>} className='banner__add-photo' modal>
+                    <ChangePhoto />
+                </Popup> : ""}
                 <img src={profileStock} alt="Profile Picture" className="banner__img"/>
                 <div className="banner__info">
                     <h5 className='banner__text'>
@@ -27,4 +36,8 @@ class Banner extends Component {
     }
 }
 
-export default Banner;
+function mapStateToProps ({ login }) {
+    return { login }
+}
+
+export default connect(mapStateToProps, null)(Banner);

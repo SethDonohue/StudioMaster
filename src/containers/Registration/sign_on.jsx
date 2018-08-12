@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { fetchLogin } from "../../actions/index";
 
 import { bindActionCreators } from "redux";
@@ -21,6 +21,7 @@ class SignOn extends Component {
         
             return (
                 <section className="section-login">
+                    {this.props.login && (this.props.login.data && this.props.login.data.id !== null) ? <Redirect to={`/profile/${this.props.login.data.id}`} /> : ''}
                     <h2 className="login-header">
                         Welcome back
                     </h2>
