@@ -6,6 +6,15 @@ const path = require('path');
 const cors = require("cors");
 const bcrypt = require('bcrypt-nodejs');
 const session = require('express-session');
+const fs = require('fs');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    filename: function(req, file, cb) {
+        cb(null, new Date().toISOString() + file.originalname);
+    }
+})
+const upload = multer({dest: 'uploads/'});
 
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
@@ -234,6 +243,22 @@ app.get('/signoff', (req, res) => {
     req.session.destroy();
     res.json({id: null});
 })
+
+app.post('/changePhoto', upload.single('image'), (req,res) => {
+    console.log(req.file);
+    console.log(req.session);
+    const photo = fs.readFile(req.file.path, (err, data) => {
+        if(err) console.log(err);
+        if(data) console.log(data);
+    });
+    // fd.append('image', req.file, req.file.originalname);
+    // s3.upload({Bucket: photoBucket, Key: credentials.awsKey, Body: fd}, (err, data) => {
+    //     if (err) console.log(err);
+    //     if (data) console.log(data);
+    // });
+})
+
+
 
 app.get('*', (req,res)=>{
     res.sendFile(path.join(__dirname, '/build/index.html') );

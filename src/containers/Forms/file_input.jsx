@@ -5,8 +5,10 @@ function FileInput(field) {
      return (
          <div className="form-group">
             <input type="file"
+                    formEncType='multipart/form-data'
                     name={field.name}
                     placeholder={field.placeholder}
+                    accept={field.types}
                     {...field.input}/>
 
             <p className='form__error'>
