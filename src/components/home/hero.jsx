@@ -14,8 +14,8 @@ class Hero extends Component{
                     <h1 className="heading-primary">
                         Anytime, anywhere.
                     </h1>
-                    <Link to="/registration" className="btn btn--purple u-margin-right-big u-margin-top-small">get started</Link>
-                    <Link to="/registration" className="btn btn--transparent">learn more</Link>
+                    <Link to="/registration" className="btn btn--purple u-margin-right-big u-margin-top-small">Create Account</Link>
+                    <Link to="/registration" className="btn btn--purple">Enter my studio</Link>
                 </div>
                 
             </section>

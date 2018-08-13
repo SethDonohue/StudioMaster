@@ -13,19 +13,44 @@ class Features extends Component{
         return(
             <section className="section-features">
                 <div className="top-features">
-                    <div className="top-features__info">
-                        <h2 className="heading-secondary u-margin-bottom-xs">
-                            Create. Share. Collaborate.
-                        </h2>
-                        <h2 className="heading-secondary">
-                            No experience required
-                        </h2>
-                        <p>
-                            StudioMaster is a cloud-based music studio, empowering musicians with the tools to work together in real-time from anywhere in the world. 
-                        </p>
-                        <Link to="#" className="btn btn--transparent">learn more</Link>
+                    <h1 className="heading-primary bottom-features__header u-center-text u-margin-bottom-medium">
+                        Intuitive, powerful features
+                    </h1>
+                    <div className="bottom-features__divider u-margin-bottom-medium">
+                        
                     </div>
-                </div>
+                    <div className="bottom-features__three-cards">
+                            <div className="row">
+                                <div className="col-1-3">
+                                    <div className="bottom-features__card">
+                                        <i className="fas fa-play-circle bottom-features__icon"></i>
+                                        <h3 className="heading-tertiary">
+                                            Easily create music and tracks
+                                        </h3>
+                                        
+                                    </div>
+                                </div>
+                                <div className="col-1-3">
+                                    <div className="bottom-features__card">
+                                        <i className="fas fa-rocket bottom-features__icon"></i>
+                                        <h3 className="heading-tertiary">
+                                            Publish & share
+                                        </h3>
+                                        
+                                    </div>
+                                </div>
+                                <div className="col-1-3">
+                                    <div className="bottom-features__card">
+                                        <i className="fas fa-comments bottom-features__icon"></i>
+                                        <h3 className="heading-tertiary">
+                                            Collaborate in real-time online
+                                        </h3>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 <div className="features">
                     <div className="features__image-box">
@@ -48,7 +73,7 @@ class Features extends Component{
 
                 </div>
 
-                <div className="bottom-features">
+                {/* <div className="bottom-features">
                     <h1 className="heading-primary bottom-features__header u-center-text u-margin-bottom-medium">
                         Intuitive, powerful features
                     </h1>
@@ -117,7 +142,7 @@ class Features extends Component{
                             <Link to="/" className="link">Learn More &rarr;</Link>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="billboard">
                     <div className="billboard__info">

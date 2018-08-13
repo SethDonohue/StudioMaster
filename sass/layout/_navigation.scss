@@ -22,9 +22,9 @@
 
 	&__logo {
 		position: absolute;
-		top: 2rem;
+		top: 1.3rem;
 		left: 5rem;
-		height: 6rem;
+		height: 4.5rem;
 	}
 
 	&__brand {
@@ -33,7 +33,6 @@
 
 	&__nav {
 		float: right;
-		display: inline-block;
 		margin-right: 5rem;
 	}
 
@@ -69,7 +68,7 @@
 
 		&:link,
 		&:visited {
-			font-size: 1.5rem;
+			font-size: 1.7rem;
 			color: $color-primary-light;
 			display: inline-block;
 			text-decoration: none;
@@ -87,7 +86,7 @@
 	}
 
 	&__log-in {
-		font-size: $default-font;
+		font-size: 1.7rem;
 		cursor: pointer;
 		color: $color-primary-light;
 		font-weight: 700;
