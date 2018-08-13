@@ -6,15 +6,24 @@ const path = require('path');
 const cors = require("cors");
 const bcrypt = require('bcrypt-nodejs');
 const session = require('express-session');
+
 const fs = require('fs');
 const multer = require('multer');
 
-const storage = multer.diskStorage({
-    filename: function(req, file, cb) {
-        cb(null, new Date().toISOString() + file.originalname);
-    }
-})
-const upload = multer({dest: 'uploads/'});
+const filename = (req, file, cb) => cb(null, file.originalname);
+const destination = (req, file, cb) => cb(null, 'uploads/'); 
+
+// const storage = multer.diskStorage({
+//     filename: function(req, file, cb) {
+//         cb(null, file.originalname);
+//     },
+//     destination: function (req, file, cb) {
+//         cb(null, 'uploads')
+//       }
+// })
+
+const storage = multer.diskStorage({filename, destination});
+const upload = multer({ storage });
 
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
@@ -245,17 +254,14 @@ app.get('/signoff', (req, res) => {
 })
 
 app.post('/changePhoto', upload.single('image'), (req,res) => {
-    console.log(req.file);
+    console.log(req.file.path);
     console.log(req.session);
-    const photo = fs.readFile(req.file.path, (err, data) => {
-        if(err) console.log(err);
-        if(data) console.log(data);
+    const photo = fs.readFileSync('./' + req.file.path);
+    
+    s3.upload({Bucket: photoBucket, Key: Date.now() + req.file.originalname, Body: photo, ACL: 'public-read'}, (err, data) => {
+        if (err) console.log(err);
+        if (data) console.log(data);
     });
-    // fd.append('image', req.file, req.file.originalname);
-    // s3.upload({Bucket: photoBucket, Key: credentials.awsKey, Body: fd}, (err, data) => {
-    //     if (err) console.log(err);
-    //     if (data) console.log(data);
-    // });
 })
 
 

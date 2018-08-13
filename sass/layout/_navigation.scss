@@ -22,7 +22,7 @@
 
 	&__logo {
 		position: absolute;
-		top: 1.3rem;
+		top: .9rem;
 		left: 5rem;
 		height: 4.5rem;
 	}
@@ -32,7 +32,9 @@
 	}
 
 	&__nav {
-		float: right;
+		position: absolute;
+		right: 0;
+		top: -1.7rem;
 		margin-right: 5rem;
 	}
 
