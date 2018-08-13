@@ -1,5 +1,6 @@
 .top-features{
 	background: linear-gradient(to top, $color-primary-dark, $color-primary-light);
+	padding: 1.6rem 2rem;
 
 	&__info{
 		padding: 6rem;
@@ -24,7 +25,7 @@
 
 .features {
 	color: $color-grey;
-	padding: 10rem 5rem;
+	padding: 0 5rem;
 	background-color: $color-grey;
 
 	&__image-box {
@@ -70,16 +71,16 @@
 
 .bottom-features {
 	position: relative;
-	padding: 5rem;
+	padding: 2rem 4rem;
 	background-color: $color-grey-light;
 	
 	&__header {
-		color: $color-primary;
+		color: $color-white;
 	}
 
 	&__divider {
 		margin-bottom: 4rem;
-		background-color: $color-primary;
+		background-color: $color-grey;
 		height: 4px;
 		width: 10rem;
 		position: relative;
@@ -105,11 +106,11 @@
 	&__card {
 		padding: 4rem 2rem;
 		width: 90%;
+		cursor: pointer;
 		height: auto;
-		color: $color-black;
+		color: $color-white;
 		text-align: center;
-		background-color: $color-white;
-		box-shadow: $shadow-center-light;
+		background-color: transparent;
 		border-radius: 1rem;
 		transition: $ease-in-out;
 
@@ -125,7 +126,7 @@
 		}
 
 		&:hover {
-			box-shadow: $shadow-center-dark;
+			
 		}
 
 		&:hover .bottom-features__icon {

@@ -1,6 +1,9 @@
 .section-hero {
     height: 85vh;
-    background-image: url("../img/StudioMan.jpg");
+    // background-image: linear-gradient(to right bottom, rgba($color-black, .4), rgba($color-black, .25)),
+    //                     url("../img/StudioMaster-front-page.jpeg");
+    background-image:   linear-gradient(to right, rgba($color-black, .2), rgba($color-black, .55)),
+                        url("../img/StudioMaster-front-page-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 60%;

@@ -173,9 +173,11 @@ ul, li {
 .billboard {
   width: 100%;
   height: 60vh;
-  background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("../img/turntable.jpg");
+  background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("../img/billboard.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: 50% 80%;
+  -webkit-filter: grayscale(80%);
+  filter: grayscale(80%);
   position: relative; }
   .billboard__info {
     position: absolute;
@@ -309,7 +311,8 @@ ul, li {
   color: #4d4d4d; }
 
 .top-features {
-  background: linear-gradient(to top, #19072d, #4b1486); }
+  background: linear-gradient(to top, #19072d, #4b1486);
+  padding: 1.6rem 2rem; }
   .top-features__info {
     padding: 6rem;
     width: 45%; }
@@ -328,7 +331,7 @@ ul, li {
 
 .features {
   color: #e5e5e5;
-  padding: 10rem 5rem;
+  padding: 0 5rem;
   background-color: #e5e5e5; }
   .features__image-box {
     max-height: 40rem;
@@ -364,13 +367,13 @@ ul, li {
 
 .bottom-features {
   position: relative;
-  padding: 5rem;
+  padding: 2rem 4rem;
   background-color: white; }
   .bottom-features__header {
-    color: #320d59; }
+    color: #fff; }
   .bottom-features__divider {
     margin-bottom: 4rem;
-    background-color: #320d59;
+    background-color: #e5e5e5;
     height: 4px;
     width: 10rem;
     position: relative;
@@ -388,11 +391,11 @@ ul, li {
   .bottom-features__card {
     padding: 4rem 2rem;
     width: 90%;
+    cursor: pointer;
     height: auto;
-    color: #000;
+    color: #fff;
     text-align: center;
-    background-color: #fff;
-    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+    background-color: transparent;
     border-radius: 1rem;
     transition: ease-in-out all 0.15s; }
     .bottom-features__card p {
@@ -401,8 +404,6 @@ ul, li {
       @media (max-width: 56.25em) {
         .bottom-features__card p {
           display: none; } }
-    .bottom-features__card:hover {
-      box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
     .bottom-features__card:hover .bottom-features__icon {
       -webkit-background-clip: text;
       background-clip: text;
@@ -919,8 +920,8 @@ section.section-login .form__login-submit {
 
 .buffer {
   width: 100%;
-  height: 10rem;
-  background: linear-gradient(to bottom, #cccccc, #a5a5a5); }
+  height: 6rem;
+  background: linear-gradient(to top, #e5e5e5, #bfbfbf); }
 
 .row {
   max-width: 114rem;
@@ -1131,14 +1132,13 @@ section.section-login .form__login-submit {
     display: inline-block; }
   .navigation__logo {
     position: absolute;
-    top: 2rem;
+    top: 1.3rem;
     left: 5rem;
-    height: 6rem; }
+    height: 4.5rem; }
   .navigation__brand {
     font-size: 3rem; }
   .navigation__nav {
     float: right;
-    display: inline-block;
     margin-right: 5rem; }
   .navigation__nav-container {
     display: inline-block; }
@@ -1162,7 +1162,7 @@ section.section-login .form__login-submit {
     padding: 0 1rem;
     font-weight: 700; }
     .navigation__link:link, .navigation__link:visited {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       color: #4b1486;
       display: inline-block;
       text-decoration: none; }
@@ -1173,7 +1173,7 @@ section.section-login .form__login-submit {
     width: 100%;
     background-color: #cccccc; }
   .navigation__log-in {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     cursor: pointer;
     color: #4b1486;
     font-weight: 700;
@@ -1194,7 +1194,7 @@ section.section-login .form__login-submit {
 
 .section-hero {
   height: 85vh;
-  background-image: url("../img/StudioMan.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)), url("../img/StudioMaster-front-page-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 60%;
