@@ -260,7 +260,13 @@ app.post('/changePhoto', upload.single('image'), (req,res) => {
     
     s3.upload({Bucket: photoBucket, Key: Date.now() + req.file.originalname, Body: photo, ACL: 'public-read'}, (err, data) => {
         if (err) console.log(err);
-        if (data) console.log(data);
+        if (data) 
+        {
+            console.log(req.session);
+            console.log(data);
+            // con.query(`UPDATE users SET 'imgURL' = ${data.url} WHERE('id' = ${req.session.id});`)
+            // Since we'll have a user id in session at this time, store the returned S3 Entry URL in the SQL DB
+        }
     });
 })
 
