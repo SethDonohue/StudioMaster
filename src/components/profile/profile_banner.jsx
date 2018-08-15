@@ -10,13 +10,13 @@ class Banner extends Component {
     
 
     render(){
-        console.log(this.props.login)
+        console.log(this.props.artist)
         return (
             <section className='banner'>
                 {this.props.login.data.id === this.props.artist.id ? <Popup trigger={<i className="fas fa-edit banner__edit-icon"></i>} className='banner__add-photo' modal>
-                    <ChangePhoto />
+                    <ChangePhoto userId={this.props.login.data.id} />
                 </Popup> : ""}
-                <img src={profileStock} alt="Profile Picture" className="banner__img"/>
+                <img src={this.props.artist.imageURL !== null ? this.props.artist.imageURL : profileStock} alt="Profile Picture" className="banner__img"/>
                 <div className="banner__info">
                     <h5 className='banner__text'>
                         ARTIST

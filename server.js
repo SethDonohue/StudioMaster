@@ -10,17 +10,12 @@ const session = require('express-session');
 const fs = require('fs');
 const multer = require('multer');
 
+// Config
+
+const app = express();
+
 const filename = (req, file, cb) => cb(null, file.originalname);
 const destination = (req, file, cb) => cb(null, 'uploads/'); 
-
-// const storage = multer.diskStorage({
-//     filename: function(req, file, cb) {
-//         cb(null, file.originalname);
-//     },
-//     destination: function (req, file, cb) {
-//         cb(null, 'uploads')
-//       }
-// })
 
 const storage = multer.diskStorage({filename, destination});
 const upload = multer({ storage });
@@ -31,18 +26,8 @@ const s3 = new AWS.S3();
 const photoBucket = 'studiomaster.photo.bucket';
 const audioBucket = 'studiomaster.audio.bucket';
 
-
-// s3.upload({Bucket: photoBucket, Key: , Body: 'Hello'}, (err, data) => {
-//     if (err) console.log(err);
-//     if (data) console.log(data);
-// })
-
 const mysql = require('mysql');
 const credentials = require('./mysqlconnection');
-
-// Config
-
-const app = express();
 
 app.use(session({ 
 
@@ -254,18 +239,18 @@ app.get('/signoff', (req, res) => {
 })
 
 app.post('/changePhoto', upload.single('image'), (req,res) => {
-    console.log(req.file.path);
-    console.log(req.session);
     const photo = fs.readFileSync('./' + req.file.path);
     
     s3.upload({Bucket: photoBucket, Key: Date.now() + req.file.originalname, Body: photo, ACL: 'public-read'}, (err, data) => {
         if (err) console.log(err);
         if (data) 
         {
-            console.log(req.session);
-            console.log(data);
-            // con.query(`UPDATE users SET 'imgURL' = ${data.url} WHERE('id' = ${req.session.id});`)
-            // Since we'll have a user id in session at this time, store the returned S3 Entry URL in the SQL DB
+            // console.log(data);
+            con.query(`UPDATE users SET imageURL = '${data.Location}' WHERE(id = ${req.body.id});`, (err, result) => {
+                if(err) console.log(err);
+                // if(result) console.log(result);
+                fs.unlinkSync(req.file.path); // delete file from local storage.
+            })
         }
     });
 })

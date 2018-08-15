@@ -840,7 +840,7 @@ section.section-login .form__login-submit {
     font-size: 2rem;
     text-transform: uppercase; }
   .profile-tracks__track-container {
-    padding: 2rem 8rem; }
+    padding: 2rem 0; }
 
 .slide-list {
   padding: 0 13rem;
@@ -889,34 +889,27 @@ section.section-login .form__login-submit {
       display: none; }
 
 .track {
-  height: 24rem;
-  width: 18rem;
+  width: 30%;
   display: inline-block;
-  margin: 0 6rem 2rem 0;
-  position: relative;
-  background-size: contain;
-  cursor: pointer; }
-  .track__play {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 5rem;
-    opacity: .5;
-    color: #333; }
-  .track__text-box {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: #333;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    cursor: initial; }
-  .track__title {
-    color: #fff; }
-  .track__release {
-    color: #cccccc; }
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+  background-color: #b2b2b2; }
+  @media (max-width: 75em) {
+    .track {
+      width: 45%; }
+      .track:last-child {
+        display: none; } }
+  .track:hover {
+    background-color: #a5a5a5;
+    cursor: pointer; }
+  .track__image-container {
+    display: inline-block; }
+  .track__image {
+    width: 12rem; }
+  .track__info {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1rem; }
 
 .buffer {
   width: 100%;

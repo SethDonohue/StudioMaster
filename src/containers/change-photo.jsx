@@ -13,6 +13,7 @@ class ChangePhoto extends Component {
     onSubmit(values){
         const formData = new FormData();
         formData.append('image', this.state.photo, this.state.photo.name);
+        formData.append('id', this.props.userId);
         axios.post('http://localhost:8080/changePhoto', formData)
             
     }
@@ -48,6 +49,8 @@ function validate(values){
 
     return errors;
 }
+
+
 
 export default reduxForm({
     validate,

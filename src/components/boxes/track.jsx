@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { changeSong } from '../../actions/audio_actions';
 
-import Logo from '../../img/logos/StudioMaster-Site-Icon_Purple.png'
+import Logo from '../../img/placeholders/vinyl.jpeg';
 
 class Track extends Component {
 
@@ -22,13 +22,15 @@ class Track extends Component {
 
         const trackImage = this.props.trackImage ? this.props.trackImage : Logo;
         return(
-            <div className="track"
-            style={{backgroundImage:`url(${Logo})`}}
-            onClick={this.setTrack.bind(this)}>
-                <i className="far fa-play-circle track__play"></i>
-                <div className="track__text-box">
-                    <p className="track__title">{this.props.title}</p>
-                    <p className="track__release">DATE</p>
+            <div className='track'>
+                <div className="track__image-container">
+                    <img src={this.props.track.coverURL ? this.props.track.coverURL : Logo} alt="track-cover" className="track__image"/>
+                </div>
+                <div className="track__info">
+                    <h5 className="track__title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Title"}</h5>
+                    <p className="track__artists">Artist Name</p>
+                    <p className="track__length">Time code</p>
+                    <p className="track__date">Release date</p>
                 </div>
             </div>
         )
