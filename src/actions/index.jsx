@@ -12,7 +12,7 @@ export const SIGN_OFF = 'SIGN_OFF';
 
 //8080 for DEVELOPMENT "" for PRODUCTION.  Need to come up with a better system.
 
-const ROOT_URL = "http://localhost:8080"
+export const ROOT_URL = "http://localhost:8080"
 // const ROOT_URL = "";
 
 export function fetchLogin (credentials){

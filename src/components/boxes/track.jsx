@@ -8,6 +8,8 @@ import Logo from '../../img/placeholders/vinyl.jpeg';
 
 class Track extends Component {
 
+    state = {active: false};
+
     setTrack(){
 
         const track = {
@@ -18,22 +20,53 @@ class Track extends Component {
         this.props.changeSong(track);
     }
 
+    changeState(){
+        if(this.state.active === true) this.setState({active: false});
+        if(this.state.active === false) this.setState({active: true});
+        console.log(this.state);
+        
+    }
+
     render() {
 
-        const trackImage = this.props.trackImage ? this.props.trackImage : Logo;
-        return(
-            <div className='track'>
-                <div className="track__image-container">
-                    <img src={this.props.track.coverURL ? this.props.track.coverURL : Logo} alt="track-cover" className="track__image"/>
+        if(this.state.active == false) 
+        {
+            return(
+                <div className='track' onClick={this.changeState.bind(this)}>
+                    <div className="track__image-container">
+                        <img src={this.props.track.coverURL ? this.props.track.coverURL : Logo} alt="track-cover" className="track__image"/>
+                    </div>
+                    <div className="track__info">
+                        <div className="track__title-container">
+                            <h5 className="track__title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Title that is obnoxiously long and will take 2 lines but will it break?"}</h5>
+                        </div>
+                        <p className="track__artists">Artist Name</p>
+                        <p className="track__length">Time code</p>
+                        <p className="track__date">Release date</p>
+                    </div>
                 </div>
-                <div className="track__info">
-                    <h5 className="track__title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Title"}</h5>
-                    <p className="track__artists">Artist Name</p>
-                    <p className="track__length">Time code</p>
-                    <p className="track__date">Release date</p>
+            )
+        }
+        else
+        {
+            return(
+                <div className="track__active" onClick={this.changeState.bind(this)}>
+                    <div className="track__active-title-container">
+                        <h5 className="track__active-title">Title that also should be ridiculously large in order to take up 2 lines and eventually 3 to see if the design breaks. Little bit more...</h5>
+                    </div>
+                    <p className="track__active-billboard">Billboard</p>
+                    <div className="track__active-metrics">
+                        <p className="track__active-info">Listens</p>
+                        <p className="track__active-info">Favorites</p>
+                    </div>
+                    <div className="track__active-actions">
+                        <i className="fas fa-plus track__active-icons"></i>
+                        <i className="fas fa-list track__active-icons"></i>
+                        <i className="fab fa-itunes-note track__active-icons"></i>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

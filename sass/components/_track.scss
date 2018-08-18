@@ -4,9 +4,10 @@
     margin-right: 3rem;
     margin-bottom: 2rem;
     background-color: darken($color-grey-dark, 10%);
+    height: 12rem;
 
     @include respond(tab-land){
-        width: 45%;
+        width: 43%;
 
         &:last-child{
             display: none;
@@ -30,5 +31,94 @@
         display: inline-block;
         vertical-align: top;
         padding: 1rem;
+        width: 60%;
+
+        @include respond(tab-land){
+            width: 70%;
+    
+        }
+        @include respond(phone){
+            width: 50%;
+    
+        }
+    }
+
+    &__title-container {
+        height: 4rem;
+        // max-height: 4rem;
+        overflow: hidden;
+    }
+
+    // &__title {
+        
+    // }
+
+    &__active {
+        width: 30%;
+        display: inline-block;
+        margin-right: 3rem;
+        margin-bottom: 2rem;
+        background: linear-gradient(to bottom, $color-primary-light, $color-primary-dark);
+        padding: 1rem;
+        position: relative;
+        vertical-align: top;
+        height: 12rem;
+
+        @include respond(tab-land){
+            width: 43%;
+
+            &:last-child{
+                display: none;
+            }
+        }
+
+        &:hover{
+            background: linear-gradient(to bottom, darken($color-primary-light, 5%), darken($color-primary-dark, 5%));
+        }
+
+        &-title-container {
+            max-height: 4rem;
+            overflow: hidden;
+        }
+
+        &-title {
+            color: $color-white;
+        }
+
+        &-billboard {
+            color: $color-white;
+        }
+
+        &-metrics {
+            position: absolute;
+            bottom: 3%;
+            left: 2%;
+        }
+
+        &-info{
+            color: $color-white;
+        }
+
+        &-actions {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            color: $color-white;
+        }
+
+        &-icons {
+            color: $color-white;
+            font-size: 2.2rem;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            &:hover{
+                color: $color-grey-dark;
+                cursor: pointer;
+            }
+        }
+
     }
 }
