@@ -14,12 +14,17 @@ class AddTrack extends Component {
     state = {track : null};
 
     onSubmit(values) {
-        console.log(values);
-        console.log(this.state.track);
+        // console.log(values);
+        // console.log(this.state.track);
+        // console.log(this.props.login);
 
         const track = new FormData();
-        track.append('')
-        this.props.newTrack()
+        track.append('track', this.state.track, this.state.track.name);
+        track.append('id', this.props.login.data.id);
+        track.append('title', values.title);
+        track.append('description', values.description);
+
+        this.props.newTrack(track)
     }
 
     fileSelectedHandler(event){
@@ -55,7 +60,11 @@ class AddTrack extends Component {
     }
 }
 
+function mapStateTopProps({ login }){
+    return{ login };
+}
+
 export default reduxForm({
     validate: validations,
     form: 'addtrack'
-})(connect(null, { newTrack })(AddTrack))
+})(connect(mapStateTopProps, { newTrack })(AddTrack))

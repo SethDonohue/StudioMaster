@@ -258,12 +258,15 @@ app.post('/changePhoto', upload.single('image'), (req,res) => {
 app.post('/newTrack', upload.single('track'), (req, res) => {
     const track = fs.readFileSync('./' + req.file.path);
 
-    s3.upload({Bucket: audioBucket, Key: Date.now() + req.file.originalname, Body: photo, ACL: 'public-read'}, (err, data) => {
+    // console.log(req.body);
+    // console.log(req.file);
+
+    s3.upload({Bucket: audioBucket, Key: Date.now() + req.file.originalname, Body: track, ACL: 'public-read'}, (err, data) => {
         if (err) console.log(err);
         if (data) 
         {
             // console.log(data);
-            con.query(`Insert into Track (trackTitle, trackDescription, trackURL, coverURL, created_at, updated_at, user_id, listens) VALUES ('${req.body.title}', '${req.body.description ? req.body.description : null}', '${data.Location}', null, now(), now(), '${req.body.id}', 0);`, (err, result) => {
+            con.query(`Insert into Tracks (trackTitle, trackDescription, trackURL, coverURL, created_at, updated_at, user_id, listens) VALUES ('${req.body.title}', '${req.body.description ? req.body.description : null}', '${data.Location}', null, now(), now(), '${req.body.id}', 0);`, (err, result) => {
                 if(err) console.log(err);
                 // if(result) console.log(result);
                 fs.unlinkSync(req.file.path); // delete file from local storage.
