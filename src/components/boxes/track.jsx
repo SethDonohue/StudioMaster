@@ -8,13 +8,12 @@ import Logo from '../../img/placeholders/vinyl.jpeg';
 
 class Track extends Component {
 
-    state = {active: false};
-
     setTrack(){
 
         const track = {
-            track: this.props.track,
-            title: this.props.title
+            id: this.props.track.id,
+            track: this.props.track.trackURL,
+            title: this.props.track.trackTitle
         }
 
         this.props.changeSong(track);
@@ -29,30 +28,13 @@ class Track extends Component {
 
     render() {
 
-        if(this.state.active == false) 
+        if(this.props.song && this.props.song.track.id === this.props.track.id)
         {
+            console.log(this.props.song)
             return(
-                <div className='track' onClick={this.changeState.bind(this)}>
-                    <div className="track__image-container">
-                        <img src={this.props.track.coverURL ? this.props.track.coverURL : Logo} alt="track-cover" className="track__image"/>
-                    </div>
-                    <div className="track__info">
-                        <div className="track__title-container">
-                            <h5 className="track__title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Title that is obnoxiously long and will take 2 lines but will it break?"}</h5>
-                        </div>
-                        <p className="track__artists">Artist Name</p>
-                        <p className="track__length">Time code</p>
-                        <p className="track__date">Release date</p>
-                    </div>
-                </div>
-            )
-        }
-        else
-        {
-            return(
-                <div className="track__active" onClick={this.changeState.bind(this)}>
+                <div className="track__active">
                     <div className="track__active-title-container">
-                        <h5 className="track__active-title">Title that also should be ridiculously large in order to take up 2 lines and eventually 3 to see if the design breaks. Little bit more...</h5>
+                        <h5 className="track__active-title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Track Title"}</h5>
                     </div>
                     <p className="track__active-billboard">Billboard</p>
                     <div className="track__active-metrics">
@@ -67,11 +49,34 @@ class Track extends Component {
                 </div>
             )
         }
+
+        else 
+        {
+            return(
+                <div className='track' onClick={this.setTrack.bind(this)}>
+                    <div className="track__image-container">
+                        <img src={this.props.track.coverURL ? this.props.track.coverURL : Logo} alt="track-cover" className="track__image"/>
+                    </div>
+                    <div className="track__info">
+                        <div className="track__title-container">
+                            <h5 className="track__title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Track Title"}</h5>
+                        </div>
+                        <p className="track__artists">Artist Name</p>
+                        <p className="track__length">Time code</p>
+                        <p className="track__date">Release date</p>
+                    </div>
+                </div>
+            )
+        }
     }
+}
+
+function mapStateToProps({ song }){
+    return { song }
 }
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({ changeSong } ,dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(Track);
+export default connect(mapStateToProps, mapDispatchToProps)(Track);

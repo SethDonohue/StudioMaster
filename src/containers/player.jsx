@@ -95,7 +95,7 @@ class Player extends Component {
                 })
             }
 
-            this.seekButton.style.left = ((this.props.song.sound.seek() / this.state.duration) * 100) + '%';
+            // this.seekButton.style.left = ((this.props.song.sound.seek() / this.state.duration) * 100) + '%';
         }
     }
 

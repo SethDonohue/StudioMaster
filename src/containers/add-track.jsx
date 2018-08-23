@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { newTrack } from '../actions/audio_actions';
 
+import axios from 'axios';
+
 import FileInput from './Forms/file_input';
 import TextInput from './Forms/text_input';
 
@@ -24,7 +26,7 @@ class AddTrack extends Component {
         track.append('title', values.title);
         track.append('description', values.description);
 
-        this.props.newTrack(track)
+        this.props.newTrack(track);
     }
 
     fileSelectedHandler(event){

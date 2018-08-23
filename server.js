@@ -250,6 +250,7 @@ app.post('/changePhoto', upload.single('image'), (req,res) => {
                 if(err) console.log(err);
                 // if(result) console.log(result);
                 fs.unlinkSync(req.file.path); // delete file from local storage.
+                res.json('success')
             })
         }
     });
@@ -258,8 +259,8 @@ app.post('/changePhoto', upload.single('image'), (req,res) => {
 app.post('/newTrack', upload.single('track'), (req, res) => {
     const track = fs.readFileSync('./' + req.file.path);
 
-    // console.log(req.body);
-    // console.log(req.file);
+    console.log(req.body);
+    console.log(req.file);
 
     s3.upload({Bucket: audioBucket, Key: Date.now() + req.file.originalname, Body: track, ACL: 'public-read'}, (err, data) => {
         if (err) console.log(err);
@@ -275,6 +276,14 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
     });
 })
 
+ app.get('/fetchProfileTracks/:id', (req,res) => {
+    con.query(`SELECT * FROM Tracks WHERE (user_id = ${req.params.id}) ORDER BY created_at DESC LIMIT 0, 9`, (err, tracks) => {
+        if(err) console.log(err);
+        if(tracks) {
+            res.json( {tracks} )
+        }
+    })
+})
 
 
 app.get('*', (req,res)=>{

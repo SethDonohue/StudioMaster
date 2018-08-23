@@ -14,8 +14,9 @@ function NewSong (state = null, action) {
 
             
             const sound = new Howl({
-                src: [action.payload.track],
-                autoplay: true
+                src: [action.payload.trackURL],
+                autoplay: true,
+                html5: true
             });
             
             

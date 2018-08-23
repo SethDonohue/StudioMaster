@@ -6,6 +6,7 @@ import checkUsernameReducer from "./reducer_check-username";
 import userProfile from "./reducer_user-profile";
 import photoReducer from "./reducer_photo";
 
+import tracksReducer from "./reducer_all-tracks";
 import newSong from "./reducer_song"; 
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
     userProfile: userProfile,
     checkLogin: checkLoginReducer,
     checkUsername: checkUsernameReducer,
+    allTracks: tracksReducer,
     song: newSong,
     photo: photoReducer
 });

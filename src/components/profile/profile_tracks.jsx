@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
 import { Link } from 'react-router-dom';
 import Track from '../boxes/track';
 
-import Song from '../../samples/guitar.wav';
+import {fetchProfileTracks} from "../../actions/audio_actions";
 
 class ProfileTracks extends Component {
     constructor(){
         super();
 
-        this.state = {
-            songs: [Song, Song, Song, Song, Song, Song, Song, Song, Song]
-        }
         this.createTracks.bind(this);
+    }
+
+    componentWillMount(){
+        this.props.fetchProfileTracks(this.props.artist.id)
     }
 
 
     createTracks() {
-        return this.state.songs.map(song => {
-            return <Track track={song} title='Track Title'/>
+        return this.props.allTracks.tracks.map(song => {
+            return <Track track={song} />
         })
     }
 
 
     render(){
+        console.log(this.props.allTracks);
         
         return(
             <section className="profile-tracks">
@@ -32,11 +35,14 @@ class ProfileTracks extends Component {
                 </div>
 
                 <div className="profile-tracks__track-container">
-                    {this.createTracks()}
+                    {this.props.allTracks !== null && this.props.allTracks.tracks.length ? this.createTracks() : "This user hasn't created any tracks yet."}
                 </div>
             </section>
         )
     }
 }
+function mapStateToProps({ allTracks }){
+    return { allTracks };
+}
 
-export default ProfileTracks;
+export default connect(mapStateToProps, { fetchProfileTracks })(ProfileTracks);
