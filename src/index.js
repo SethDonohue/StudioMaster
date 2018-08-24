@@ -14,6 +14,7 @@ import rootReducer from './reducers/index.jsx';
 import Home from './components/Home.jsx';
 import Registration from './components/Registration.jsx';
 import Profile from './components/Profile.jsx';
+import AllTracksPage from "./containers/all-tracks";
 import Company from "./components/Company.jsx";
 import Community from "./components/Community";
 import Support from "./components/Support.jsx";
@@ -32,6 +33,7 @@ ReactDOM.render(
                     <Route path='/company' component={Company} />
                     <Route path='/registration' component={Registration} />
                     <Route path='/profile/:id' component={Profile} />
+                    <Route path='/all-tracks/profile/:id' component={AllTracksPage} />
                     <Route path='/' component={Home} />
                 </Switch>
                 <Player />

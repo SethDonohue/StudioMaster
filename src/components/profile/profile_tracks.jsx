@@ -31,7 +31,7 @@ class ProfileTracks extends Component {
         return(
             <section className="profile-tracks">
                 <div className="profile-tracks__link-container">
-                    <Link to={`/all-tracks/profile=${this.props.artist.id}`} className="profile-tracks__link">All Tracks</Link>
+                    <Link to={`/all-tracks/profile/${this.props.artist.id}`} className="profile-tracks__link">All Tracks</Link>
                 </div>
 
                 <div className="profile-tracks__track-container">

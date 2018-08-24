@@ -18,7 +18,7 @@ const filename = (req, file, cb) => cb(null, file.originalname);
 const destination = (req, file, cb) => cb(null, 'uploads/'); 
 
 const storage = multer.diskStorage({filename, destination});
-const upload = multer({ storage });
+const upload = multer({ storage: storage, limits: {fileSize: 50*1024*1024} });
 
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
@@ -38,7 +38,7 @@ app.use(session({
 
 }));
 
-app.use(bp.json());
+app.use(bp.json({limit: '30mb'}));
 
 
 
@@ -276,10 +276,21 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
     });
 })
 
+//Track Fetching Routes
+
  app.get('/fetchProfileTracks/:id', (req,res) => {
     con.query(`SELECT * FROM Tracks WHERE (user_id = ${req.params.id}) ORDER BY created_at DESC LIMIT 0, 9`, (err, tracks) => {
         if(err) console.log(err);
         if(tracks) {
+            res.json( {tracks} )
+        }
+    })
+})
+
+app.get('/fetchAllTracks/:id', (req,res) => {
+    con.query(`SELECT * FROM Tracks WHERE(user_id = ${req.params.id}) ORDER BY created_at DESC;`, (err, tracks) => {
+        if(err) console.log(err);
+        if(tracks){
             res.json( {tracks} )
         }
     })
