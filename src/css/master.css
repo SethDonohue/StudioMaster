@@ -843,6 +843,12 @@ section.section-login .form__login-submit {
     padding: 2rem 0;
     padding-left: 4rem; }
 
+.all-tracks__container {
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+  padding: 0 1rem; }
+
 .slide-list {
   padding: 0 13rem;
   color: #fff;

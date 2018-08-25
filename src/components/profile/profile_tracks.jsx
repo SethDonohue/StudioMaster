@@ -20,13 +20,12 @@ class ProfileTracks extends Component {
 
     createTracks() {
         return this.props.allTracks.tracks.map(song => {
-            return <Track track={song} />
+            return <Track track={song} key={song.id} />
         })
     }
 
 
     render(){
-        console.log(this.props.allTracks);
         
         return(
             <section className="profile-tracks">

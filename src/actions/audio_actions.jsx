@@ -5,6 +5,7 @@ export const CHANGE_SONG = "CHANGE_SONG";
 export const CLEAR_SONG = "CLEAR_SONG";
 export const NEW_TRACK = 'NEW_TRACK';
 export const FETCH_TRACKS_PROFILE = 'FETCH_TRACKS_PROFILE';
+export const FETCH_TRACKS_ALL = 'FETCH_TRACKS_ALL'
 
 
 export function changeSong(track){
@@ -39,6 +40,17 @@ export function fetchProfileTracks(id){
 
     return {
         type: FETCH_TRACKS_PROFILE,
+        payload: request
+    }
+}
+
+export function fetchAllTracks(id){
+    const url = `${ROOT_URL}/fetchAllTracks/${id}`;
+
+    const request = axios.get(url);
+
+    return {
+        type: FETCH_TRACKS_ALL,
         payload: request
     }
 }

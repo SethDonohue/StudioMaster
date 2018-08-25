@@ -68,7 +68,6 @@ class Profile extends Component {
                         <NavBtn />
                         <Banner artist={this.props.userProfile[0]} />
                         {this.props.login !== null && this.props.login.data.id === this.props.userProfile[0].id ? <Actions /> : ''}
-                        {/* <Actions /> */}
                         <Info artist={this.props.userProfile[0]} />
                         <Tracks artist={this.props.userProfile[0]} />
                         <Footer />

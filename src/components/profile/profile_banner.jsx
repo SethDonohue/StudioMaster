@@ -10,7 +10,7 @@ class Banner extends Component {
     
 
     render(){
-        console.log(this.props.artist)
+        
         return (
             <section className='banner'>
                 {this.props.login.data.id === this.props.artist.id ? <Popup trigger={<i className="fas fa-edit banner__edit-icon"></i>} className='banner__add-photo' modal>

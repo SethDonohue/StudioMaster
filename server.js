@@ -288,7 +288,7 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
 })
 
 app.get('/fetchAllTracks/:id', (req,res) => {
-    con.query(`SELECT * FROM Tracks WHERE(user_id = ${req.params.id}) ORDER BY created_at DESC;`, (err, tracks) => {
+    con.query(`SELECT * FROM Tracks WHERE(user_id = ${req.params.id}) ORDER BY created_at DESC LIMIT 0, 100;`, (err, tracks) => {
         if(err) console.log(err);
         if(tracks){
             res.json( {tracks} )

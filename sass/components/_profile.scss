@@ -265,3 +265,13 @@
 // .photoForm {
     
 // }
+
+.all-tracks {
+
+    &__container {
+        width: 85%;
+        display: block;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+}
