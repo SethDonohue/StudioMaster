@@ -29,7 +29,10 @@ class Banner extends Component {
                 </div>
                 <div className="banner__actions">
                     <Link to='/' className='btn btn--orange'>My Mix Board</Link>
-                    <button className='btn btn--grey'>Edit Profile</button>
+                    <Popup trigger={<button className='btn btn--grey'>Edit Profile</button>} modal>
+                        
+                    </Popup>
+                    
                 </div>
             </section>
         )
