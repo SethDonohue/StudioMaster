@@ -1,4 +1,4 @@
-import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER, CHECK_LOGIN_SESSION, SIGN_OFF } from "../actions/index";
+import { FETCH_LOGIN, LOGIN_ERRORS, NEW_USER, CHECK_LOGIN_SESSION, SIGN_OFF, ARTIST_INFO } from "../actions/index";
 
 function loggedIn(state = null, action) {
 
@@ -17,6 +17,9 @@ function loggedIn(state = null, action) {
 
         case SIGN_OFF:
             return action.payload;
+
+        case ARTIST_INFO:
+            return state;
 
         default:
             return state;

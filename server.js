@@ -276,6 +276,17 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
     });
 })
 
+app.post('/setArtistInfo', (req, res) => {
+    console.log(req.session.loggedInUser);
+    console.log(req.body);
+    if(req.body.description){
+        con.query(`UPDATE users SET description = ${req.body.description} WHERE(id = ${req.session.loggedInUser});`, (err, user) => {
+            if(err) res.json(err);
+            if(user) res.json("success");
+        } )
+    }
+})
+
 //Track Fetching Routes
 
  app.get('/fetchProfileTracks/:id', (req,res) => {
@@ -292,6 +303,25 @@ app.get('/fetchAllTracks/:id', (req,res) => {
         if(err) console.log(err);
         if(tracks){
             res.json( {tracks} )
+        }
+    })
+})
+
+app.get('/instrumentsAndGenres', (req,res) =>{
+    const instAndGenreLists = {};
+    con.query('select instrument from instrumentsCSV', (err, instruments) => {
+
+        if(err) res.json(err);
+        if(instruments){
+            instAndGenreLists['instrumentList'] = instruments;
+            con.query('select genre from genresCSV', (err, genres) => {
+                if(err) res.json(err);
+                if(genres) {
+                    instAndGenreLists['genreList'] = genres;
+                    res.json(instAndGenreLists);
+                }    
+            })
+            
         }
     })
 })

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
+import { Link } from "react-router-dom";
 
 import AddTrack from '../../containers/add-track';
 
@@ -37,15 +38,15 @@ class ProfileActions extends Component {
                     </p>
                 </button>
 
-                <button className="profile-actions__button">
+                <Link to={`/manager/${this.props.artist.id}`} className="profile-actions__button">
                     <div className="profile-actions__icon-container profile-actions__icon-container--purple">
                         <i className="fas fa-signal profile-actions__icon profile-actions__icon--white"></i>
                     </div>
 
                     <p className="profile-actions__text">
-                        Billboards
+                        Manager
                     </p>
-                </button>
+                </Link>
 
                 <button className="profile-actions__button">
                     <div className="profile-actions__icon-container profile-actions__icon-container--purple">
