@@ -280,8 +280,9 @@ app.post('/setArtistInfo', (req, res) => {
     console.log(req.session.loggedInUser);
     console.log(req.body);
     if(req.body.description){
-        con.query(`UPDATE users SET description = ${req.body.description} WHERE(id = ${req.session.loggedInUser});`, (err, user) => {
+        con.query(`UPDATE users SET description = '${req.body.description}' WHERE(id = ${req.session.loggedInUser});`, (err, user) => {
             if(err) res.json(err);
+            console.log('inside the query')
             if(user) res.json("success");
         } )
     }

@@ -17,9 +17,12 @@ class Banner extends Component {
         }
     }
 
+    componentDidMount(){
+        if(this.state.editWindowShown) this.setState({editWindowShown: false});
+    }
+
 
     render(){
-        console.log(this.props)
         
         return (
             <section className='banner'>

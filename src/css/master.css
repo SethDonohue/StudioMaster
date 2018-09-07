@@ -158,6 +158,9 @@ ul, li {
 .u-display-block {
   display: block; }
 
+.u-pos-relative {
+  position: relative; }
+
 .addTrack {
   background-color: #cccccc;
   padding: 2rem;
@@ -659,6 +662,65 @@ section.section-login .form__login-submit {
   @media (max-width: 37.5em) {
     .hero {
       width: 90%; } }
+
+.toggle {
+  position: relative;
+  background-color: #cccccc;
+  padding: 2rem; }
+  .toggle__container {
+    margin: auto;
+    text-align: center; }
+  .toggle__item {
+    display: inline-block;
+    list-style: none;
+    margin-right: 10rem;
+    border-bottom: 2px solid #320d59;
+    padding-bottom: .5rem;
+    cursor: pointer; }
+
+.track-manager {
+  padding: 2rem;
+  margin-top: 5rem; }
+  .track-manager__item {
+    list-style: none;
+    position: relative;
+    padding: 1rem 0 1rem 1rem; }
+    .track-manager__item:hover {
+      cursor: pointer; }
+  .track-manager__item:nth-child(odd) {
+    background-color: #e5e5e5; }
+  .track-manager__item-text {
+    font-size: 1.5rem;
+    font-weight: bold; }
+    .track-manager__item-text:hover {
+      color: #320d59; }
+  .track-manager__edit-icon {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%); }
+    .track-manager__edit-icon:hover {
+      cursor: pointer;
+      color: #320d59; }
+  .track-manager__trash-icon {
+    position: absolute;
+    left: 5%;
+    bottom: 84%;
+    font-size: 2.5rem; }
+    .track-manager__trash-icon:hover {
+      color: #320d59;
+      cursor: pointer; }
+  .track-manager__confirm-window {
+    background-color: #cccccc;
+    height: 50%;
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .track-manager__input {
+    display: block; }
 
 .player {
   width: 100%;

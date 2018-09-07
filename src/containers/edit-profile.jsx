@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {reduxForm, Field} from 'redux-form'; 
+import {reduxForm, Field} from 'redux-form';
+import { Redirect } from 'react-router-dom';
 
 import { fetchInstrumentsAndGenres, setArtistInfo } from "../actions/index";
 
@@ -17,7 +18,8 @@ class EditProfile extends Component {
     }
 
     state = {
-        searchResults: ['thing', 'thing2']
+        searchResults: ['thing', 'thing2'],
+        formSent: false
     }
 
     componentDidMount(){
@@ -75,10 +77,15 @@ class EditProfile extends Component {
     onSubmitHandler(values){
         console.log(values);
         this.props.setArtistInfo(values);
+        this.setState({formSent: true});
     }
 
     render(){
         const { handleSubmit } = this.props;
+
+        if(this.state.formSent){
+            return <Redirect to={`/profile/${this.props.login.data.id}`} />
+        }
         return(
             <form className="edit-profile" onSubmit={handleSubmit(this.onSubmitHandler.bind(this))}>
                 <h2 className="edit-profile__header">
@@ -116,6 +123,7 @@ class EditProfile extends Component {
                 </div>
 
                 <button className="btn btn--purple edit-profile__submit" type='submit'>Submit</button>
+
                 
             </form>
         )

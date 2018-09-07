@@ -12,7 +12,19 @@ import RadioInput from '../Forms/radio_input';
 import SelectInput from '../Forms/select_input';
 // import PopUp from '../../components/boxes/pop_up.jsx';
 
-const securityQuestions = ['Please choose a security question', 'Example1', 'Example2', 'Example3']
+const securityQuestions = [
+    'Please choose a security question',
+    'In what town or city was your first full time job?',
+    "What is your grandmother's (on your mother's side) maiden name?", 
+    'What primary school did you attend?',
+    "What is the first concert you ever went to?",
+    "Where were you on New Year’s Eve in 2000?",
+    "Who was your childhood hero?",
+    "Where were you when you had your first alcoholic drink?",
+    "What is the make of your first car?",
+    "What was your favorite food as a child?",
+    "What is your ultimate vacation destination?"
+    ]
 
 
 
