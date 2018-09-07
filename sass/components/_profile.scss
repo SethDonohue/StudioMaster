@@ -67,7 +67,7 @@
         padding: 2rem 0;
     }
 
-    &__actions > * {
+    &__actions div > * {
         display: block;
         width: 18rem;
         text-align: center;
@@ -89,6 +89,32 @@
         &:hover {
             color: $color-charcoal-light;
         }
+    }
+
+    &__edit-profile {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-grey;
+        padding: 5rem;
+        width: 50%;
+        z-index: 1000;
+        border: 1px solid black;
+        
+    }
+
+    &__edit-profile-hidden{
+        display: none;
+    }
+
+    &__edit-close {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: 2.3rem;
+        cursor: pointer;
+        color: $color-primary;
     }
 
 }

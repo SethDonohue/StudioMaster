@@ -158,6 +158,9 @@ ul, li {
 .u-display-block {
   display: block; }
 
+.u-pos-relative {
+  position: relative; }
+
 .addTrack {
   background-color: #cccccc;
   padding: 2rem;
@@ -309,6 +312,62 @@ ul, li {
   background-color: #e5e5e5;
   border: 2px solid #e5e5e5;
   color: #4d4d4d; }
+
+.edit-profile__header {
+  margin-bottom: 1rem; }
+  .edit-profile__header--center {
+    text-align: center; }
+
+.edit-profile__search-container {
+  margin-right: 4rem; }
+
+.edit-profile__search {
+  display: block;
+  margin: 0 auto; }
+  .edit-profile__search:first-child {
+    margin-bottom: 1rem; }
+
+.edit-profile__results-container {
+  vertical-align: top;
+  width: 80%;
+  margin: 1rem auto;
+  height: 15rem;
+  max-height: 15rem;
+  overflow: auto; }
+
+.edit-profile__results-item {
+  font-size: 1.4rem;
+  font-weight: 400;
+  background-color: #cccccc;
+  cursor: pointer; }
+  .edit-profile__results-item:not(:last-child) {
+    margin-bottom: 3px; }
+
+.edit-profile__results-item:nth-child(even) {
+  background-color: #e5e5e5; }
+
+.edit-profile__results-item:hover {
+  background-color: #320d59;
+  color: #fff; }
+
+.edit-profile__instrument-results {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5rem; }
+
+.edit-profile__genre-results {
+  display: inline-block;
+  vertical-align: top; }
+
+.edit-profile__selection-container {
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid #000; }
+
+.edit-profile__submit {
+  position: absolute;
+  right: 5%;
+  bottom: 5%; }
 
 .top-features {
   background: linear-gradient(to top, #19072d, #4b1486);
@@ -604,6 +663,65 @@ section.section-login .form__login-submit {
     .hero {
       width: 90%; } }
 
+.toggle {
+  position: relative;
+  background-color: #cccccc;
+  padding: 2rem; }
+  .toggle__container {
+    margin: auto;
+    text-align: center; }
+  .toggle__item {
+    display: inline-block;
+    list-style: none;
+    margin-right: 10rem;
+    border-bottom: 2px solid #320d59;
+    padding-bottom: .5rem;
+    cursor: pointer; }
+
+.track-manager {
+  padding: 2rem;
+  margin-top: 5rem; }
+  .track-manager__item {
+    list-style: none;
+    position: relative;
+    padding: 1rem 0 1rem 1rem; }
+    .track-manager__item:hover {
+      cursor: pointer; }
+  .track-manager__item:nth-child(odd) {
+    background-color: #e5e5e5; }
+  .track-manager__item-text {
+    font-size: 1.5rem;
+    font-weight: bold; }
+    .track-manager__item-text:hover {
+      color: #320d59; }
+  .track-manager__edit-icon {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%); }
+    .track-manager__edit-icon:hover {
+      cursor: pointer;
+      color: #320d59; }
+  .track-manager__trash-icon {
+    position: absolute;
+    left: 5%;
+    bottom: 84%;
+    font-size: 2.5rem; }
+    .track-manager__trash-icon:hover {
+      color: #320d59;
+      cursor: pointer; }
+  .track-manager__confirm-window {
+    background-color: #cccccc;
+    height: 50%;
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .track-manager__input {
+    display: block; }
+
 .player {
   width: 100%;
   position: fixed;
@@ -722,11 +840,11 @@ section.section-login .form__login-submit {
     right: 5%;
     vertical-align: center;
     padding: 2rem 0; }
-  .banner__actions > * {
+  .banner__actions div > * {
     display: block;
     width: 18rem;
     text-align: center; }
-    .banner__actions > *:not(:last-child) {
+    .banner__actions div > *:not(:last-child) {
       margin-bottom: 3rem; }
   .banner__edit-icon {
     color: #cccccc;
@@ -738,6 +856,25 @@ section.section-login .form__login-submit {
     transition: all .1s; }
     .banner__edit-icon:hover {
       color: #4d4d4d; }
+  .banner__edit-profile {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e5e5e5;
+    padding: 5rem;
+    width: 50%;
+    z-index: 1000;
+    border: 1px solid black; }
+  .banner__edit-profile-hidden {
+    display: none; }
+  .banner__edit-close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 2.3rem;
+    cursor: pointer;
+    color: #320d59; }
 
 .profile-actions {
   background-color: #fff;

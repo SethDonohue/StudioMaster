@@ -10,7 +10,7 @@ class ProfileInfo extends Component {
                     </h2>
                     <div className="profile-info__description-container">
                         <p className="profile-info__text">
-                            This area will have an edit icon if you are viewing your own page. This will allow you to very quickly change the text inside here and save it. This description area will retain this height regardless of word fill or not to keep a consistent design across this and the snapshot boxes
+                            {this.props.artist.description ? this.props.artist.description : "Artist has not entered a description yet"}
                         </p>
                     </div>
 

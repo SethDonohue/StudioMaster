@@ -18,6 +18,7 @@ import AllTracksPage from "./containers/all-tracks";
 import Company from "./components/Company.jsx";
 import Community from "./components/Community";
 import Support from "./components/Support.jsx";
+import Manager from "./components/Manager.jsx";
 import Player from "./containers/player.jsx";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -34,6 +35,7 @@ ReactDOM.render(
                     <Route path='/registration' component={Registration} />
                     <Route path='/profile/:id' component={Profile} />
                     <Route path='/all-tracks/profile/:id' component={AllTracksPage} />
+                    <Route path='/manager/:id' component={Manager} />
                     <Route path='/' component={Home} />
                 </Switch>
                 <Player />

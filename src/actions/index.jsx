@@ -8,6 +8,8 @@ export const CHECK_USERNAME ="CHECK_USERNAME";
 export const GET_ACCOUNT_INFO = "GET_INFO";
 export const CHECK_LOGIN_SESSION = 'CHECK_LOGIN_SESSION';
 export const SIGN_OFF = 'SIGN_OFF';
+export const FETCH_I_AND_G = "FETCH_I_AND_G";
+export const ARTIST_INFO = "ARTIST_INFO";
 
 
 //8080 for DEVELOPMENT "" for PRODUCTION.  Need to come up with a better system.
@@ -111,6 +113,31 @@ export function signOff(){
 
     return {
         type: SIGN_OFF,
+        payload: request
+    }
+}
+
+export function fetchInstrumentsAndGenres(){
+    const url = `${ROOT_URL}/instrumentsAndGenres`;
+
+    const request = axios.get(url);
+
+    return {
+        type: FETCH_I_AND_G,
+        payload: request
+    }
+}
+
+export function setArtistInfo(artistInfo){
+    const url = `${ROOT_URL}/setArtistInfo`;
+
+    const request = axios.post(url, artistInfo, {
+        method: 'post',
+        withCredentials: true,
+    })
+
+    return {
+        type: ARTIST_INFO,
         payload: request
     }
 }
