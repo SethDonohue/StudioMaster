@@ -28,16 +28,6 @@ class Footer extends Component {
 
                     <ul className="footer__nav-list">
                         <p className="footer__nav-title">
-                            Community
-                        </p>
-                        <li className="footer__nav-item"><Link to="/community" className="footer__nav-link">Artists</Link></li>
-                        <li className="footer__nav-item"><Link to="/community" className="footer__nav-link">Producers</Link></li>
-                        <li className="footer__nav-item"><Link to="/community" className="footer__nav-link">Developers</Link></li>
-                        <li className="footer__nav-item"><Link to="/community" className="footer__nav-link">Investors</Link></li>
-                    </ul>
-
-                    <ul className="footer__nav-list">
-                        <p className="footer__nav-title">
                             Support
                         </p>
                         <li className="footer__nav-item"><Link to="Support" className="footer__nav-link">Account</Link></li>

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import SongBlade from "../boxes/song_blade";
+// import Track from "../boxes/track";
 
-import Guitar from "../../samples/guitar.wav";
-import Bass from "../../samples/bass.wav";
+
 
 // This component will be broken up into smaller components later
 
@@ -16,35 +15,44 @@ class Features extends Component{
                     <h1 className="heading-primary bottom-features__header u-center-text u-margin-bottom-medium">
                         Intuitive, powerful features
                     </h1>
-                    <div className="bottom-features__divider u-margin-bottom-medium">
+                    <div className="top-features__divider u-margin-bottom-medium">
                         
                     </div>
-                    <div className="bottom-features__three-cards">
+                    <div className="top-features__three-cards">
                             <div className="row">
                                 <div className="col-1-3">
-                                    <div className="bottom-features__card">
-                                        <i className="fas fa-play-circle bottom-features__icon"></i>
+                                    <div className="top-features__card">
+                                        <i className="fas fa-play-circle top-features__icon"></i>
                                         <h3 className="heading-tertiary">
                                             Easily create music and tracks
                                         </h3>
+                                        <p className="top-features__card-text">
+                                        With easy to use tools, quickly import your music or record an all new piece. Whether you are working on your own piece or collaborating with others, use the powerful tools StudioMaster offers to edit, mix, and master your work.
+                                        </p>
                                         
                                     </div>
                                 </div>
                                 <div className="col-1-3">
-                                    <div className="bottom-features__card">
-                                        <i className="fas fa-rocket bottom-features__icon"></i>
+                                    <div className="top-features__card">
+                                        <i className="fas fa-rocket top-features__icon"></i>
                                         <h3 className="heading-tertiary">
                                             Publish & share
                                         </h3>
+                                        <p className="top-features__card-text">
+                                        Creating your own masterpiece is exciting and rewarding. Share with the world your creativity and passion. Discover other artist’s work and be inspired.
+                                        </p>
                                         
                                     </div>
                                 </div>
                                 <div className="col-1-3">
-                                    <div className="bottom-features__card">
-                                        <i className="fas fa-comments bottom-features__icon"></i>
+                                    <div className="top-features__card">
+                                        <i className="fas fa-comments top-features__icon"></i>
                                         <h3 className="heading-tertiary">
                                             Collaborate in real-time online
                                         </h3>
+                                        <p className="top-features__card-text">
+                                        Share your skills and passion and work with other likeminded artists. Collaborate with others on your work and theirs. Create a group and develop new and exciting music together for the world to enjoy.
+                                        </p>
                                         
                                     </div>
                                 </div>
@@ -54,8 +62,7 @@ class Features extends Component{
 
                 <div className="features">
                     <div className="features__image-box">
-                        <SongBlade title="Guitar Sample" track={Guitar} />
-                        <SongBlade title="Bass Sample" track={Bass} />
+                        
                     </div>
 
                     <div className="features__info">
@@ -145,12 +152,12 @@ class Features extends Component{
                 </div> */}
 
                 <div className="billboard">
-                    <div className="billboard__info">
+                    {/* <div className="billboard__info">
                         <h1 className="heading-primary">
                             Get noticed and rise to the top.
                         </h1>
                         <Link to="#" className="billboard__link">View Billboards &rarr;</Link>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         );

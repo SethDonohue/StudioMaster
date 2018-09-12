@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Logo from "../../img/logos/StudioMaster-Logo_Purple-Light.png";
+import Logo from "../../img/logos/StudioMaster-Logo.png";
 import NoUser from './nav_bar-no-user';
 import LoggedInUser from './nav_bar-logged_in';
 
@@ -25,13 +25,16 @@ class NavBar extends Component {
                 <div className="navigation__nav">
                     <ul className="navigation__nav-container">
                         <li className="navigation__item">
-                            <Link to="/" className="navigation__link">Explore</Link>
+                            <Link to={this.props.login && this.props.login.data && this.props.login.data.id !== null ? "/profile/" + this.props.login.data.id : "/registration"} className="navigation__link">My Studio</Link>
+                        </li>
+                        <li className="navigation__item">
+                            <Link to="/" className="navigation__link">Music Board</Link>
+                        </li>
+                        <li className="navigation__item">
+                            <Link to="/" className="navigation__link">Billboard</Link>
                         </li>
                         <li className="navigation__item">
                             <Link to="/" className="navigation__link">About</Link>
-                        </li>
-                        <li className="navigation__item">
-                            <Link to="/" className="navigation__link">Billboards</Link>
                         </li>
                     </ul>
                     <span className="navigation__divider">&nbsp;</span>
