@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
 
+import EditProfile from "../../containers/edit-profile";
+
 class ProfileInfo extends Component {
+
+    state={editWindowShown: false};
+
+    changeEditState(){
+        if(this.state.editWindowShown === true) this.setState({editWindowShown: false})
+        else {
+            this.setState({editWindowShown: true});
+        }
+    }
+
+    componentDidMount(){
+        if(this.state.editWindowShown) this.setState({editWindowShown: false});
+    }
+
     render() {
         return(
             <section className='profile-info'>
                 <div className="profile-info__about">
+                    <i onClick={this.changeEditState.bind(this)} className="fas fa-edit profile-info__edit-icon"></i>
                     <h2 className="profile-info__header">
                         About {this.props.artist.userName}
                     </h2>
@@ -50,6 +67,11 @@ class ProfileInfo extends Component {
                     <div className="profile-info__ad-container">
                         <p>AD GOES HERE</p>
                     </div>
+                </div>
+
+                <div className={this.state.editWindowShown ? "banner__edit-profile" : "banner__edit-profile-hidden"}>
+                    <i className="fas fa-times banner__edit-close" onClick={this.changeEditState.bind(this)}></i>
+                    <EditProfile />
                 </div>
 
             </section>

@@ -387,6 +387,41 @@ ul, li {
       font-size: 1.5rem;
       font-weight: 400;
       line-height: 2rem; }
+  .top-features__card {
+    padding: 4rem 2rem;
+    width: 90%;
+    cursor: pointer;
+    height: auto;
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 1rem;
+    transition: ease-in-out all 0.15s; }
+    .top-features__card p {
+      font-size: 1.5rem;
+      line-height: 2rem; }
+      @media (max-width: 56.25em) {
+        .top-features__card p {
+          display: none; } }
+    .top-features__card:hover .bottom-features__icon {
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: #754996; }
+  .top-features__icon {
+    font-size: 8rem;
+    color: #cccccc;
+    transition: all .3s; }
+  .top-features__divider {
+    margin-bottom: 4rem;
+    background-color: #e5e5e5;
+    height: 4px;
+    width: 10rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; }
+  .top-features__card-text {
+    color: #fff; }
 
 .features {
   color: #e5e5e5;
@@ -439,14 +474,6 @@ ul, li {
     left: 50%;
     transform: translateX(-50%);
     top: 0; }
-  @media (max-width: 37.5em) {
-    .bottom-features__three-cards {
-      display: none; } }
-  .bottom-features__one-card {
-    display: none; }
-    @media (max-width: 37.5em) {
-      .bottom-features__one-card {
-        display: block; } }
   .bottom-features__card {
     padding: 4rem 2rem;
     width: 90%;
@@ -818,9 +845,11 @@ section.section-login .form__login-submit {
     .banner {
       margin-top: 12rem; } }
   .banner__img {
+    border-radius: 50%;
+    border: 5px solid #000;
     display: inline-block;
     margin-right: 3rem;
-    height: 12rem;
+    height: 14rem;
     color: #fff;
     vertical-align: top; }
   .banner__info {
@@ -929,7 +958,8 @@ section.section-login .form__login-submit {
     width: 55%;
     padding: 1rem;
     background-color: #cccccc;
-    margin-right: 1rem; }
+    margin-right: 1rem;
+    position: relative; }
   .profile-info__description-container {
     height: 15rem;
     padding: .5rem 1rem; }
@@ -964,6 +994,14 @@ section.section-login .form__login-submit {
     text-align: center;
     margin-top: 1rem;
     height: 10rem; }
+  .profile-info__edit-icon {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    color: #000;
+    font-size: 2rem; }
+    .profile-info__edit-icon:hover {
+      cursor: pointer; }
 
 .profile-tracks {
   background-color: #cccccc;
@@ -979,6 +1017,8 @@ section.section-login .form__login-submit {
   .profile-tracks__track-container {
     padding: 2rem 0;
     padding-left: 4rem; }
+  .profile-tracks__edit-link {
+    font-size: 2rem; }
 
 .all-tracks__container {
   width: 85%;
@@ -1373,6 +1413,12 @@ section.section-login .form__login-submit {
     transition: all .1s; }
     .navigation__log-in:hover {
       color: #19072d; }
+  .navigation__profile-picture {
+    position: relative;
+    top: 1rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    margin-right: 1rem; }
 
 .information {
   width: 100%;

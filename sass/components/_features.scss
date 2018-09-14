@@ -21,6 +21,58 @@
 			line-height: 2rem;
 		}
 	}
+
+	&__card {
+		padding: 4rem 2rem;
+		width: 90%;
+		cursor: pointer;
+		height: auto;
+		color: $color-white;
+		text-align: center;
+		background-color: transparent;
+		border-radius: 1rem;
+		transition: $ease-in-out;
+
+		
+
+		p {
+			font-size: 1.5rem;
+			line-height: 2rem;
+
+			@include respond(tab-port) {
+				display: none;
+			}
+		}
+
+		&:hover .bottom-features__icon {
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: $color-secondary;
+		}
+	}
+
+	&__icon {
+		font-size: 8rem;
+		color: $color-grey-dark;
+		transition: all .3s;
+	}
+
+	&__divider {
+		margin-bottom: 4rem;
+		background-color: $color-grey;
+		height: 4px;
+		width: 10rem;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0;
+	}
+
+	&__card-text{
+		color: $color-white;
+	}
+
+	
 }
 
 .features {
@@ -89,19 +141,8 @@
 		top: 0;
 	}
 
-	&__three-cards {
-		@include respond(phone) {
-			display: none;
-		}
-	}
 
-	&__one-card {
-		display: none;
-
-		@include respond(phone) {
-			display: block;
-		}
-	}
+	
 
 	&__card {
 		padding: 4rem 2rem;
@@ -123,10 +164,6 @@
 			@include respond(tab-port) {
 				display: none;
 			}
-		}
-
-		&:hover {
-			
 		}
 
 		&:hover .bottom-features__icon {

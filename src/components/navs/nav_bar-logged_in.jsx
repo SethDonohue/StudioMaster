@@ -10,13 +10,11 @@ class LoggedInUser extends Component {
     }
 
     render(){
+        console.log(this.props.user.data);
         return(
             <ul className="navigation__nav-container">
                 <li className="navigation__item">
-                    <Link to={`/profile/${this.props.user.data.id}`} className="navigation__link">My Studio</Link>
-                </li>
-                <li className="navigation__item">
-                    <Link to="/registration" className="navigation__link">{this.props.user.data.info.firstName}</Link>
+                    <Link to={`/profile/${this.props.user.data.id}`} className="navigation__link"><img src={this.props.user.data.info.imageURL} className='navigation__profile-picture' />{this.props.user.data.info.firstName}</Link>
                 </li>
                 <li className="navigation__item" onClick={this.signOffUser.bind(this)}>
                     <a className="navigation__link">Log Off</a>
