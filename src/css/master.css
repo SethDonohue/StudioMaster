@@ -93,10 +93,8 @@ ul, li {
   color: #333; }
 
 .heading-primary {
-  margin: 2rem;
-  font-size: 4rem;
-  line-height: 4.5rem;
-  color: inherit; }
+  margin: 1rem;
+  color: #fff; }
 
 .heading-secondary {
   font-size: 3rem;
@@ -409,8 +407,8 @@ ul, li {
       color: #754996; }
   .top-features__icon {
     font-size: 8rem;
-    color: #cccccc;
-    transition: all .3s; }
+    color: #fff;
+    transition: ease-in-out all 0.125s; }
   .top-features__divider {
     margin-bottom: 4rem;
     background-color: #e5e5e5;
@@ -497,7 +495,7 @@ ul, li {
   .bottom-features__icon {
     font-size: 8rem;
     color: #cccccc;
-    transition: all .3s; }
+    transition: ease-in-out all 0.125s; }
   .bottom-features .heading-primary {
     margin-bottom: 3rem; }
   .bottom-features .heading-primary,
@@ -1149,9 +1147,6 @@ section.section-login .form__login-submit {
         color: #cccccc;
         cursor: pointer; }
 
-.buffer {
-  display: none; }
-
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -1439,16 +1434,16 @@ section.section-login .form__login-submit {
     border-bottom: 1px solid white; }
 
 .section-hero {
-  height: 65vh;
+  height: 50vh;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)), url("../img/StudioMaster-front-page-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 60%;
+  background-position: center center;
   position: relative;
   z-index: 5; }
 
 .section-features {
-  background-color: white;
+  background-color: #fff;
   color: #fff; }
 
 .page-registration {

@@ -53,8 +53,8 @@
 
 	&__icon {
 		font-size: 8rem;
-		color: $color-grey-dark;
-		transition: all .3s;
+		color: $color-white;
+		transition: $ease-default;
 	}
 
 	&__divider {
@@ -176,7 +176,7 @@
 	&__icon {
 		font-size: 8rem;
 		color: $color-grey-dark;
-		transition: all .3s;
+		transition: $ease-default;
 	}
 
 	.heading-primary {
