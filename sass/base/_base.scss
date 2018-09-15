@@ -7,18 +7,18 @@
 }
 
 html {
-	font-size: 62.5%; //Sets 1rem == 10 px before responsive modifiers
+	font-size: 1rem; //Sets 1rem == 10 px before responsive modifiers
 	
 	@include respond(tab-land) {
-		font-size: 56.25%;
+		font-size: 75%;
 	}
 
 	@include respond(tab-port) {
-		font-size: 50%;
+		font-size: 75%;
 	}
 
 	@include respond(phone) {
-		font-size: 37.5%;
+		font-size: 75%;
 	}
 
 	@include respond(big-desktop) {

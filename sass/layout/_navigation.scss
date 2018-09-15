@@ -1,60 +1,60 @@
 .navigation {
-	position: absolute;
+	display: flex;
 	top: 0;
 	left: 0;
 	padding: 0;
 	margin: 0;
 	width: 100%;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	font-size: 1rem;
-	line-height: 3rem;
-	color: $color-white;
+	height: 6.25rem;
 	z-index: 20;
 
 	@include respond (tab-port) {
 		display: none;
 	}
+
+	&__nav-container {
+		display: inline-flex;
+	}
+
+	&__nav {
+		position: absolute;
+		display: flex;
+		justify-content: flex-end;
+		height: 6.25rem;
+		right: 0;
+		margin-right: 4rem;
+	}
 	
 	&__logo-box {
 		display: inline-block;
+		height: 6.25rem;
 	}
 
 	&__logo {
-		position: absolute;
-		top: .9rem;
-		left: 5rem;
-		height: 4.5rem;
+		margin-top: 1.125rem;
+		height: 4rem;
+		margin-left: 4rem;
 	}
 
 	&__brand {
 		font-size: 3rem;
 	}
 
-	&__nav {
-		position: absolute;
-		right: 0;
-		top: -1.7rem;
-		margin-right: 5rem;
-	}
-
-	&__nav-container {
-		display: inline-block;
-	}
-
 	&__divider {
-		display: inline-block;
 		position: relative;
-		top: 0;
-		margin: 0.5rem;
+		display: inline-block;
+		top: 1.5625rem;
+		margin: 0 0.5rem;
 		width: 1px;
-		height: 3rem;
+		height: 3.125rem;
+		line-height: 6.25rem;
 		background-color: $color-primary-dark;
 	}
 
 	&__item {
+		display: flex;
+		line-height: 6.25rem;
 		list-style: none;
-		display: inline-block;
 
 		&:not(:last-child) {
 			margin: 0;
@@ -62,15 +62,15 @@
 	}
 
 	&__link {
-		display: inline-block;
-		transition: $ease-in-out;
-		line-height: 10rem;
-		padding: 0 1rem;
-		font-weight: 700;
+		display: flex;
+		padding: 0 0.75rem;
+
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 6.25rem;
 
 		&:link,
 		&:visited {
-			font-size: 1.7rem;
 			color: $color-primary-light;
 			display: inline-block;
 			text-decoration: none;
@@ -88,10 +88,11 @@
 	}
 
 	&__log-in {
-		font-size: 1.7rem;
 		cursor: pointer;
 		color: $color-primary-light;
-		font-weight: 700;
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 6.25rem;
 		transition: all .1s;
 
 		&:hover {

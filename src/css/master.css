@@ -20,16 +20,16 @@ Breakpoint choices:
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 1rem; }
   @media (max-width: 75em) {
     html {
-      font-size: 56.25%; } }
+      font-size: 75%; } }
   @media (max-width: 56.25em) {
     html {
-      font-size: 50%; } }
+      font-size: 75%; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 37.5%; } }
+      font-size: 75%; } }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -1150,9 +1150,7 @@ section.section-login .form__login-submit {
         cursor: pointer; }
 
 .buffer {
-  width: 100%;
-  height: 6rem;
-  background: linear-gradient(to top, #e5e5e5, #bfbfbf); }
+  display: none; }
 
 .row {
   max-width: 114rem;
@@ -1344,58 +1342,57 @@ section.section-login .form__login-submit {
     left: 0; }
 
 .navigation {
-  position: absolute;
+  display: flex;
   top: 0;
   left: 0;
   padding: 0;
   margin: 0;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 3rem;
-  color: #fff;
+  height: 6.25rem;
   z-index: 20; }
   @media (max-width: 56.25em) {
     .navigation {
       display: none; } }
-  .navigation__logo-box {
-    display: inline-block; }
-  .navigation__logo {
-    position: absolute;
-    top: .9rem;
-    left: 5rem;
-    height: 4.5rem; }
-  .navigation__brand {
-    font-size: 3rem; }
+  .navigation__nav-container {
+    display: inline-flex; }
   .navigation__nav {
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    height: 6.25rem;
     right: 0;
-    top: -1.7rem;
-    margin-right: 5rem; }
-  .navigation__nav-container {
-    display: inline-block; }
-  .navigation__divider {
+    margin-right: 4rem; }
+  .navigation__logo-box {
     display: inline-block;
+    height: 6.25rem; }
+  .navigation__logo {
+    margin-top: 1.125rem;
+    height: 4rem;
+    margin-left: 4rem; }
+  .navigation__brand {
+    font-size: 3rem; }
+  .navigation__divider {
     position: relative;
-    top: 0;
-    margin: 0.5rem;
+    display: inline-block;
+    top: 1.5625rem;
+    margin: 0 0.5rem;
     width: 1px;
-    height: 3rem;
+    height: 3.125rem;
+    line-height: 6.25rem;
     background-color: #19072d; }
   .navigation__item {
-    list-style: none;
-    display: inline-block; }
+    display: flex;
+    line-height: 6.25rem;
+    list-style: none; }
     .navigation__item:not(:last-child) {
       margin: 0; }
   .navigation__link {
-    display: inline-block;
-    transition: ease-in-out all 0.15s;
-    line-height: 10rem;
-    padding: 0 1rem;
-    font-weight: 700; }
+    display: flex;
+    padding: 0 0.75rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 6.25rem; }
     .navigation__link:link, .navigation__link:visited {
-      font-size: 1.7rem;
       color: #4b1486;
       display: inline-block;
       text-decoration: none; }
@@ -1406,10 +1403,11 @@ section.section-login .form__login-submit {
     width: 100%;
     background-color: #cccccc; }
   .navigation__log-in {
-    font-size: 1.7rem;
     cursor: pointer;
     color: #4b1486;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 6.25rem;
     transition: all .1s; }
     .navigation__log-in:hover {
       color: #19072d; }
@@ -1432,7 +1430,7 @@ section.section-login .form__login-submit {
     border-bottom: 1px solid white; }
 
 .section-hero {
-  height: 85vh;
+  height: 65vh;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)), url("../img/StudioMaster-front-page-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
