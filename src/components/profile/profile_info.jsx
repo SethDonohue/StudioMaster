@@ -71,7 +71,7 @@ class ProfileInfo extends Component {
 
                 <div className={this.state.editWindowShown ? "banner__edit-profile" : "banner__edit-profile-hidden"}>
                     <i className="fas fa-times banner__edit-close" onClick={this.changeEditState.bind(this)}></i>
-                    <EditProfile />
+                    <EditProfile closeWindow={this.changeEditState.bind(this)} />
                 </div>
 
             </section>

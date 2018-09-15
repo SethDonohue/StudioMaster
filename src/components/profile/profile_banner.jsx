@@ -41,8 +41,7 @@ class Banner extends Component {
                         
                         :
                         <div>
-                            <button className="btn">Button</button>
-                            <button className="btn">Other Button</button>
+                            <button className="btn btn--grey">Send Mail</button>
                         </div>
                         }
 

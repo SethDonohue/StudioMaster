@@ -11,20 +11,20 @@ import TextInput from "./Forms/text_input";
 class EditProfile extends Component {
     constructor(){
         super();
-
-        this.selectedGeneres = [];
-
-        this.selectedInstruments = [];
     }
 
     state = {
-        searchResults: ['thing', 'thing2'],
-        formSent: false
+        searchResults: [],
+        queryFor: null,
+        selectedGenres: [],
+        selectedInstruments: []
     }
 
     componentDidMount(){
         this.props.fetchInstrumentsAndGenres();
     }
+
+    //Server queries
 
     queryInstruments(e){
     
@@ -39,13 +39,13 @@ class EditProfile extends Component {
         }
         
         this.setState({
-            searchResults: results
+            searchResults: results,
+            queryFor: 'instruments'
         })
         
     }
 
     queryGeneres(e){
-        console.log(this.props.instrumentsAndGenres)
         const results = [];
         if(e.target.value.length){
             let re = new RegExp(`${e.target.value}+`);
@@ -57,27 +57,74 @@ class EditProfile extends Component {
         }
 
         this.setState({
-            searchResults: results
+            searchResults: results,
+            queryFor: 'genres'
         })
     }
+
+    //UI Mapping
 
     fillSearchResults(){
        return this.state.searchResults.map(item => {
-            return <li key={item} onClick={this.addToSelections} className='edit-profile__results-item'>{item}</li>
+            return <li key={item} onClick={this.addToSelections.bind(this, item)} className='edit-profile__results-item'>{item}</li>
         })
     }
 
-    addToSelections(){
+    fillGenres(){
+        return this.state.selectedGenres.map(genre => {
+            return <p key={genre}>{genre}</p>
+        });
+    }
 
+    fillInstruments(){
+        return this.state.selectedInstruments.map(instrument => {
+            return <p key={instrument}>{instrument}</p>
+        });
     }
 
 
 
+    addToSelections(item){
+        
+        if(this.state.queryFor === 'genres'){ 
+            let currentGenres = this.state.selectedGenres; // Save the current state
+            for(let idx = 0; idx < currentGenres.length; idx++){ // Make sure we aren't adding duplicate genres
+                if(currentGenres[idx] === item) {
+                    return;
+                };
+            }
+            this.setState({
+                selectedGenres: [...currentGenres, item] //New state with new and old genre values
+            })
+        }
+        else{
+            let currentInstruments = this.state.selectedInstruments;
+            for(let idx = 0; idx < currentInstruments.length; idx++){ // Make sure we aren't adding duplicate Instruments
+                if(currentInstruments[idx] === item) {
+                    return;
+                };
+            }
+            this.setState({
+                selectedInstruments: [...currentInstruments, item]
+            })
+        }
+    }
+
+    //Submit Handler
 
     onSubmitHandler(values){
+        values['instruments'] = this.state.selectedInstruments; //Manually add the selected genres and instruments into form packet
+        values['genres'] = this.state.selectedGenres;
         console.log(values);
         this.props.setArtistInfo(values);
-        this.setState({formSent: true});
+        this.props.closeWindow();
+        
+        this.setState({
+            searchResults: [],
+            queryFor: null,
+            selectedGenres: [],
+            selectedInstruments: []
+        })
     }
 
     render(){
@@ -113,12 +160,14 @@ class EditProfile extends Component {
                 <div className="edit-profile__selection-container">
                     <div className="edit-profile__instrument-results">
                         <h3>Instruments</h3>
+                        {this.fillInstruments()}
                         
                     </div>
                     <div className="edit-profile__genre-results">
                         <h3>
                             Genres
                         </h3>
+                        {this.fillGenres()}
                     </div>
                 </div>
 
