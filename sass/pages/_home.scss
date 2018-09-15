@@ -7,6 +7,10 @@
     background-position: center center;
     position: relative;
     z-index: 5;
+
+    .hero {
+        width: calc(100% - 8rem);
+    }
 }
 
 .section-features {
