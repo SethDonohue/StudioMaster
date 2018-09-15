@@ -10,9 +10,9 @@ class Registration extends Component {
     render(){
         return(
             <main className="page-registration">
-                <BrandPurple />
                 <NavBar />
                 <NavBtn />
+                <BrandPurple />
                 <SignUp />
                 <Footer />
             </main>

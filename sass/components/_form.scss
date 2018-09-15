@@ -28,7 +28,7 @@
 		border: 2px solid $color-white;
 		border-radius: $input-bradius;
 		box-shadow: $shadow-center-light;
-		transition: $ease-in-out;
+		transition: $ease-default;
 
 		&:focus,
 		&:active,

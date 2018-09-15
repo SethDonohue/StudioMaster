@@ -47,7 +47,7 @@ $color-yellow: #eeff00;
 $color-yellow-light: lighten($color-yellow, 12%);
 
 // Font Sizes
-$default-font: 1.5rem;
+$default-font: 1.25rem;
 
 // Input Styles
 $input-bradius: 0.5rem;
@@ -57,6 +57,8 @@ $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-horizontal: 2rem;
 
+// Transition Effects
+$ease-default: ease-in-out all 0.125s;
 
 // Box Shadows
 $shadow-light: 0 1rem 1.5rem rgba($color-black, 0.15);

@@ -12,14 +12,14 @@
 		text-transform: uppercase;
 		border-radius: .5rem;
 		cursor: pointer;
-		transition: $ease-in-out;
+		transition: $ease-default;
 		box-shadow: $shadow-center-light;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		transition: $ease-in-out;
+		transition: $ease-default;
 		box-shadow: $shadow-center-dark;
 	}
 
