@@ -48,15 +48,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #333; }
 
-h1 {
+h1,
+h1.heading-primary {
   font-size: 3rem;
   line-height: 3.5rem; }
 
-h2 {
+h2,
+h2.heading-secondary {
   font-size: 2.5rem;
   line-height: 3rem; }
 
-h3 {
+h3,
+h3.heading-tertiary {
   font-size: 2rem;
   line-height: 2.5rem; }
 
@@ -141,7 +144,7 @@ ul, li {
 
 .billboard {
   width: 100%;
-  height: 60vh;
+  height: 30rem;
   background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("../img/billboard.jpg");
   background-size: cover;
   background-position: 50% 80%;
@@ -336,32 +339,33 @@ ul, li {
   bottom: 5%; }
 
 .top-features {
-  background: linear-gradient(to top, #19072d, #4b1486);
-  padding: 6rem 0; }
+  background: linear-gradient(to top, #320d59, #754996);
+  padding: 6rem 0 8rem 0; }
+  .top-features ul.top-features__list > li {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    text-align: left; }
   .top-features__info {
     padding: 6rem;
-    width: 45%; }
+    width: 100%; }
     @media (max-width: 56.25em) {
       .top-features__info {
         display: block;
         margin: auto;
         width: 80%;
         text-align: center; } }
-    .top-features__info p {
-      color: #fff;
-      margin: 2rem 0;
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 2rem; }
   .top-features__card {
-    padding: 4rem 2rem;
-    width: 90%;
-    cursor: pointer;
+    padding: 4rem;
+    width: 100%;
     height: auto;
-    color: #fff;
+    min-height: 44rem;
+    color: #333;
     text-align: center;
-    background-color: transparent;
-    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
     transition: ease-in-out all 0.125s; }
     .top-features__card p {
       font-size: 1.5rem;
@@ -369,38 +373,39 @@ ul, li {
       @media (max-width: 56.25em) {
         .top-features__card p {
           display: none; } }
-    .top-features__card:hover .bottom-features__icon {
+    .top-features__card:hover, .top-features__card:focus {
+      background-color: #fff;
+      box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35); }
+    .top-features__card:hover .top-features__icon,
+    .top-features__card:focus .top-features__icon {
       -webkit-background-clip: text;
       background-clip: text;
-      color: #754996; }
+      transform: scale(1.1); }
   .top-features__icon {
-    font-size: 8rem;
-    color: #fff;
+    font-size: 6rem;
+    color: #754996;
     transition: ease-in-out all 0.125s; }
   .top-features__divider {
-    margin-bottom: 4rem;
-    background-color: #e5e5e5;
+    margin: 4rem 0;
     height: 4px;
-    width: 10rem;
+    background-color: #fff;
+    width: 4rem;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     top: 0; }
-  .top-features__card-text {
-    color: #fff; }
-  .top-features .heading-primary {
+  .top-features h1.heading-primary {
     margin-bottom: 2rem;
     text-transform: uppercase; }
-  .top-features .heading-secondary {
+  .top-features h2.heading-secondary {
     margin-bottom: 4rem;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #fff; }
-  .top-features .heading-tertiary {
-    margin: 2rem;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    color: inherit; }
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase; }
+  .top-features h3.heading-tertiary {
+    margin: 2rem 0;
+    font-weight: 600;
+    text-transform: capitalize; }
 
 .features {
   color: #e5e5e5;
@@ -437,19 +442,6 @@ ul, li {
   .features .heading-secondary,
   .features .heading-tertiary {
     color: #333; }
-  .features .heading-primary {
-    margin-bottom: 2rem;
-    color: #fff;
-    text-transform: uppercase; }
-  .features .heading-secondary {
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    font-weight: 500; }
-  .features .heading-tertiary {
-    margin: 2rem;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    color: inherit; }
 
 .bottom-features {
   position: relative;
@@ -688,9 +680,6 @@ section.section-login .form__login-submit {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff; }
-  @media (max-width: 37.5em) {
-    .hero {
-      width: 90%; } }
   .hero .btn {
     margin: 0 4rem; }
   .hero .heading-primary {
@@ -1465,7 +1454,7 @@ section.section-login .form__login-submit {
     border-bottom: 1px solid white; }
 
 .section-hero {
-  height: 50vh;
+  height: 64rem;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)), url("../img/StudioMaster-front-page-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;

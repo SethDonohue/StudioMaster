@@ -24,12 +24,26 @@ class Features extends Component{
                                     <div className="top-features__card">
                                         <i className="fas fa-play-circle top-features__icon"></i>
                                         <h3 className="heading-tertiary">
-                                            Easily create music and tracks
+                                            Easily create music & tracks
                                         </h3>
-                                        <p className="top-features__card-text">
-                                        With easy to use tools, quickly import your music or record an all new piece. Whether you are working on your own piece or collaborating with others, use the powerful tools StudioMaster offers to edit, mix, and master your work.
-                                        </p>
-                                        
+                                        <ul className="top-features__list">
+                                            <li>Quickly import your music or record an all new piece</li>
+                                            <li>Easily collaborate with others, or work independently</li>
+                                            <li>Power tools StudioMaster offers to edit, mix, and master your work</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                 <div className="col-1-3">
+                                    <div className="top-features__card">
+                                        <i className="fas fa-comments top-features__icon"></i>
+                                        <h3 className="heading-tertiary">
+                                            Collaborate in real-time online
+                                        </h3>
+                                        <ul className="top-features__list">
+                                            <li>Share your skills and passion and work with other likeminded artists</li>
+                                            <li>Collaborate with others on your work and theirs</li>
+                                            <li>Create a group and develop new and exciting music together for the world to enjoy</li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="col-1-3">
@@ -38,24 +52,14 @@ class Features extends Component{
                                         <h3 className="heading-tertiary">
                                             Publish & share
                                         </h3>
-                                        <p className="top-features__card-text">
-                                        Creating your own masterpiece is exciting and rewarding. Share with the world your creativity and passion. Discover other artist’s work and be inspired.
-                                        </p>
-                                        
+                                        <ul className="top-features__list">
+                                            <li>Create your own music with StudioMaster and share your work</li>
+                                            <li>Explore new genres, instruments, artists and more</li>
+                                            <li>Find a team of musicians and create a masterpiece together</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div className="col-1-3">
-                                    <div className="top-features__card">
-                                        <i className="fas fa-comments top-features__icon"></i>
-                                        <h3 className="heading-tertiary">
-                                            Collaborate in real-time online
-                                        </h3>
-                                        <p className="top-features__card-text">
-                                        Share your skills and passion and work with other likeminded artists. Collaborate with others on your work and theirs. Create a group and develop new and exciting music together for the world to enjoy.
-                                        </p>
-                                        
-                                    </div>
-                                </div>
+                
                             </div>
                         </div>
                     </div>

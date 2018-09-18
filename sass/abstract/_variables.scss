@@ -61,6 +61,9 @@ $gutter-horizontal: 2rem;
 // Transition Effects
 $ease-default: ease-in-out all 0.125s;
 
+// Scales Effects
+$scale-small: scale(1.10);
+
 // Box Shadows
 $shadow-light: 0 1rem 1.5rem rgba($color-black, 0.15);
 $shadow-dark: 0 1rem 1.5rem rgba($color-black, 0.35);
