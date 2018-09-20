@@ -5,7 +5,6 @@ import Popup from 'reactjs-popup';
 
 import profileStock from "../../img/dj-profile.png";
 import ChangePhoto from "../../containers/change-photo";
-import EditProfile from "../../containers/edit-profile";
 
 class Banner extends Component {
     render(){

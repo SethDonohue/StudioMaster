@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
-import { Redirect } from 'react-router-dom';
 
 import { fetchInstrumentsAndGenres, setArtistInfo } from "../actions/index";
 
@@ -9,9 +8,6 @@ import TextInput from "./Forms/text_input";
 
 
 class EditProfile extends Component {
-    constructor(){
-        super();
-    }
 
     state = {
         searchResults: [],
@@ -33,7 +29,7 @@ class EditProfile extends Component {
             let re = new RegExp(`${e.target.value}+`);
             for(let idx = 0; idx < this.props.instrumentsAndGenres.instrumentList.length; idx++){
                 if (re.test(this.props.instrumentsAndGenres.instrumentList[idx].instrument)){
-                    results.push(this.props.instrumentsAndGenres.instrumentList[idx].instrument);
+                    results.push(this.props.instrumentsAndGenres.instrumentList[idx]);
                 }
             }
         }
@@ -51,7 +47,7 @@ class EditProfile extends Component {
             let re = new RegExp(`${e.target.value}+`);
             for(let idx = 0; idx < this.props.instrumentsAndGenres.genreList.length; idx++){
                 if (re.test(this.props.instrumentsAndGenres.genreList[idx].genre)){
-                    results.push(this.props.instrumentsAndGenres.genreList[idx].genre);
+                    results.push(this.props.instrumentsAndGenres.genreList[idx]);
                 }
             }
         }
@@ -65,20 +61,21 @@ class EditProfile extends Component {
     //UI Mapping
 
     fillSearchResults(){
+        
        return this.state.searchResults.map(item => {
-            return <li key={item} onClick={this.addToSelections.bind(this, item)} className='edit-profile__results-item'>{item}</li>
+            return <li key={item.id} onClick={this.addToSelections.bind(this, item)} className='edit-profile__results-item'>{item.instrument ? item.instrument : item.genre}</li>
         })
     }
 
     fillGenres(){
         return this.state.selectedGenres.map(genre => {
-            return <p key={genre}>{genre}</p>
+            return <p key={genre.id}>{genre.genre}</p>
         });
     }
 
     fillInstruments(){
         return this.state.selectedInstruments.map(instrument => {
-            return <p key={instrument}>{instrument}</p>
+            return <p key={instrument.id}>{instrument.instrument}</p>
         });
     }
 
@@ -130,9 +127,7 @@ class EditProfile extends Component {
     render(){
         const { handleSubmit } = this.props;
 
-        if(this.state.formSent){
-            return <Redirect to={`/profile/${this.props.login.data.id}`} />
-        }
+        console.log(this.props.instrumentsAndGenres)
         return(
             <form className="edit-profile" onSubmit={handleSubmit(this.onSubmitHandler.bind(this))}>
                 <h2 className="edit-profile__header">

@@ -205,7 +205,7 @@ app.post('/login', (req,res) => {
 })
 
 app.get('/getAccountInfo/:id', (req, res) => {
-    con.query(`SELECT * FROM users WHERE(id = ${req.params.id})`, (err, user) => {
+    con.query(`SELECT users.id, users.userName, users.description, users.imageURL FROM users WHERE(id = ${req.params.id})`, (err, user) => {
         if(err) console.log(err);
 
         if(user) {
@@ -279,12 +279,72 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
 app.post('/setArtistInfo', (req, res) => {
     console.log(req.session.loggedInUser);
     console.log(req.body);
+    let descFlag = false, genreFlag = false, instrumentFlag = false, responseObj = {};
+
+    // Check to see if a description was sent through. If so, update the user description in DB, if not, pass.
     if(req.body.description){
         con.query(`UPDATE users SET description = '${req.body.description}' WHERE(id = ${req.session.loggedInUser});`, (err, user) => {
             if(err) res.json(err);
-            console.log('inside the query')
-            if(user) res.json("success");
-        } )
+            if(user){
+                responseObj['user'] = user;
+                descFlag = true;
+            };
+        })
+    
+    }
+    else{
+        descFlag = true;
+    }
+
+    //If genres were sent through, build out a quqery string. Create rows for each genre passed through. If no genres, pass
+
+    if(req.body.genres){
+        let values = ''
+        for(let idx = 0; idx < req.body.genres.length; idx++){
+            
+            values += `(${req.session.loggedInUser}, ${req.body.genres[idx].id})`;
+
+            if(idx !== req.body.genres.length - 1) values += ', ';
+        }
+        con.query(`INSERT INTO user_genres (users_id, genresCSV_id) VALUES ${values};`, (err, genres) => {
+            if(err) console.log(err);
+            if(genres) {
+                responseObj['genres'] = genres;
+                genreFlag = true;
+            }
+        })
+    }
+
+    else{
+        genreFlag = true;
+    }
+
+    //If instruments were sent through, build out a query string. Create rows for each instrument passed through. If no instruments, pass
+
+    if(req.body.instruments){
+        let values = ''
+        for(let idx = 0; idx < req.body.instruments.length; idx++){
+            
+            values += `(${req.session.loggedInUser}, ${req.body.instruments[idx].id})`;
+
+            if(idx !== req.body.instruments.length - 1) values += ', ';
+        }
+        con.query(`INSERT INTO user_instruments (users_id, instrumentsCSV_id) VALUES ${values};`, (err, instruments) => {
+            if(err) console.log(err);
+            if(instruments){
+                responseObj['instruments'] = instruments;
+                instrumentFlag = true;
+            }
+        })
+    }
+    else{
+        instrumentFlag = true;
+    }
+
+    //Make sure each operation has had a chance to fire if values were passed through.
+
+    if(descFlag && genreFlag && instrumentFlag){
+        res.json(responseObj);
     }
 })
 
@@ -308,14 +368,18 @@ app.get('/fetchAllTracks/:id', (req,res) => {
     })
 })
 
+app.get('/fetchProfileGenresInstruments/:id', (req,res) => {
+    
+} )
+
 app.get('/instrumentsAndGenres', (req,res) =>{
     const instAndGenreLists = {};
-    con.query('select instrument from instrumentsCSV', (err, instruments) => {
+    con.query('select * from instrumentsCSV', (err, instruments) => {
 
         if(err) res.json(err);
         if(instruments){
             instAndGenreLists['instrumentList'] = instruments;
-            con.query('select genre from genresCSV', (err, genres) => {
+            con.query('select * from genresCSV', (err, genres) => {
                 if(err) res.json(err);
                 if(genres) {
                     instAndGenreLists['genreList'] = genres;
