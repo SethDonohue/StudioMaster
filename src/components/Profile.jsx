@@ -10,6 +10,7 @@ import Footer from "./footer/footer_main";
 import Banner from "../components/profile/profile_banner";
 import Info from "../components/profile/profile_info";
 import Tracks from "../components/profile/profile_tracks";
+import Albums from "../components/profile/profile_albums";
 
 
 class Profile extends Component {
@@ -69,6 +70,7 @@ class Profile extends Component {
                         <Banner artist={this.props.userProfile[0]} />                        
                         <Info artist={this.props.userProfile} login={this.props.login} />
                         <Tracks artist={this.props.userProfile[0]} login={this.props.login} />
+                        <Albums artist={this.props.userProfile[0]} />
                         <Footer />
                     </main>
                 )
