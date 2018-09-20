@@ -7,7 +7,6 @@ function getAccountInfo(state = null, action) {
             return action.payload.data;
 
         case FETCH_PROFILE_IG:
-            console.log(action.payload.data)
             
             return [...state, action.payload.data.genres, action.payload.data.instruments];
         default:

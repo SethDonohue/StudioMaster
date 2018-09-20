@@ -8,7 +8,6 @@ import NavBar from './navs/nav_bar';
 import NavBtn from './navs/nav_btn';
 import Footer from "./footer/footer_main";
 import Banner from "../components/profile/profile_banner";
-import Actions from "../components/profile/profile_actions";
 import Info from "../components/profile/profile_info";
 import Tracks from "../components/profile/profile_tracks";
 
@@ -62,14 +61,14 @@ class Profile extends Component {
 
         
             else{
-                console.log(this.props.userProfile)
+                console.log(this.props.login)
                 return (
                     <main className="section-profile">
                         <NavBar />
                         <NavBtn />
                         <Banner artist={this.props.userProfile[0]} />                        
-                        <Info artist={this.props.userProfile} />
-                        <Tracks artist={this.props.userProfile[0]} />
+                        <Info artist={this.props.userProfile} login={this.props.login} />
+                        <Tracks artist={this.props.userProfile[0]} login={this.props.login} />
                         <Footer />
                     </main>
                 )

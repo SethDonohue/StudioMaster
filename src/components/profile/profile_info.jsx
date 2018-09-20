@@ -30,10 +30,13 @@ class ProfileInfo extends Component {
     }
 
     render() {
+
+        console.log(this.props.login)
+        
         return(
             <section className='profile-info'>
                 <div className="profile-info__about">
-                    <i onClick={this.changeEditState.bind(this)} className="fas fa-edit profile-info__edit-icon"></i>
+                    {this.props.login.data.id !== null && this.props.login.data.id == this.props.artist[0].id ? <i onClick={this.changeEditState.bind(this)} className="fas fa-edit profile-info__edit-icon"></i> : ""}
                     <h2 className="profile-info__header">
                         About {this.props.artist[0].userName}
                     </h2>
