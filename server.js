@@ -368,7 +368,26 @@ app.get('/fetchAllTracks/:id', (req,res) => {
     })
 })
 
-app.get('/fetchProfileGenresInstruments/:id', (req,res) => {
+app.get('/fetchProfileGenresInstruments/:id/:limit', (req,res) => {
+    let responseObj = {}, limit = req.params.limit;
+    con.query(`SELECT genresCSV.* FROM genresCSV INNER JOIN user_genres on genresCSV.id = user_genres.genresCSV_id WHERE(user_genres.users_id = ${req.params.id})${limit !== 0 ? " limit " + limit : ""};`, (err, genres) => {
+        if (err) console.log(err);
+        if (genres) {
+            responseObj['genres'] = genres;
+
+            con.query(`SELECT instrumentsCSV.* FROM instrumentsCSV INNER JOIN user_instruments on instrumentsCSV.id = user_instruments.instrumentsCSV_id WHERE(user_instruments.users_id = ${req.params.id})${limit !== 0 ? " limit " + limit : ""};`, (err, instruments) => {
+                if(err) console.log(err);
+                if(instruments){
+                    responseObj['instruments'] = instruments;
+    
+                    res.json(responseObj);
+                }
+            });
+        }
+
+    });
+
+
     
 } )
 

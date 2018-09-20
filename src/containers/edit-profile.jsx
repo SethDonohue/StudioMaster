@@ -126,8 +126,6 @@ class EditProfile extends Component {
 
     render(){
         const { handleSubmit } = this.props;
-
-        console.log(this.props.instrumentsAndGenres)
         return(
             <form className="edit-profile" onSubmit={handleSubmit(this.onSubmitHandler.bind(this))}>
                 <h2 className="edit-profile__header">

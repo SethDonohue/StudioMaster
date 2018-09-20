@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getAccountInfo } from "../actions/index";
+import { getAccountInfo, fetchProfileInstrumentGenres } from "../actions/index";
 
 import NavBar from './navs/nav_bar';
 import NavBtn from './navs/nav_btn';
@@ -17,6 +17,7 @@ class Profile extends Component {
 
     componentDidMount(){
         this.props.getAccountInfo(this.props.match.params.id);
+        this.props.fetchProfileInstrumentGenres(this.props.match.params.id, 3);
     }
 
     render(){  
@@ -61,12 +62,13 @@ class Profile extends Component {
 
         
             else{
-
+                console.log(this.props.userProfile)
                 return (
                     <main className="section-profile">
                         <NavBar />
                         <NavBtn />
-                        <Banner artist={this.props.userProfile[0]} />                        <Info artist={this.props.userProfile[0]} />
+                        <Banner artist={this.props.userProfile[0]} />                        
+                        <Info artist={this.props.userProfile} />
                         <Tracks artist={this.props.userProfile[0]} />
                         <Footer />
                     </main>
@@ -80,4 +82,4 @@ function mapStateToProps({ login, userProfile }) {
     return {login, userProfile}
 }
 
-export default connect(mapStateToProps, {getAccountInfo})(Profile)
+export default connect(mapStateToProps, {getAccountInfo, fetchProfileInstrumentGenres})(Profile)

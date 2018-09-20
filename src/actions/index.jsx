@@ -9,6 +9,7 @@ export const GET_ACCOUNT_INFO = "GET_INFO";
 export const CHECK_LOGIN_SESSION = 'CHECK_LOGIN_SESSION';
 export const SIGN_OFF = 'SIGN_OFF';
 export const FETCH_I_AND_G = "FETCH_I_AND_G";
+export const FETCH_PROFILE_IG = "FETCH_PROFILE_IG";
 export const ARTIST_INFO = "ARTIST_INFO";
 
 
@@ -116,6 +117,24 @@ export function signOff(){
         payload: request
     }
 }
+
+//This function queries for instruments and genres related to a profile.
+
+export function fetchProfileInstrumentGenres(id, limit = 0){
+    const url = `${ROOT_URL}/fetchProfileGenresInstruments/${id}/${limit}`;
+
+    const request = axios.get(url, {
+        method: 'get',
+        withCredentials: true
+    });
+
+    return {
+        type: FETCH_PROFILE_IG,
+        payload: request
+    }
+}
+
+//This function queries for the entire list of genres and instruments in order for users to create relations in DB
 
 export function fetchInstrumentsAndGenres(){
     const url = `${ROOT_URL}/instrumentsAndGenres`;
