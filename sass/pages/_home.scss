@@ -1,17 +1,19 @@
 .section-hero {
-    height: 85vh;
-    // background-image: linear-gradient(to right bottom, rgba($color-black, .4), rgba($color-black, .25)),
-    //                     url("../img/StudioMaster-front-page.jpeg");
+    height: 64rem;
     background-image:   linear-gradient(to right, rgba($color-black, .2), rgba($color-black, .55)),
                         url("../img/StudioMaster-front-page-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 60%;
+    background-position: center center;
     position: relative;
     z-index: 5;
+
+    .hero {
+        width: calc(100% - 8rem);
+    }
 }
 
 .section-features {
-    background-color: $color-grey-light;
+    background-color: $color-white;
     color: $color-white;
 }

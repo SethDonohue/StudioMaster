@@ -1,11 +1,52 @@
 .hero {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: $color-white;
-    @include respond(phone){
-        width: 90%;
-    }
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: $color-white;
+	// @include respond(phone){
+	// 	width: 90%;
+	// }
+
+	.btn {
+		margin: 0 4rem;
+	}
+
+	.heading-primary {
+		margin-bottom: 2rem;
+		color: $color-white;
+		text-transform: uppercase;
+	}
+
+	.heading-secondary {
+		margin-bottom: 4rem;
+		font-size: 2rem;
+		font-weight: 500;
+		color: $color-white;
+	}
+
+	.heading-tertiary {
+		margin: 2rem;
+		font-size: 2.5rem;
+		line-height: 3rem;
+		color: inherit;
+	}
+}
+
+.link {
+	font-family: 'Open Sans', sans-serif;
+	transition: $ease-default;
+
+	&:link,
+	&:visited {
+		color: $color-primary;
+		font-size: $default-font;
+	}
+
+	&:hover,
+	&:active {
+		color: $color-primary-light;
+		font-weight: 400;
+	}
 }

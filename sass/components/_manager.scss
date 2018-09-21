@@ -8,8 +8,6 @@
         text-align: center;
     }
 
-    
-
     &__item {
         display: inline-block;
         list-style: none;
@@ -17,8 +15,6 @@
         border-bottom: 2px solid $color-primary;
         padding-bottom: .5rem;
         cursor: pointer;
-
-        
     }
 }
 
