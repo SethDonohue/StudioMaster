@@ -29,9 +29,10 @@ class ProfileTracks extends Component {
         
         return(
             <section className="profile-tracks">
+                {this.props.login.data.id !== null && this.props.login.data.id == this.props.artist.id ? 
                 <Link to={`/manager/${this.props.artist.id}`} className="profile-tracks__edit-link">
                     <i className="fas fa-edit"></i>
-                </Link>
+                </Link> : ""}
                 <div className="profile-tracks__link-container">
                     <Link to={`/all-tracks/profile/${this.props.artist.id}`} className="profile-tracks__link">All Tracks</Link>
                 </div>

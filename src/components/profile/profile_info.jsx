@@ -17,17 +17,32 @@ class ProfileInfo extends Component {
         if(this.state.editWindowShown) this.setState({editWindowShown: false});
     }
 
+    mapGenres(){
+        return this.props.artist[1].map(genre => {
+            return <li key={genre.id} className='profile-info__item'>{genre.genre}</li>
+        })
+    }
+
+    mapInstruments(){
+        return this.props.artist[2].map(instrument => {
+            return <li key={instrument.id} className="profile-info__item">{instrument.instrument}</li>
+        })
+    }
+
     render() {
+
+        console.log(this.props.login)
+        
         return(
             <section className='profile-info'>
                 <div className="profile-info__about">
-                    <i onClick={this.changeEditState.bind(this)} className="fas fa-edit profile-info__edit-icon"></i>
+                    {this.props.login.data.id !== null && this.props.login.data.id == this.props.artist[0].id ? <i onClick={this.changeEditState.bind(this)} className="fas fa-edit profile-info__edit-icon"></i> : ""}
                     <h2 className="profile-info__header">
-                        About {this.props.artist.userName}
+                        About {this.props.artist[0].userName}
                     </h2>
                     <div className="profile-info__description-container">
                         <p className="profile-info__text">
-                            {this.props.artist.description ? this.props.artist.description : "Artist has not entered a description yet"}
+                            {this.props.artist[0].description ? this.props.artist[0].description : "Artist has not entered a description yet"}
                         </p>
                     </div>
 
@@ -36,9 +51,7 @@ class ProfileInfo extends Component {
                             Expertise
                         </h2>
                         <ul className="profile-info__list">
-                            <li className="profile-info__item">Instrument</li>
-                            <li className="profile-info__item">Instrument</li>
-                            <li className="profile-info__item">Instrument</li>
+                            {this.props.artist && this.props.artist[2] && this.props.artist[2].length ? this.mapInstruments() : <li className='profile-info__item'>No Instruments Available</li>}
                         </ul>
                     </div>
                     <div className="profile-info__list-container">
@@ -46,9 +59,7 @@ class ProfileInfo extends Component {
                             Genres
                         </h2>
                         <ul className="profile-info__list">
-                            <li className="profile-info__item">Genre</li>
-                            <li className="profile-info__item">Genre</li>
-                            <li className="profile-info__item">Genre</li>
+                            {this.props.artist && this.props.artist[1] && this.props.artist[2].length ? this.mapGenres() : <li className='profile-info__item'>No Genres Available</li>}
                         </ul>
                     </div>
                 </div>
@@ -71,7 +82,7 @@ class ProfileInfo extends Component {
 
                 <div className={this.state.editWindowShown ? "banner__edit-profile" : "banner__edit-profile-hidden"}>
                     <i className="fas fa-times banner__edit-close" onClick={this.changeEditState.bind(this)}></i>
-                    <EditProfile />
+                    <EditProfile closeWindow={this.changeEditState.bind(this)} />
                 </div>
 
             </section>

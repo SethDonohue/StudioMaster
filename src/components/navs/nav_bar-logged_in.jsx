@@ -10,7 +10,7 @@ class LoggedInUser extends Component {
     }
 
     render(){
-        console.log(this.props.user.data);
+        
         return(
             <ul className="navigation__nav-container">
                 <li className="navigation__item">
