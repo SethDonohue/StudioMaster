@@ -14,7 +14,7 @@ class ProfileAlbums extends Component {
     }
     render(){
         return(
-            <section className="profile-tracks">
+            <section className="profile-tracks profile-tracks--albums">
 
                 <div className="profile-tracks__link-container">
                     <Link to={`/all-albums/tracks/profile/${this.props.artist.id}`} className="profile-tracks__link">All Albums</Link>

@@ -1,6 +1,35 @@
 .album {
     position: relative;
-    width: 20%;
-    height: 15rem;
+    width: 15%;
+    height: 25rem;
     display: inline-block;
+    background-image: url('../../src/img/placeholders/vinyl.jpeg');
+    background-size: cover;
+    margin-right: 3rem;
+    cursor: pointer;
+
+    &__play {
+        color: $color-grey;
+        position: absolute;
+        font-size: 4rem;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text-container {
+        padding: 1rem 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 6.5rem;
+        background-color: $color-charcoal;
+        width: 100%;
+        opacity: .9;
+        text-align: center;
+    }
+
+    &__text {
+        color: $color-white;
+    }
 }
