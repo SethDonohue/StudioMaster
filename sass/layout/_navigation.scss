@@ -90,25 +90,34 @@
 		border: 0;
 		border-radius: 0.5rem;
 
-		form.form {
-
-			.form__login {
-				width: 50%;
-			}
-
-			.form__icon {
-				margin: 0;
-			}
-		}
-
 		.section-login {
 
 			.login-header {
 				text-transform: capitalize;
 			}
 
-			.btn.btn--purple.form__login-submit {
-				margin-top: 4rem;
+			.form__group {
+				margin: 0 auto 2rem auto;
+				width: 65%;
+
+				&__login {
+					width: 100%;
+				}
+
+				&__icon {
+					margin: 0;
+				}
+			}
+
+			a.link {
+				margin: 0 auto;
+				padding: 1rem;
+				width: auto;
+				color: $color-secondary;
+
+				&:hover {
+					color: $color-secondary-light;
+				}
 			}
 		}
 	}
@@ -118,6 +127,7 @@
 		margin-left: 0.75rem;
 		padding: 1rem 1.5rem;
 		height: 4rem;
+		width: 100%;
 
 		background-color: $color-secondary;
 		color: $color-white;

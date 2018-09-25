@@ -15,9 +15,7 @@ class Features extends Component{
                     <h1 className="heading-primary bottom-features__header u-center-text u-margin-bottom-medium">
                         Intuitive, powerful features
                     </h1>
-                    <div className="top-features__divider u-margin-bottom-medium">
-                        
-                    </div>
+                    <div className="top-features__divider u-margin-bottom-medium"></div>
                     <div className="top-features__three-cards">
                             <div className="row">
                                 <div className="col-1-3">
@@ -59,7 +57,6 @@ class Features extends Component{
                                         </ul>
                                     </div>
                                 </div>
-                
                             </div>
                         </div>
                     </div>

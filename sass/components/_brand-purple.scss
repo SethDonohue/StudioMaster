@@ -1,6 +1,8 @@
 .brand {
+    margin: 0 auto;
+    padding: 8rem;
+    width: 50%;
     text-align: center;
-    padding: 10rem 0 5rem 0;
     @include respond(tab-port) {
         padding-top: 12rem;
     }
@@ -11,7 +13,7 @@
 
     &__logo {
         height: 18rem;
-        width: 18rem;
+        width: auto;
     }
 
     &__header {

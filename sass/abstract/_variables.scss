@@ -40,8 +40,8 @@ $color-red-light: lighten($color-red, 10%);
 $color-red-dark: darken($color-red, 10%);
 
 //Orange
-$color-orange: rgb(235, 185, 22);
-$color-orange-dark: darken($color-orange, 5%);
+$color-orange: #ffca21;
+$color-orange-dark: darken($color-orange, 10%);
 
 //Yellow
 $color-yellow: #eeff00;
@@ -65,7 +65,7 @@ $ease-default: ease-in-out all 0.125s;
 $scale-small: scale(1.10);
 
 // Box Shadows
-$shadow-light: 0 1rem 1.5rem rgba($color-black, 0.15);
-$shadow-dark: 0 1rem 1.5rem rgba($color-black, 0.35);
-$shadow-center-light: 0 0 1.5rem rgba($color-black, 0.15);
-$shadow-center-dark: 0 0 1.5rem rgba($color-black, 0.35);
+$shadow-light: 0 0.5rem 0.75rem rgba($color-black, 0.15);
+$shadow-dark: 0 0.75rem 1rem rgba($color-black, 0.35);
+$shadow-center-light: 0 0 0.75rem rgba($color-black, 0.15);
+$shadow-center-dark: 0 0 1rem rgba($color-black, 0.35);

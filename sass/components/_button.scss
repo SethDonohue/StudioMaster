@@ -10,7 +10,7 @@
 		font-weight: 700;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		border-radius: .5rem;
+		border-radius: 0.5rem;
 		cursor: pointer;
 		transition: $ease-default;
 		box-shadow: $shadow-center-light;
@@ -29,14 +29,14 @@
 		&:link,
 		&:visited {
 			color: $color-white;
-			background-color: $color-primary-light;
-			border: 2px solid $color-primary-light;
+			background-color: $color-secondary;
+			border: 2px solid $color-secondary;
 		}
 
 		&:hover,
 		&:active {
-			border: 2px solid $color-primary;
-			background-color: $color-primary;
+			border: 2px solid $color-secondary-dark;
+			background-color: $color-secondary-dark;
 		}
 	}
 
@@ -88,6 +88,25 @@
 			color: $color-white;
 			background-color: $color-green;
 			border: 2px solid $color-green;
+			box-shadow: $shadow-center-dark;
+		}
+	}
+
+	&--yellow {
+		
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-orange;
+			border: 2px solid $color-black;
+			color: $color-primary;
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			background-color: $color-orange-dark;
+			border: 2px solid $color-black;
 			box-shadow: $shadow-center-dark;
 		}
 	}
