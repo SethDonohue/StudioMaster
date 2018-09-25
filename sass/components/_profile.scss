@@ -282,6 +282,9 @@
 .profile-tracks {
     background-color: $color-grey-dark;
     padding: 2rem;
+    &--albums{
+        background-color: $color-white;
+    }
 
     &__link-container {
         text-align: right;

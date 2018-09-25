@@ -5,7 +5,6 @@ import Popup from 'reactjs-popup';
 
 import profileStock from "../../img/dj-profile.png";
 import ChangePhoto from "../../containers/change-photo";
-import EditProfile from "../../containers/edit-profile";
 
 class Banner extends Component {
     render(){
@@ -41,8 +40,7 @@ class Banner extends Component {
                         
                         :
                         <div>
-                            <button className="btn">Button</button>
-                            <button className="btn">Other Button</button>
+                            <button className="btn btn--grey">Send Mail</button>
                         </div>
                         }
 
