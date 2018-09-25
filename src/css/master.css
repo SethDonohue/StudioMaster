@@ -1417,7 +1417,17 @@ section.section-login .form__login-submit {
       transition: ease-in-out all 0.125s; }
   .navigation__pop-up {
     width: 100%;
-    background-color: #cccccc; }
+    background-color: #fff;
+    border: 0;
+    border-radius: 0.5rem; }
+    .navigation__pop-up form.form .form__login {
+      width: 50%; }
+    .navigation__pop-up form.form .form__icon {
+      margin: 0; }
+    .navigation__pop-up .section-login .login-header {
+      text-transform: capitalize; }
+    .navigation__pop-up .section-login .btn.btn--purple.form__login-submit {
+      margin-top: 4rem; }
   .navigation__log-in {
     margin-top: 2rem;
     margin-left: 0.75rem;
