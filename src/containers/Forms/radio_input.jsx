@@ -2,7 +2,7 @@ import React from 'react';
 
 function RadioInput(field){
     return(
-        <div className="form__radio-group">
+        <div className="form__radio-group track-manager__item">
             <input type="radio"
             className="form__radio-input"
             value={field.value}

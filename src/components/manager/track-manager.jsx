@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchAllTracks } from "../../actions/audio_actions";
+import { fetchAllTracks, deleteTracks } from "../../actions/audio_actions";
 
 class TrackManager extends Component {
     constructor(){
@@ -22,22 +22,31 @@ class TrackManager extends Component {
         console.log(this.props.allTracks)
          return this.props.allTracks.tracks.map(track => {
              return(
-                <li
-                key={track.id} 
-                className='track-manager__item'>
-                    <p onClick={this.addTrackToSelected.bind(this, track)}
-                    className="track-manager__item-text">
+                <div className="form__radio-group track-manager__item" key={track.id}>
+                    <input type="checkbox"
+                    className="form__radio-input"
+                    value={track.id}
+                    id={track.id}
+                    
+                    />
+                    <label 
+                    onClick={this.addTrackToSelected.bind(this, track)}
+                    htmlFor={track.id} 
+                    className="form__label-radio">
+
+                        <span className="form__radio-button"></span>
                         {track.trackTitle}
-                    </p>
+                    </label>
+
                     <i onClick={this.editWindow.bind(this, track)}
                     className="fas fa-edit track-manager__edit-icon"></i>
-                </li>
+                </div>
              )
         })
     }
 
     addTrackToSelected(track){
-        console.log(track);
+        // console.log(track);
         let length = this.selectedTracks.length; // store the original length
         for(let idx = 0; idx < this.selectedTracks.length; idx++){ // search for the track id in the array, removing it if we find it.
             if(this.selectedTracks[idx] == track.id){
@@ -46,6 +55,7 @@ class TrackManager extends Component {
         }
         if(length === this.selectedTracks.length){ //if we made no change, push the new id in, otherwise return.
             this.selectedTracks.push(track.id);
+            console.log(this.selectedTracks);
         }
         else{
             return;
@@ -53,6 +63,7 @@ class TrackManager extends Component {
     }
 
     promptDeleteSelectedTracks(){
+        console.log(this.props.login.data.id)
         if(!this.selectedTracks.length){
             console.log("can't do that")
             return;
@@ -64,6 +75,8 @@ class TrackManager extends Component {
 
     deleteSelectedTracks(){
         console.log(this.selectedTracks);
+        this.props.deleteTracks(this.selectedTracks, this.props.login.data.id);
+        this.changeStateHandler('confirm');
     }
 
     editWindow(track){
@@ -79,15 +92,17 @@ class TrackManager extends Component {
             case 'edit':
                 this.setState({showEdit: false, track : null});
                 return;
+            case 'cancel':
+                this.setState({showConfirm: false});
             case 'confirm':
                 this.selectedTracks = [];
-                this.setState({showConfirm: false});
+                this.setState({showConfirm: false})
+
                 return;
         }
     }
 
     render(){
-        console.log(this.state);
         return(
             <section>
                 <i onClick={this.promptDeleteSelectedTracks.bind(this)}
@@ -101,7 +116,7 @@ class TrackManager extends Component {
                             <h2 className="track-manager__header">Are you sure you want to delete {this.selectedTracks.length} track(s)?</h2>
                             <button onClick={this.deleteSelectedTracks.bind(this)}
                             className='btn btn--green track-manager__confirm'>Confirm</button>
-                            <button onClick={this.changeStateHandler.bind(this, 'confirm')}
+                            <button onClick={this.changeStateHandler.bind(this, 'cancel')}
                             className="btn track-manager__cancel">Cancel</button>
 
                       </div>
@@ -133,4 +148,4 @@ function mapStateToProps({ allTracks, login }){
     return { allTracks, login }
 }
 
-export default connect(mapStateToProps, { fetchAllTracks })(TrackManager);
+export default connect(mapStateToProps, { fetchAllTracks, deleteTracks })(TrackManager);

@@ -276,6 +276,49 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
     });
 })
 
+app.post('/deleteTracks/:id', (req, res) => {
+
+    const id = req.params.id;
+
+    const tracks = req.body.tracks ? req.body.tracks : null;
+
+    if(tracks){
+        const query = ''
+        for (let idx = 0; idx < tracks.length; idx++){
+            query += tracks[idx];
+            if(idx !== tracks.length - 1) query += ','
+        }
+        con.query(`SELECT trackUrl from Tracks WHERE id IN (${query})`, (err, tracksToDelete) => {
+            if(err) console.log(err);
+
+            if(tracksToDelete) {
+                let keys = []
+                
+                for(let idx = 0; idx < tracksToDelete.length; idx++){
+                    keys.push({Key: tracksToDelete[idx].trackUrl})
+                }
+                let params = {
+                    Bucket: audioBucket,
+                    Delete: {
+                        Objects: keys
+                    } 
+                }
+
+                s3.deleteObjects(params, (err, data) => {
+                    if (err) console.log(err);
+                    else {
+                        console.log(data);
+                        con.query(`DELETE FROM Tracks WHERE id IN (${query});`, (err, success) => {
+                            if(err) console.log (err);
+                            if (success) res.json({success});
+                        })
+                    }
+                })
+            }
+        })
+    }
+})
+
 app.post('/setArtistInfo', (req, res) => {
     console.log(req.session.loggedInUser);
     console.log(req.body);
