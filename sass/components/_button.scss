@@ -13,14 +13,12 @@
 		border-radius: 0.5rem;
 		cursor: pointer;
 		transition: $ease-default;
-		box-shadow: $shadow-center-light;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
 		transition: $ease-default;
-		box-shadow: $shadow-center-dark;
 	}
 
 	&--purple {
@@ -78,17 +76,16 @@
 		&,
 		&:link,
 		&:visited {
-			background-color: $color-green-dark;
-			border: 2px solid $color-green-dark;
+			background-color: $color-green;
+			border: 2px solid $color-green;
 			color: $color-white;
 		}
 
 		&:hover,
 		&:active {
+			background-color: $color-green-dark;
+			border: 2px solid $color-green-dark;
 			color: $color-white;
-			background-color: $color-green;
-			border: 2px solid $color-green;
-			box-shadow: $shadow-center-dark;
 		}
 	}
 
@@ -97,8 +94,8 @@
 		&,
 		&:link,
 		&:visited {
-			background-color: $color-orange;
-			border: 2px solid $color-black;
+			background-color: $color-yellow;
+			border: 2px solid $color-yellow;
 			color: $color-primary;
 		}
 
@@ -106,8 +103,7 @@
 		&:active {
 			color: $color-primary;
 			background-color: $color-orange-dark;
-			border: 2px solid $color-black;
-			box-shadow: $shadow-center-dark;
+			border: 2px solid $color-orange-dark;
 		}
 	}
 
@@ -126,7 +122,6 @@
 			color: $color-primary;
 			background-color: $color-orange-dark;
 			border: 2px solid $color-black;
-			box-shadow: $shadow-center-dark;
 		}
 	}
 
@@ -135,16 +130,16 @@
 		&,
 		&:link,
 		&:visited {
-			background-color: $color-grey-dark;
-			border: 2px solid $color-grey-dark;
-			color: $color-charcoal-light;
+			background-color: $color-grey;
+			border: 2px solid $color-grey;
+			color: $color-charcoal;
 		}
 
 		&:hover,
 		&:active {
-			background-color: $color-grey;
-			border: 2px solid $color-grey;
-			color: $color-charcoal-light;
+			background-color: $color-grey-dark;
+			border: 2px solid $color-grey-dark;
+			color: $color-charcoal;
 		}
 	}
 }
