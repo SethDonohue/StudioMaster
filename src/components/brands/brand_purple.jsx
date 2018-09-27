@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "../../img/logos/StudioMaster-Site-Icon_Purple.png"
+import Logo from "../../img/logos/StudioMaster-Logo-Stacked.png"
 
 class BrandPurple extends Component {
     render() {
@@ -9,10 +9,7 @@ class BrandPurple extends Component {
         <section className="section-brand">
             <div className="brand">
                 <Link to="/" className="brand__link">
-                    <img src={Logo} alt="Studio Master Logo Purple" className="brand__logo u-margin-bottom-medium"/>
-                    <h1 className="brand__header">
-                        <span className="brand__header--strong">Studio</span>Master
-                    </h1>
+                    <img src={Logo} alt="Studio Master Logo Stacked" className="brand__logo u-margin-bottom-medium"/>
                 </Link>
             </div>
         </section>

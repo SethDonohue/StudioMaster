@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "../../img/logos/StudioMaster-Logo_Purple-Light.png";
+import Logo from "../../img/logos/StudioMaster-Logo.png";
 
 class NavBtn extends Component {
 
@@ -18,12 +18,6 @@ class NavBtn extends Component {
                 </label>
 
                 <div className="mobile-nav__nav">
-                    <Link to="/">
-                        <h2 className="mobile-nav__title">
-                            <strong>Studio</strong>Master
-                        </h2>
-                    </Link>
-
                     <ul className="mobile-nav__list">
                         <li className="mobile-nav__item">
                             <Link to="/" className="mobile-nav__link">Billboard</Link>

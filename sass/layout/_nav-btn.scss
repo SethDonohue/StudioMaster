@@ -46,7 +46,7 @@
             height: .6rem;
             border-radius: 1rem;
             background-color: $color-primary;
-            transition: all .2s;
+            transition: $ease-default;
         }
 
         &::before {
@@ -68,22 +68,20 @@
 
     &__nav {
         position: fixed;
-        top: 0;
-        left: -100%;
-        width: 75%;
+        top: 8rem;
+        right: -100%;
+        width: 66%;
         height: 100%;
-        background-color: $color-charcoal;
-        padding: 3rem 6rem;
-        transition: all .4s;
-
+        background-color: rgba(255,255,255,0.9);
+        transition: $ease-default;
     }
 
     &__title {
-        color: $color-white;
-        font-size: 5rem;
         padding: 2rem 0 3rem 0;
-        border-bottom: 1px solid $color-black;
+        font-size: 5rem;
         font-weight: 400;
+        color: $color-white;
+        border-bottom: 1px solid $color-black;
         
         strong {
             font-weight: 700;
@@ -95,19 +93,20 @@
     }
 
     &__item {
+        margin: 0 auto;
+        width: 50%;
         list-style: none;
-        font-size: 3rem;
-        margin: 2rem 0;
-        padding: 1rem 0;
-        
-        
     }
 
     &__link,
     &__link:visited {
-        color: $color-white;
         display: block;
-
+        padding: 2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-secondary;
 
         &:not(:last-child) {
             border-bottom: 1px solid $color-black;
