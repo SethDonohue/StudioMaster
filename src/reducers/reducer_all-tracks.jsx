@@ -13,7 +13,7 @@ export default function tracksReducer(state = null, action){
             return action.payload.data;
 
         case DELETE_TRACKS:
-            return state;
+            return action.payload.data;
 
         default:
             return state;

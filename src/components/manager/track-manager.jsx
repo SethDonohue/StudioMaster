@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import { fetchAllTracks, deleteTracks } from "../../actions/audio_actions";
+import { fetchAllTracks, deleteTracks, newAlbum } from "../../actions/audio_actions";
 
 class TrackManager extends Component {
     constructor(){
@@ -10,7 +11,7 @@ class TrackManager extends Component {
         this.selectedTracks = [];
     }
 
-    state = { showConfirm : false, showEdit : false, track: null };
+    state = { showConfirm : false, showEdit : false, showAlbum: false, track: null };
 
 
 
@@ -45,6 +46,26 @@ class TrackManager extends Component {
         })
     }
 
+    renderNewAlbumList(){
+        let albumTracks = []
+        for(let idx = 0; idx < this.props.allTracks.tracks.length; idx++){
+            if(this.selectedTracks.indexOf(this.props.allTracks.tracks[idx].id) !== -1) {
+                albumTracks.push(
+                    <p key={this.props.allTracks.tracks[idx].id}>
+                        {this.props.allTracks.tracks[idx].trackTitle}
+                    </p>
+                )
+            }
+        }
+        if(albumTracks.length) return albumTracks;
+        else return(<p>No Tracks Selected</p>);
+    }
+
+    createNewAlbum(){
+        this.props.newAlbum(this.selectedTracks);
+        return <Redirect to={`/profile/${this.props.login.data.id}`} />
+    }
+
     addTrackToSelected(track){
         // console.log(track);
         let length = this.selectedTracks.length; // store the original length
@@ -77,6 +98,7 @@ class TrackManager extends Component {
         console.log(this.selectedTracks);
         this.props.deleteTracks(this.selectedTracks, this.props.login.data.id);
         this.changeStateHandler('confirm');
+        window.location.reload();
     }
 
     editWindow(track){
@@ -89,27 +111,41 @@ class TrackManager extends Component {
     changeStateHandler(view){
         console.log(view)
         switch(view){
+            case 'cancel':
+                this.setState({showConfirm: false, showAlbum: false, showEdit: false});
+                break;
+
             case 'edit':
                 this.setState({showEdit: false, track : null});
                 return;
-            case 'cancel':
-                this.setState({showConfirm: false});
+
             case 'confirm':
                 this.selectedTracks = [];
                 this.setState({showConfirm: false})
 
                 return;
+            case 'album':
+                this.setState({showAlbum: true})
         }
     }
 
-    render(){
+    render(){ console.log(this.props.allTracks)
         return(
             <section>
-                <i onClick={this.promptDeleteSelectedTracks.bind(this)}
-                className="fas fa-trash-alt track-manager__trash-icon"></i>
+
                 <ul className="track-manager">
+
+                    <div className="track-manager__actions--container">
+                        <button onClick={this.changeStateHandler.bind(this, 'album')}
+                        className="btn btn--orange">Create Album</button>
+                        
+                        <button onClick={this.promptDeleteSelectedTracks.bind(this)}
+                        className="btn "> Delete Tracks</button>
+                    </div>
+
                     {this.props.allTracks ? this.mapTracksToList() : ''}
                 </ul>
+
                 {this.state.showConfirm ? 
 
                       <div className="track-manager__confirm-window">
@@ -139,6 +175,19 @@ class TrackManager extends Component {
                     :
                     ""  
                     }
+                    {this.state.showAlbum ? 
+                    <div className="track-manager__confirm-window">
+                        <h2 className="track-manager__header">
+                            Name your new album
+                        </h2>
+                        <input type="text" className="track-manager__input"/>
+                        {this.renderNewAlbumList()}
+                        <button onClick={this.createNewAlbum.bind(this)} 
+                        className="btn btn--green">Publish</button>
+                        <button onClick={this.changeStateHandler.bind(this, 'cancel')}
+                        className="btn">Cancel</button>
+                    </div> 
+                    : ""}
             </section>
         )
     }
@@ -148,4 +197,4 @@ function mapStateToProps({ allTracks, login }){
     return { allTracks, login }
 }
 
-export default connect(mapStateToProps, { fetchAllTracks, deleteTracks })(TrackManager);
+export default connect(mapStateToProps, { fetchAllTracks, deleteTracks, newAlbum })(TrackManager);

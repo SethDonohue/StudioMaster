@@ -3,7 +3,6 @@
 const express = require('express');
 const bp = require('body-parser');
 const path = require('path');
-const cors = require("cors");
 const bcrypt = require('bcrypt-nodejs');
 const session = require('express-session');
 
@@ -276,6 +275,14 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
     });
 })
 
+app.post('/newAlbum', (req,res) => {
+    const tracks = req.body.tracks;
+
+    console.log(tracks);
+
+    
+})
+
 app.post('/deleteTracks/:id', (req, res) => {
 
     const id = req.params.id;
@@ -283,7 +290,7 @@ app.post('/deleteTracks/:id', (req, res) => {
     const tracks = req.body.tracks ? req.body.tracks : null;
 
     if(tracks){
-        const query = ''
+        let query = ''
         for (let idx = 0; idx < tracks.length; idx++){
             query += tracks[idx];
             if(idx !== tracks.length - 1) query += ','
@@ -310,7 +317,9 @@ app.post('/deleteTracks/:id', (req, res) => {
                         console.log(data);
                         con.query(`DELETE FROM Tracks WHERE id IN (${query});`, (err, success) => {
                             if(err) console.log (err);
-                            if (success) res.json({success});
+                            if (success) {
+                                con.query(`SELECT * FROM Tracks WHERE (user_id = ${id})`)
+                            };
                         })
                     }
                 })
