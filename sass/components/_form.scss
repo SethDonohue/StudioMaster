@@ -201,9 +201,10 @@
 			display: none;
 		}
 
+		&:active,
 		&:hover,
 		&:focus {
-			border: 2px solid $color-primary;
+			border: 2px solid $color-secondary;
 			color: $color-charcoal;
 			background: #ffffff;
 			box-shadow: $shadow-center-dark;

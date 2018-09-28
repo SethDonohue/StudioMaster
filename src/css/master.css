@@ -672,8 +672,8 @@ h6 {
     -moz-appearance: none; }
     .form__select::-ms-expand {
       display: none; }
-    .form__select:hover, .form__select:focus {
-      border: 2px solid #320d59;
+    .form__select:active, .form__select:hover, .form__select:focus {
+      border: 2px solid #754996;
       color: #333;
       background: #ffffff;
       box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25); }
