@@ -465,11 +465,11 @@ h6 {
   .features__image-box {
     display: inline-block;
     width: 50%;
-    height: 100%;
+    height: 40rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../img/StudioMaster-front-page.jpeg"); }
+    background-image: url("../../src/img/StudioMaster-front-page.jpeg"); }
     @media (max-width: 56.25em) {
       .features__image-box {
         display: block;
