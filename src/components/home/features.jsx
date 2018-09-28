@@ -63,7 +63,7 @@ class Features extends Component{
 
                 <div className="features">
                     <div className="features__image-box">
-                        
+                    
                     </div>
 
                     <div className="features__info">

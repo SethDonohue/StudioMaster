@@ -36,14 +36,31 @@ html {
 
 body {
   box-sizing: border-box; }
-  body p {
-    font-family: 'Open Sans';
-    font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 2rem;
-    color: #333; }
 
-h1, h2, h3, h4, h5, h6 {
+p,
+ul,
+li {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: #333; }
+
+a {
+  color: #754996;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  cursor: pointer; }
+  a:hover {
+    color: #260a43;
+    text-decoration: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat';
   font-weight: 700;
   color: #333; }
@@ -74,19 +91,6 @@ h5 {
 h6 {
   font-size: 1.25rem;
   line-height: 1.75rem; }
-
-a {
-  color: #3f106f;
-  text-decoration: none;
-  font-family: 'Montserrat';
-  font-size: 1.25rem;
-  cursor: pointer; }
-  a:hover {
-    color: #260a43;
-    text-decoration: none; }
-
-ul, li {
-  font-family: 'Montserrat'; }
 
 .u-center-text {
   text-align: center; }
@@ -242,7 +246,7 @@ ul, li {
   padding: 1rem 2rem;
   font-size: 1.25rem;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 0.5rem;
@@ -266,18 +270,18 @@ ul, li {
   border: 2px solid #fff; }
 
 .btn--transparent:hover, .btn--transparent:active {
-  color: #d9d9d9;
+  color: #fff;
   border: 2px solid #fff; }
 
 .btn--transparent-purple:link, .btn--transparent-purple:visited {
   background-color: transparent;
-  border: 2px solid #3f106f;
-  color: #3f106f; }
+  border: 2px solid #754996;
+  color: #754996; }
 
 .btn--transparent-purple:hover, .btn--transparent-purple:active {
-  background-color: transparent;
+  background-color: #320d59;
   border: 2px solid #320d59;
-  color: #320d59; }
+  color: #fff; }
 
 .btn--green, .btn--green:link, .btn--green:visited {
   background-color: #06ad1a;
@@ -377,7 +381,19 @@ ul, li {
 
 .top-features {
   background: linear-gradient(to top, #320d59, #754996);
-  padding: 6rem 0 8rem 0; }
+  padding: 6rem 0; }
+  .top-features h1.heading-primary {
+    margin: 0;
+    text-transform: uppercase; }
+  .top-features h2.heading-secondary {
+    margin-bottom: 4rem;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase; }
+  .top-features h3.heading-tertiary {
+    margin: 2rem 0;
+    font-weight: 600;
+    text-transform: capitalize; }
   .top-features ul.top-features__list > li {
     padding-bottom: 1rem;
     font-size: 1.5rem;
@@ -423,7 +439,7 @@ ul, li {
     color: #754996;
     transition: ease-in-out all 0.125s; }
   .top-features__divider {
-    margin: 4rem 0;
+    margin: 3rem 0 4rem 0;
     height: 4px;
     background-color: #fff;
     width: 4rem;
@@ -431,29 +447,24 @@ ul, li {
     left: 50%;
     transform: translateX(-50%);
     top: 0; }
-  .top-features h1.heading-primary {
-    margin-bottom: 2rem;
-    text-transform: uppercase; }
-  .top-features h2.heading-secondary {
-    margin-bottom: 4rem;
-    font-weight: 400;
-    color: #fff;
-    text-transform: uppercase; }
-  .top-features h3.heading-tertiary {
-    margin: 2rem 0;
-    font-weight: 600;
-    text-transform: capitalize; }
 
 .features {
-  color: #e5e5e5;
-  padding: 0 5rem;
-  background-color: #e5e5e5; }
+  margin: 0 auto;
+  max-width: 114rem; }
+  .features .heading-primary,
+  .features .heading-secondary,
+  .features .heading-tertiary {
+    color: #333; }
+  .features .heading-secondary {
+    margin-bottom: 1rem; }
   .features__image-box {
-    max-height: 40rem;
-    width: 40%;
-    background-color: #000;
-    margin-top: 6rem;
-    display: inline-block; }
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/StudioMaster-front-page.jpeg"); }
     @media (max-width: 56.25em) {
       .features__image-box {
         display: block;
@@ -462,7 +473,7 @@ ul, li {
   .features__info {
     vertical-align: top;
     display: inline-block;
-    padding: 6rem;
+    padding: 6rem 0 6rem 6rem;
     color: #000;
     width: 50%; }
     @media (max-width: 56.25em) {
@@ -473,12 +484,8 @@ ul, li {
         padding: 2rem;
         margin-top: 3rem;
         text-align: center; } }
-    .features__info p {
-      font-size: 1.25rem; }
-  .features .heading-primary,
-  .features .heading-secondary,
-  .features .heading-tertiary {
-    color: #333; }
+  .features .btn.btn--purple {
+    margin-right: 4rem; }
 
 .bottom-features {
   position: relative;
@@ -519,22 +526,6 @@ ul, li {
     font-size: 8rem;
     color: #d8d8d8;
     transition: ease-in-out all 0.125s; }
-  .bottom-features .heading-primary,
-  .bottom-features .heading-secondary,
-  .bottom-features .heading-tertiary {
-    color: #333; }
-  .bottom-features .heading-primary {
-    margin-bottom: 2rem;
-    text-transform: uppercase; }
-  .bottom-features .heading-secondary {
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    font-weight: 500; }
-  .bottom-features .heading-tertiary {
-    margin: 2rem;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    color: inherit; }
 
 .form {
   text-align: center;
@@ -719,8 +710,11 @@ ul, li {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff; }
+  @media (max-width: 37.5em) {
+    .hero {
+      width: 90%; } }
   .hero .btn {
-    margin: 4rem; }
+    margin: 2rem; }
   .hero .heading-primary {
     margin-bottom: 2rem;
     color: #fff;
@@ -1297,7 +1291,7 @@ ul, li {
       font-size: 1.5rem;
       font-weight: 700;
       text-transform: uppercase;
-      color: inherit; }
+      color: #8251a7; }
     .footer__nav-item {
       list-style: none; }
       .footer__nav-item:not(:last-child) {
@@ -1518,7 +1512,7 @@ ul, li {
 
 .section-hero {
   height: 64rem;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)), url("../img/StudioMaster-front-page-2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url("../img/Home-Hero-Image-Edited.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

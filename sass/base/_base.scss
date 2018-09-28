@@ -28,17 +28,36 @@ html {
 
 body {
 	box-sizing: border-box;
-	p {
-		font-family: 'Open Sans';
-		font-weight: 400;
-		font-size: 1.125rem;
-		line-height: 2rem;
-		color: #333;
+}
+
+p,
+ul,
+li {
+	font-family: 'Open Sans';
+	font-weight: 300;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	color: $color-charcoal;
+}
+
+a {
+	color: $color-secondary;
+	text-decoration: none;
+	font-family: 'Montserrat';
+	cursor: pointer;
+
+	&:hover {
+		color: $color-primary-dark;
+		text-decoration: none;
 	}
 }
 
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: 'Montserrat';
 	font-weight: 700;
 	color: #333;
@@ -75,21 +94,4 @@ h5 {
 h6 {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
-}
-
-a {
-	color: $color-primary-light;
-	text-decoration: none;
-	font-family: 'Montserrat';
-	font-size: $default-font;
-	cursor: pointer;
-
-	&:hover {
-		color: $color-primary-dark;
-		text-decoration: none;
-	}
-}
-
-ul, li {
-	font-family: 'Montserrat';
 }

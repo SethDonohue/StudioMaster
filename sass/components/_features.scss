@@ -1,6 +1,25 @@
-.top-features{
+// TOP FEATURES
+.top-features {
 	background: linear-gradient(to top, $color-primary, $color-secondary);
-	padding: 6rem 0 8rem 0;
+	padding: 6rem 0;
+
+	h1.heading-primary {
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	h2.heading-secondary {
+		margin-bottom: 4rem;
+		font-weight: 400;
+		color: $color-white;
+		text-transform: uppercase;
+	}
+
+	h3.heading-tertiary {
+		margin: 2rem 0;
+		font-weight: 600;
+		text-transform: capitalize;
+	}
 
 	ul.top-features__list > li {
 		padding-bottom: 1rem;
@@ -10,7 +29,7 @@
 		text-align: left;
 	}
 
-	&__info{
+	&__info {
 		padding: 6rem;
 		width: 100%;
 
@@ -64,7 +83,7 @@
 	}
 
 	&__divider {
-		margin: 4rem 0;
+		margin: 3rem 0 4rem 0;
 		height: 4px;
 		background-color: $color-white;
 		width: 4rem;
@@ -73,51 +92,46 @@
 		transform: translateX(-50%);
 		top: 0;
 	}
-
-	h1.heading-primary {
-		margin-bottom: 2rem;
-		text-transform: uppercase;
-	}
-
-	h2.heading-secondary {
-		margin-bottom: 4rem;
-		font-weight: 400;
-		color: $color-white;
-		text-transform: uppercase;
-	}
-
-	h3.heading-tertiary {
-		margin: 2rem 0;
-		font-weight: 600;
-		text-transform: capitalize;
-	}
 }
 
+// FEATURES
 .features {
-	color: $color-grey;
-	padding: 0 5rem;
-	background-color: $color-grey;
+	margin: 0 auto;
+	max-width: 114rem;
+
+	.heading-primary,
+	.heading-secondary,
+	.heading-tertiary {
+		color: $color-charcoal;
+	}
+
+	.heading-secondary {
+		margin-bottom: 1rem;
+	}
 
 	&__image-box {
-		max-height: 40rem;
-		width: 40%;
-		background-color: $color-black;
-		margin-top: 6rem;
 		display: inline-block;
-		@include respond(tab-port){
+		width: 50%;
+		height: 100%;
+		background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+		background-image: url("../img/StudioMaster-front-page.jpeg");
+
+		@include respond(tab-port) {
 			display: block;
 			margin: auto;
 			width: 80%
 		}
-
 	}
 	
 	&__info {
 		vertical-align: top;
 		display: inline-block;
-		padding: 6rem;
+		padding: 6rem 0 6rem 6rem;
 		color: $color-black;
 		width: 50%;
+
 		@include respond(tab-port){
 			display: block;
 			margin: auto;
@@ -126,19 +140,14 @@
 			margin-top: 3rem;
 			text-align: center;
 		}
-
-		p {
-			font-size: $default-font;
-		}
 	}
 
-	.heading-primary,
-	.heading-secondary,
-	.heading-tertiary {
-		color: $color-charcoal;
+	.btn.btn--purple {
+		margin-right: 4rem;
 	}
 }
 
+// BOTTOM FEATURES
 .bottom-features {
 	position: relative;
 	padding: 2rem 4rem;
@@ -190,29 +199,5 @@
 		font-size: 8rem;
 		color: $color-grey-dark;
 		transition: $ease-default;
-	}
-
-	.heading-primary,
-	.heading-secondary,
-	.heading-tertiary {
-		color: $color-charcoal;
-	}
-
-	.heading-primary {
-		margin-bottom: 2rem;
-		text-transform: uppercase;
-	}
-
-	.heading-secondary {
-		margin-bottom: 4rem;
-		font-size: 2rem;
-		font-weight: 500;
-	}
-
-	.heading-tertiary {
-		margin: 2rem;
-		font-size: 2.5rem;
-		line-height: 3rem;
-		color: inherit;
 	}
 }
