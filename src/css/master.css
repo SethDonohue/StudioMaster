@@ -151,16 +151,21 @@ h6 {
   width: 15%;
   height: 25rem;
   display: inline-block;
-  background-image: url("../../src/img/placeholders/vinyl.jpeg");
-  background-size: cover;
   margin-right: 3rem;
   cursor: pointer; }
+  .album__album-cover {
+    position: relative;
+    background-image: url("../../src/img/placeholders/vinyl.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 18.5rem;
+    width: 100%; }
   .album__play {
     color: #e5e5e5;
     position: absolute;
     font-size: 4rem;
     left: 50%;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%, -50%); }
   .album__text-container {
     padding: 1rem 0;
@@ -761,6 +766,7 @@ h6 {
   .track-manager__item {
     list-style: none;
     position: relative;
+    display: block;
     padding: 1rem 0 1rem 1rem; }
     .track-manager__item:hover {
       cursor: pointer; }

@@ -3,17 +3,25 @@
     width: 15%;
     height: 25rem;
     display: inline-block;
-    background-image: url('../../src/img/placeholders/vinyl.jpeg');
-    background-size: cover;
     margin-right: 3rem;
     cursor: pointer;
+
+    &__album-cover {
+        position: relative;
+        background-image: url('../../src/img/placeholders/vinyl.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 18.5rem;
+        width: 100%;
+    }
+
 
     &__play {
         color: $color-grey;
         position: absolute;
         font-size: 4rem;
         left: 50%;
-        top: 40%;
+        top: 50%;
         transform: translate(-50%, -50%);
     }
 

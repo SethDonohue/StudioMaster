@@ -11,6 +11,7 @@ import Banner from "../components/profile/profile_banner";
 import Info from "../components/profile/profile_info";
 import Tracks from "../components/profile/profile_tracks";
 import Albums from "../components/profile/profile_albums";
+import Actions from "../components/profile/profile_actions";
 
 
 class Profile extends Component {
@@ -67,7 +68,8 @@ class Profile extends Component {
                     <main className="section-profile">
                         <NavBar />
                         <NavBtn />
-                        <Banner artist={this.props.userProfile[0]} />                        
+                        <Banner artist={this.props.userProfile[0]} />
+                        <Actions artist={this.props.userProfile[0]}/>                        
                         <Info artist={this.props.userProfile} login={this.props.login} />
                         <Tracks artist={this.props.userProfile[0]} login={this.props.login} />
                         <Albums artist={this.props.userProfile[0]} />
