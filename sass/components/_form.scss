@@ -2,18 +2,36 @@
 	text-align: center;
 	margin-top: 3rem;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.25rem;
+
+	input {
+		width: 100%;
+		padding: 1rem 1.5rem;
+		font-size: 1.25rem;
+		line-height: 1.25rem;
+		border-radius: 0.5rem;
+		border: 2px solid $color-grey;
+	}
+
+	.security-heading,
+	.heading-tertiary {
+		color: $color-charcoal;
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		text-transform: capitalize;
+	}
 
 	&__login {
-		width: 35%;
+		width: 100%;
 		display: inline-block;
 	}
 
 	&__group {
 		position: relative;
 		display: block;
-		height: 4rem;
-		margin-bottom: 3rem;
-		border-radius: $input-bradius
+		margin-bottom: 2rem;
 	}
 
 	&__control {
@@ -34,7 +52,7 @@
 		&:active,
 		&:hover {
 			outline: none;
-			border: 2px solid $color-primary;
+			border: 2px solid $color-secondary;
 			box-shadow: $shadow-center-dark;
 		}
 
@@ -59,13 +77,12 @@
 		background-color: $color-white;
 	}
 
-	&__icon {
-		top: 50%;
-		right: 5%;
+	&__icon {;
 		position: absolute;
-		padding-right: 1rem;
+		right: 1rem;
 		font-size: 1.5rem;
-		transform: translateY(-50%);
+		line-height: 1.5rem;
+		transform: translateY(-1rem);
 
 		&--success {
 			color: $color-green;
@@ -78,25 +95,17 @@
 	
 	&__login-submit {
 		display: block;
-		margin: auto;
+		margin: 1rem auto;
 		margin-bottom: 1rem;
 	}
 
-	//Registration specific css
-
 	&__register {
-		text-align: left;
+		display: inline-block;
 		width: 50%;
+		text-align: left;
 
 		@include respond(tab-port){
 			width: 80%;
-		}
-
-		display: inline-block;
-
-		.heading-tertiary {
-			color: $color-charcoal;
-			font-size: 2rem;
 		}
 
 		input[type="date"]::-webkit-calendar-picker-indicator{
@@ -160,9 +169,9 @@
 
 	&__disclaimer {
 		padding-left: 2.25rem;
-		margin: 2rem 0;
-		font-size: 1.25rem;
-		color: $color-charcoal
+		margin: 1rem 0;
+		font-size: 1.125rem;
+		color: $color-grey-dark;
 	}
 
 	&__select-group {
@@ -209,13 +218,12 @@
 	&__select-arrow {
 		position: absolute;
 		top: 1.25rem;
-		right: 5rem;
+		right: 2rem;
 		width: 1rem;
 		height: 1rem;
 		border: solid $color-black;
 		border-width: 0 3px 3px 0;
 		display: inline-block;
-		padding: 3px;
 		transform: rotate(45deg);
 		-webkit-transform: rotate(45deg);
 	}
@@ -237,17 +245,5 @@
 			margin-bottom: 2rem;
 			display: inline-block;
 		}
-	}
-}
-
-.security-heading {
-	padding-left: 4rem;
-	margin-bottom: 1rem;
-}
-
-section.section-login {
-
-	.form__login-submit {
-		margin-top: 2rem;
 	}
 }

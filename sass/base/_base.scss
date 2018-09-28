@@ -7,7 +7,7 @@
 }
 
 html {
-	font-size: 1rem; //Sets 1rem == 10 px before responsive modifiers
+	font-size: 0.75rem; //Sets 0.75rem == 16 px before responsive modifiers
 	
 	@include respond(tab-land) {
 		font-size: 75%;
@@ -27,18 +27,37 @@ html {
 }
 
 body {
-	box-sizing: border-box; // Padding will not add or subtract from overall dimensions of an element.
-	p {
-		font-family: 'Open Sans';
-		font-weight: 400;
-		font-size: 1.125rem;
-		line-height: 2rem;
-		color: #333;
+	box-sizing: border-box;
+}
+
+p,
+ul,
+li {
+	font-family: 'Open Sans';
+	font-weight: 300;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	color: $color-charcoal;
+}
+
+a {
+	color: $color-secondary;
+	text-decoration: none;
+	font-family: 'Montserrat';
+	cursor: pointer;
+
+	&:hover {
+		color: $color-primary-dark;
+		text-decoration: none;
 	}
 }
 
-// HEADINGS */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: 'Montserrat';
 	font-weight: 700;
 	color: #333;
@@ -75,22 +94,4 @@ h5 {
 h6 {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
-}
-
-// Links
-a {
-	color: $color-primary-light;
-	text-decoration: none;
-	font-family: 'Montserrat';
-	font-size: $default-font;
-	cursor: pointer;
-
-	&:hover {
-		color: $color-primary-dark;
-		text-decoration: none;
-	}
-}
-
-ul, li {
-	font-family: 'Montserrat';
 }

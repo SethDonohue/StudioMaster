@@ -7,20 +7,18 @@
 		padding: 1rem 2rem;
 		font-size: 1.25rem;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 700;
+		font-weight: 600;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		border-radius: .5rem;
+		border-radius: 0.5rem;
 		cursor: pointer;
 		transition: $ease-default;
-		box-shadow: $shadow-center-light;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
 		transition: $ease-default;
-		box-shadow: $shadow-center-dark;
 	}
 
 	&--purple {
@@ -29,14 +27,14 @@
 		&:link,
 		&:visited {
 			color: $color-white;
-			background-color: $color-primary-light;
-			border: 2px solid $color-primary-light;
+			background-color: $color-secondary;
+			border: 2px solid $color-secondary;
 		}
 
 		&:hover,
 		&:active {
-			border: 2px solid $color-primary;
-			background-color: $color-primary;
+			border: 2px solid $color-secondary-dark;
+			background-color: $color-secondary-dark;
 		}
 	}
 
@@ -50,7 +48,7 @@
 			
 		&:hover,
 		&:active {
-			color: $color-white-dark;
+			color: $color-white;
 			border: 2px solid $color-white;
 		}
 	}
@@ -61,15 +59,15 @@
 		&:link,
 		&:visited {
 			background-color: transparent;
-			border: 2px solid $color-primary-light;
-			color: $color-primary-light;
+			border: 2px solid $color-secondary;
+			color: $color-secondary;
 		}
 			
 		&:hover,
 		&:active {
-			background-color: transparent;
+			background-color: $color-primary;
 			border: 2px solid $color-primary;
-			color: $color-primary;
+			color: $color-white;
 		}
 	}
 
@@ -78,17 +76,34 @@
 		&,
 		&:link,
 		&:visited {
-			background-color: $color-green-dark;
-			border: 2px solid $color-green-dark;
+			background-color: $color-green;
+			border: 2px solid $color-green;
 			color: $color-white;
 		}
 
 		&:hover,
 		&:active {
+			background-color: $color-green-dark;
+			border: 2px solid $color-green-dark;
 			color: $color-white;
-			background-color: $color-green;
-			border: 2px solid $color-green;
-			box-shadow: $shadow-center-dark;
+		}
+	}
+
+	&--yellow {
+		
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-yellow;
+			border: 2px solid $color-yellow;
+			color: $color-primary;
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			background-color: $color-orange-dark;
+			border: 2px solid $color-orange-dark;
 		}
 	}
 
@@ -107,7 +122,6 @@
 			color: $color-primary;
 			background-color: $color-orange-dark;
 			border: 2px solid $color-black;
-			box-shadow: $shadow-center-dark;
 		}
 	}
 
@@ -116,16 +130,16 @@
 		&,
 		&:link,
 		&:visited {
-			background-color: $color-grey-dark;
-			border: 2px solid $color-grey-dark;
-			color: $color-charcoal-light;
+			background-color: $color-grey;
+			border: 2px solid $color-grey;
+			color: $color-charcoal;
 		}
 
 		&:hover,
 		&:active {
-			background-color: $color-grey;
-			border: 2px solid $color-grey;
-			color: $color-charcoal-light;
+			background-color: $color-grey-dark;
+			border: 2px solid $color-grey-dark;
+			color: $color-charcoal;
 		}
 	}
 }

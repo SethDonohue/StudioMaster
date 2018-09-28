@@ -1,13 +1,13 @@
 // Dark Purple
 $color-primary: #320d59;
-$color-primary-light: lighten($color-primary, 10%);
-$color-primary-dark: darken($color-primary, 10%);
+$color-primary-light: lighten($color-primary, 5%);
+$color-primary-dark: darken($color-primary, 5%);
 
 // Light Purple
 $color-secondary: #754996;
-$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-light: lighten($color-secondary, 5%);
 $color-secondary-light-alt: lighten($color-secondary, 25%);
-$color-secondary-dark: darken($color-secondary, 10%);
+$color-secondary-dark: darken($color-secondary, 5%);
 
 // White
 $color-white: #fff;
@@ -16,36 +16,38 @@ $color-white-90: rgba(255,255,255,0.9);
 
 // Grey
 $color-grey: #e5e5e5;
-$color-grey-light: lighten($color-grey, 10%);
-$color-grey-dark: darken($color-grey, 10%);
+$color-grey-light: lighten($color-grey, 5%);
+$color-grey-dark: darken($color-grey, 5%);
 
 // Charcoal
 $color-charcoal: #333;
-$color-charcoal-light: lighten($color-charcoal, 10%);
-$color-charcoal-dark: darken($color-charcoal, 10%);
+$color-charcoal-light: lighten($color-charcoal, 5%);
+$color-charcoal-dark: darken($color-charcoal, 5%);
 
 // Black
 $color-black: #000;
-$color-black-light: lighten($color-black, 10%);
-$color-black-dark: darken($color-black, 10%);
+$color-black-light: lighten($color-black, 5%);
+$color-black-dark: darken($color-black, 5%);
 
 // Green
-$color-green: #2ecc40;
-$color-green-light: lighten($color-green, 10%);
-$color-green-dark: darken($color-green, 10%);
+$color-green: #06ad1a;
+$color-green-light: lighten($color-green, 5%);
+$color-green-dark: darken($color-green, 5%);
 
 // Red
 $color-red: #ff4136;
-$color-red-light: lighten($color-red, 10%);
-$color-red-dark: darken($color-red, 10%);
+$color-red-light: lighten($color-red, 5%);
+$color-red-dark: darken($color-red, 5%);
 
 //Orange
-$color-orange: rgb(235, 185, 22);
+$color-orange: #ffca21;
+$color-orange-light: lighten($color-orange, 5%);
 $color-orange-dark: darken($color-orange, 5%);
 
 //Yellow
-$color-yellow: #eeff00;
-$color-yellow-light: lighten($color-yellow, 12%);
+$color-yellow: #f9ce20;
+$color-yellow-light: lighten($color-yellow, 5%);
+$color-yellow-darken: darken($color-yellow, 5%);
 
 // Font Sizes
 $default-font: 1.25rem;
@@ -65,7 +67,7 @@ $ease-default: ease-in-out all 0.125s;
 $scale-small: scale(1.10);
 
 // Box Shadows
-$shadow-light: 0 1rem 1.5rem rgba($color-black, 0.15);
-$shadow-dark: 0 1rem 1.5rem rgba($color-black, 0.35);
-$shadow-center-light: 0 0 1.5rem rgba($color-black, 0.15);
-$shadow-center-dark: 0 0 1.5rem rgba($color-black, 0.35);
+$shadow-light: 0 0.25rem 0.5rem rgba($color-black, 0.10);
+$shadow-dark: 0 0.25rem 0.5rem rgba($color-black, 0.25);
+$shadow-center-light: 0 0 0.5rem rgba($color-black, 0.10);
+$shadow-center-dark: 0 0 0.5rem rgba($color-black, 0.25);
