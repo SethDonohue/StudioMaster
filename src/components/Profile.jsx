@@ -63,7 +63,6 @@ class Profile extends Component {
 
         
             else{
-                console.log(this.props.login)
                 return (
                     <main className="section-profile">
                         <NavBar />

@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeSong } from '../../actions/audio_actions';
+import { changeSong, addFavorite, deleteFavorite } from '../../actions/audio_actions';
 
 import Logo from '../../img/placeholders/vinyl.jpeg';
 
 class Track extends Component {
+
+    state = {
+        active : false,
+        deleteWindow : false,
+        menuShow: false,
+    }
 
     setTrack(){
 
@@ -19,10 +25,38 @@ class Track extends Component {
         this.props.changeSong(track);
     }
 
-    changeState(){
-        if(this.state.active === true) this.setState({active: false});
-        if(this.state.active === false) this.setState({active: true});
-        console.log(this.state);
+    changeState(view){
+        console.log('hello')
+
+        switch(view){
+            case null:
+                console.log('am i happening?')
+                if(this.state.active === true) this.setState({active: false});
+                if(this.state.active === false) this.setState({active: true});
+                break;
+            case 'menuShow':
+                if(this.state.menuShow){
+                    this.setState({
+                        menuShow: false,
+                        deleteWindow: false
+                    })
+                }
+                else {
+                    this.setState({
+                        menuShow: true,
+                        deleteWindow: false
+                    })
+                }
+                break;
+            case 'deleteShow':
+                this.setState({
+                    deleteWindow: true,
+                    menuShow: false
+                })
+                break;
+
+            default: return;
+        }
         
     }
 
@@ -30,7 +64,6 @@ class Track extends Component {
 
         if(this.props.song && this.props.song.track.id === this.props.track.id)
         {
-            console.log(this.props.song)
             return(
                 <div className="track__active">
                     <div className="track__active-title-container">
@@ -44,8 +77,25 @@ class Track extends Component {
                     <div className="track__active-actions">
                         <i className="fas fa-plus track__active-icons"></i>
                         <i className="fas fa-list track__active-icons"></i>
-                        <i className="fab fa-itunes-note track__active-icons"></i>
+                        <i className="fas fa-ellipsis-v track__active-icons"
+                            onClick={this.changeState.bind(this, 'menuShow')}></i>
                     </div>
+
+                    {this.state.menuShow ? 
+                    <div className="track__dropdown">
+                        <ul>
+                            <li className="track__menu-item">Delete Track</li>
+                            <li className="track__menu-item">Action</li>
+                            <li className="track__menu-item">Action</li>
+                        </ul>
+                    </div> : ""}
+
+                    {this.state.deleteShow ? 
+                    <div className="track__delete-window">
+                        <h2>Are you sure you want to delete this track?</h2>
+                        <button className="btn btn--green">Delete</button>
+                        <button className="btn">Cancel</button>
+                    </div> : ""}
                 </div>
             )
         }
@@ -76,7 +126,7 @@ function mapStateToProps({ song }){
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({ changeSong } ,dispatch);
+    return bindActionCreators({ changeSong, addFavorite, deleteFavorite } ,dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Track);

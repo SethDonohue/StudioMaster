@@ -184,14 +184,28 @@ app.post('/login', (req,res) => {
                 if(bcrypt.compareSync(req.body.password , user[0].password)) { // if user is found and pw matches save session with userID
                     req.session.loggedInUser = user[0].id;
                     req.session.save();
-                    
+
+                    console.log(user[0])
+                    const info = {
+                        imageURL: user[0].imageURL,
+                        userName: user[0].userName
+                    };
+
+                    con.query(`SELECT Tracks_id FROM favorites WHERE (user_id = ${user[0].id})`, (err, tracks_id) => {
+                        if(err) res.json(err);
+                        else {
+                            info['favoriteTracks'] =  tracks_id;
+                            
+                            res.json({
+                                id: req.session.loggedInUser,
+                                info
+                            });
+                        }
+                    })
                     
 
-                    res.json({
-                        id: req.session.loggedInUser,
-                        info: user[0]
-                    });
                 }
+                
 
                 else { // if user is found but pw does not match
                     res.json({
@@ -255,6 +269,8 @@ app.post('/changePhoto', upload.single('image'), (req,res) => {
     });
 })
 
+//TRACKS//
+
 app.post('/newTrack', upload.single('track'), (req, res) => {
     const track = fs.readFileSync('./' + req.file.path);
 
@@ -273,14 +289,6 @@ app.post('/newTrack', upload.single('track'), (req, res) => {
             })
         }
     });
-})
-
-app.post('/newAlbum', (req,res) => {
-    const tracks = req.body.tracks;
-
-    console.log(tracks);
-
-    
 })
 
 app.post('/deleteTracks/:id', (req, res) => {
@@ -327,6 +335,40 @@ app.post('/deleteTracks/:id', (req, res) => {
         })
     }
 })
+
+//ALBUMS//
+
+app.post('/newAlbum', (req,res) => {
+    const tracks = req.body.tracks;
+    const albumName = req.body.name;
+    const albumDesc = req.body.desc;
+    const id = req.body.id;
+
+    console.log(tracks);
+    console.log(albumName);
+
+    con.query(`INSERT INTO albums (albumName, albumDesc, created_at, updated_at, user_id) VALUES ('${albumName}', '${albumDesc ? albumDesc : "No description provided"}', now(), now(), ${id})`, (err, album) => {
+        if(err) console.log(err);
+
+        else{
+            console.log(album);
+            let query = '';
+            for (let idx = 0; idx < tracks.length; idx++){
+                query += `(${tracks[idx]}, ${album.insertId})`
+                if(idx !== tracks.length - 1) query += ', '
+            }
+
+            con.query(`INSERT INTO album_tracks (Tracks_id, albums_id) VALUES ${query};`, (err, result) => {
+                if(err) console.log(err);
+                else console.log(result);
+            })
+
+        }
+    })
+
+    
+})
+
 
 app.post('/setArtistInfo', (req, res) => {
     console.log(req.session.loggedInUser);
@@ -438,10 +480,29 @@ app.get('/fetchProfileGenresInstruments/:id/:limit', (req,res) => {
         }
 
     });
-
-
-    
 } )
+
+app.get('/fetchAlbums/:id', (req,res) => {
+    const id = req.params.id;
+
+    con.query(`SELECT * FROM albums WHERE (user_id = ${id});`, (err, albums) => {
+        if(err) console.log(err);
+        else {
+            console.log(albums);
+            res.json({albums});   
+        }
+    })
+})
+
+app.post('/addFavorite', (req, res) => {
+    const id = req.body.id;
+    const track = req.body.track;
+
+    con.query(`INSERT INTO favorites (Tracks_id, user_id) VALUES (${track}, ${id});`, (err, result) => {
+        if(err) console.log(err);
+        else console.log(result);
+    })
+})
 
 app.get('/instrumentsAndGenres', (req,res) =>{
     const instAndGenreLists = {};

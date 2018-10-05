@@ -7,7 +7,10 @@ export const NEW_TRACK = 'NEW_TRACK';
 export const NEW_ALBUM = 'NEW_ALBUM';
 export const FETCH_TRACKS_PROFILE = 'FETCH_TRACKS_PROFILE';
 export const FETCH_TRACKS_ALL = 'FETCH_TRACKS_ALL';
+export const FETCH_ALBUMS = "FETCH_ALBUMS";
 export const DELETE_TRACKS = "DELETE_TRACKS";
+export const ADD_FAVORITE = "ADD_FAVORITE";
+export const DELETE_FAVORITE = "DELETE_FAVORITE";
 
 
 export function changeSong(track){
@@ -35,11 +38,11 @@ export function newTrack(track){
     }
 }
 
-export function newAlbum(tracks){
+export function newAlbum(tracks, name, desc, id){
 
     const url = `${ROOT_URL}/newAlbum`;
-
-    axios.post(url, {tracks});
+    console.log(name)
+    axios.post(url, {tracks, name, desc, id});
 
     return {
         type: NEW_ALBUM
@@ -68,6 +71,19 @@ export function fetchAllTracks(id){
     }
 }
 
+export function fetchProfileAlbums(id){
+    const url = `${ROOT_URL}/fetchAlbums/${id}`;
+
+    const request = axios.get(url, {
+        withCredentials: true
+    });
+
+    return {
+        type: FETCH_ALBUMS,
+        payload: request
+    }
+}
+
 export function deleteTracks(tracks, id){
     const url = `${ROOT_URL}/deleteTracks/${id}`;
 
@@ -78,6 +94,28 @@ export function deleteTracks(tracks, id){
 
     return {
         type: DELETE_TRACKS,
+        payload: request
+    }
+}
+
+export function addFavorite(track, id){
+    const url = `${ROOT_URL}/addFavorite`;
+
+    const request = axios.post(url, {track, id});
+
+    return {
+        type: ADD_FAVORITE,
+        payload: request
+    }
+}
+
+export function deleteFavorite(track, id){
+    const url = `${ROOT_URL}/deleteFavorite`;
+
+    const request = axios.post(url, {track, id});
+
+    return {
+        type: DELETE_FAVORITE,
         payload: request
     }
 }

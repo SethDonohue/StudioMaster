@@ -30,8 +30,6 @@ class ProfileInfo extends Component {
     }
 
     render() {
-
-        console.log(this.props.login)
         
         return(
             <section className='profile-info'>

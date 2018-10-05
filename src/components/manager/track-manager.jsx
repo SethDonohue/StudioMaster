@@ -20,7 +20,6 @@ class TrackManager extends Component {
     }
 
     mapTracksToList(){
-        console.log(this.props.allTracks)
          return this.props.allTracks.tracks.map(track => {
              return(
                 <div className="form__radio-group track-manager__item" key={track.id}>
@@ -62,7 +61,9 @@ class TrackManager extends Component {
     }
 
     createNewAlbum(){
-        this.props.newAlbum(this.selectedTracks);
+        const albumName = document.getElementById('albumName').value
+        const albumDesc = document.getElementById('desc').value
+        this.props.newAlbum(this.selectedTracks, albumName, albumDesc, this.props.login.data.id);
         return <Redirect to={`/profile/${this.props.login.data.id}`} />
     }
 
@@ -109,7 +110,6 @@ class TrackManager extends Component {
     }
 
     changeStateHandler(view){
-        console.log(view)
         switch(view){
             case 'cancel':
                 this.setState({showConfirm: false, showAlbum: false, showEdit: false});
@@ -129,7 +129,7 @@ class TrackManager extends Component {
         }
     }
 
-    render(){ console.log(this.props.allTracks)
+    render(){
         return(
             <section>
 
@@ -180,7 +180,11 @@ class TrackManager extends Component {
                         <h2 className="track-manager__header">
                             Name your new album
                         </h2>
-                        <input type="text" className="track-manager__input"/>
+                        <input type="text" id='albumName' className="track-manager__input"/>
+                        <h2 className="track-manager__header">
+                            Describe your new album
+                        </h2>
+                        <textarea id="desc" cols="30" rows="10" className="track-manager__textarea"></textarea>
                         {this.renderNewAlbumList()}
                         <button onClick={this.createNewAlbum.bind(this)} 
                         className="btn btn--green">Publish</button>
