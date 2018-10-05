@@ -121,4 +121,30 @@
         }
 
     }
+
+    &__dropdown {
+        border: 1px solid $color-black;
+        position: absolute;
+        right: 0;
+        top: 12rem;
+        background-color: $color-charcoal;   
+    }
+
+    &__menu-item{
+        color: $color-white;
+        list-style: none;
+        border-bottom: 1px solid $color-grey;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $color-charcoal-light;
+        }
+    }
+
+    &__deleteWindow {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

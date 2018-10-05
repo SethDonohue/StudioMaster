@@ -1,15 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Album from "../boxes/album";
+
+import { fetchProfileAlbums } from "../../actions/audio_actions";
 
 const albums = [1,2,3,4,5]
 
 class ProfileAlbums extends Component {
 
+    componentWillMount(){
+        this.props.fetchProfileAlbums(this.props.artist.id);
+    }
+
     mapAlbums(){
-        return albums.map(album => {
-            return <Album key={album} />
+        return this.props.albums.data.albums.map(album => {
+            return <Album key={album.id} info={album} />
         })
     }
     render(){
@@ -21,11 +28,15 @@ class ProfileAlbums extends Component {
                 </div>
 
                 <div className="profile-tracks__track-container">
-                    {this.mapAlbums()}
+                    {this.props.albums ? this.mapAlbums() : "user has not created albums yet"}
                 </div>
             </section>
         )
     }
 }
 
-export default ProfileAlbums;
+function mapStateToProps({albums}){
+    return {albums};
+}
+
+export default connect(mapStateToProps, { fetchProfileAlbums })(ProfileAlbums);

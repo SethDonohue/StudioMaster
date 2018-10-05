@@ -892,7 +892,6 @@ h6 {
     margin-top: 3rem; }
 
 .banner {
-  margin-top: 10rem;
   width: 100%;
   background: linear-gradient(to right, #3f106f, #260a43);
   padding: 2rem 4rem;
@@ -1206,6 +1205,24 @@ h6 {
       .track__active-icons:hover {
         color: #d8d8d8;
         cursor: pointer; }
+  .track__dropdown {
+    border: 1px solid #000;
+    position: absolute;
+    right: 0;
+    top: 12rem;
+    background-color: #333; }
+  .track__menu-item {
+    color: #fff;
+    list-style: none;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer; }
+    .track__menu-item:hover {
+      background-color: #404040; }
+  .track__deleteWindow {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
 
 .row {
   max-width: 114rem;
