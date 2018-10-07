@@ -191,7 +191,7 @@ app.post('/login', (req,res) => {
                         userName: user[0].userName
                     };
 
-                    con.query(`SELECT Tracks_id FROM favorites WHERE (user_id = ${user[0].id})`, (err, tracks_id) => {
+                    con.query(`SELECT Tracks_id FROM favorites WHERE (users_id = ${user[0].id})`, (err, tracks_id) => {
                         if(err) res.json(err);
                         else {
                             info['favoriteTracks'] =  tracks_id;
@@ -445,7 +445,7 @@ app.post('/setArtistInfo', (req, res) => {
 //Track Fetching Routes
 
  app.get('/fetchProfileTracks/:id', (req,res) => {
-    con.query(`SELECT * FROM Tracks WHERE (user_id = ${req.params.id}) ORDER BY created_at DESC LIMIT 0, 9`, (err, tracks) => {
+    con.query(`Select Tracks.*, users.userName from Tracks join users on Tracks.user_id = users.id WHERE (Tracks.user_id = ${req.params.id}) ORDER BY Tracks.created_at DESC LIMIT 0,9;`, (err, tracks) => {
         if(err) console.log(err);
         if(tracks) {
             res.json( {tracks} )
@@ -454,7 +454,7 @@ app.post('/setArtistInfo', (req, res) => {
 })
 
 app.get('/fetchAllTracks/:id', (req,res) => {
-    con.query(`SELECT * FROM Tracks WHERE(user_id = ${req.params.id}) ORDER BY created_at DESC LIMIT 0, 100;`, (err, tracks) => {
+    con.query(`Select Tracks.*, users.userName from Tracks join users on Tracks.user_id = users.id WHERE (Tracks.user_id = ${req.params.id}) ORDER BY Tracks.created_at DESC LIMIT 0,100;`, (err, tracks) => {
         if(err) console.log(err);
         if(tracks){
             res.json( {tracks} )

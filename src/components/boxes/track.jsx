@@ -61,32 +61,34 @@ class Track extends Component {
     }
 
     render() {
+        console.log(this.props.track)
 
         if(this.props.song && this.props.song.track.id === this.props.track.id)
         {
             return(
+                // ACTIVE TRACK CARD
                 <div className="track__active">
                     <div className="track__active-title-container">
                         <h5 className="track__active-title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Track Title"}</h5>
                     </div>
                     <p className="track__active-billboard">Billboard</p>
                     <div className="track__active-metrics">
-                        <p className="track__active-info">Listens</p>
+                        <p className="track__active-info">{this.props.track.listens} Listens</p>
                         <p className="track__active-info">Favorites</p>
                     </div>
                     <div className="track__active-actions">
-                        <i className="fas fa-plus track__active-icons"></i>
                         <i className="fas fa-list track__active-icons"></i>
                         <i className="fas fa-ellipsis-v track__active-icons"
                             onClick={this.changeState.bind(this, 'menuShow')}></i>
                     </div>
 
                     {this.state.menuShow ? 
+
+                    // DROPDOWN MENU
                     <div className="track__dropdown">
                         <ul>
                             <li className="track__menu-item">Delete Track</li>
-                            <li className="track__menu-item">Action</li>
-                            <li className="track__menu-item">Action</li>
+                            <li className="track__menu-item">Add to Favorites</li>
                         </ul>
                     </div> : ""}
 
@@ -103,6 +105,7 @@ class Track extends Component {
         else 
         {
             return(
+                // NON ACTIVE TRACK CARD
                 <div className='track' onClick={this.setTrack.bind(this)}>
                     <div className="track__image-container">
                         <img src={this.props.track.coverURL ? this.props.track.coverURL : Logo} alt="track-cover" className="track__image"/>
@@ -111,9 +114,8 @@ class Track extends Component {
                         <div className="track__title-container">
                             <h5 className="track__title">{this.props.track.trackTitle ? this.props.track.trackTitle : "Track Title"}</h5>
                         </div>
-                        <p className="track__artists">Artist Name</p>
-                        <p className="track__length">Time code</p>
-                        <p className="track__date">Release date</p>
+                        <p className="track__artists">{this.props.track.userName}</p>
+                        <p className="track__date">{this.props.track.created_at.toString()}</p>
                     </div>
                 </div>
             )
